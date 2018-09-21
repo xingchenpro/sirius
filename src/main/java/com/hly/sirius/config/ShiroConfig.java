@@ -1,6 +1,6 @@
 package com.hly.sirius.config;
 
-import org.apache.shiro.mgt.DefaultSecurityManager;
+import com.hly.sirius.realm.ShiroRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;

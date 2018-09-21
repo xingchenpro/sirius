@@ -41,7 +41,7 @@ public class UserController {
 			mView.setViewName("/index");
 			return mView;
 		} catch (AuthenticationException e) {
-			System.out.println("用户名或密码错误");
+			System.err.println("用户名或密码错误");
 			e.printStackTrace();
 			mView.addObject("error", "用户名或密码错误");
 			mView.setViewName("/login");
