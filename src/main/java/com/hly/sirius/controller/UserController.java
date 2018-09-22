@@ -56,10 +56,10 @@ public class UserController {
 	 */
 	@RequestMapping("/register")
 	public ModelAndView register(@RequestParam(value="user_id",required=false)String userId,@RequestParam(value="user_password",required=false)String userPassword){
-		User user = new User(userId, CryptographyUtil.md5(userPassword,userId));
-		System.err.println(user.toString());
 		ModelAndView mView = new ModelAndView();
 			try {
+				User user = new User(userId, CryptographyUtil.md5(userPassword,userId));
+				System.err.println(user.toString());
 				userService.insertUser(user);
 				mView.setViewName("/login");
 				return mView;

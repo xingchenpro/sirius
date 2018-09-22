@@ -8,6 +8,7 @@ import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
@@ -22,12 +23,11 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
  */
 
 @Aspect
-@Configuration
+@Component
 public class TransactionAdviceConfig {
 
     @Autowired
     private PlatformTransactionManager transactionManager;
-
 
     /**
      * 配置数据库通知事务
@@ -35,15 +35,16 @@ public class TransactionAdviceConfig {
      */
     @Bean
     public TransactionInterceptor txAdvice(){
-
         DefaultTransactionAttribute txAttr_REQUIRED = new DefaultTransactionAttribute();
         txAttr_REQUIRED.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+
         DefaultTransactionAttribute txAttr_REQUIRED_READONLY = new DefaultTransactionAttribute();
         txAttr_REQUIRED_READONLY.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
         //只读事务，不做更新操作
         txAttr_REQUIRED_READONLY.setReadOnly(true);
-
+        //事务管理规则，声明具备事务管理的方法名
         NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
+
         source.addTransactionalMethod("delete*",txAttr_REQUIRED);
         source.addTransactionalMethod("insert*",txAttr_REQUIRED);
         source.addTransactionalMethod("remove*",txAttr_REQUIRED);
@@ -65,7 +66,7 @@ public class TransactionAdviceConfig {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         //设置需要拦截的方法
         pointcut.setExpression("execution(* com.hly.sirius.service.*.*(..))");
-        //关联pointcut和advice
+        //设置切面=pointcut(切点)+advice(通知)
         return new DefaultPointcutAdvisor(pointcut,txAdvice());
 
     }

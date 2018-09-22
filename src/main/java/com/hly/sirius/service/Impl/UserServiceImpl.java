@@ -5,6 +5,9 @@ import com.hly.sirius.domain.User;
 import com.hly.sirius.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 
 /**
@@ -19,13 +22,14 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
 
+	//@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED,rollbackFor = Exception.class)
 	@Override
 	public User selectUserById(String userId) {
-		
 		return userDao.selectUserById(userId);
 	}
 
 	@Override
+	//@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED,rollbackFor = Exception.class)
 	public boolean insertUser(User user) {
 		
 		return userDao.insertUser(user);

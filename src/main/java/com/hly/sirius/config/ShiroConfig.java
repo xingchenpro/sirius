@@ -19,6 +19,7 @@ import java.util.Map;
  */
 @Configuration
 public class ShiroConfig {
+
     /**
      * shiro过滤器
      * @param securityManager
