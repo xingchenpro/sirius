@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Appenders>
+
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <RollingFile name="RollingFile" fileName="d:/logs.log"
-                     filePattern="F:/$${date:yyyy-MM}/log-%d{MM-dd-yyyy}-%i.log.gz">
+        <!--添加append="false"日志文件每次都会清空-->
+        <File name="Sirius" fileName="d:/logs/sirius.log">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %M() @%L - %msg%n"/>
+        </File>
+
+        <RollingFile name="RollingFile" fileName="d:/logs/siriusLog.log"
+                     filePattern="d:/$${date:yyyy-MM}/logs-%d{MM-dd-yyyy}-%i.siriusLog.gz">
             <PatternLayout>
                 <Pattern>%d [%t] %-5level %logger{36} - %msg%n</Pattern>
             </PatternLayout>
+
             <Policies>
                 <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <SizeBasedTriggeringPolicy size="20MB"/>
             </Policies>
         </RollingFile>
+
+
     </Appenders>
 
     <Loggers>
         <Root level="DEBUG">
-            <!--<AppenderRef ref="RollingFile"/>-->
+            <!--匹配每一个appender的名称-->
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="Sirius"/>
+            <AppenderRef ref="RollingFile"/>
         </Root>
     </Loggers>
+
+
 </Configuration>
