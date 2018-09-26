@@ -49,9 +49,16 @@ public class TransactionAdviceConfig {
         source.addTransactionalMethod("insert*",txAttr_REQUIRED);
         source.addTransactionalMethod("remove*",txAttr_REQUIRED);
         source.addTransactionalMethod("update*",txAttr_REQUIRED);
-        source.addTransactionalMethod("select*",txAttr_REQUIRED_READONLY);
+        source.addTransactionalMethod("edit*",txAttr_REQUIRED);
+        source.addTransactionalMethod("save*",txAttr_REQUIRED);
+        source.addTransactionalMethod("add*",txAttr_REQUIRED);
+        source.addTransactionalMethod("new*",txAttr_REQUIRED);
+        source.addTransactionalMethod("set*",txAttr_REQUIRED);
+        source.addTransactionalMethod("change*",txAttr_REQUIRED);
+        source.addTransactionalMethod("load*",txAttr_REQUIRED_READONLY);
         source.addTransactionalMethod("get*",txAttr_REQUIRED_READONLY);
         source.addTransactionalMethod("find*",txAttr_REQUIRED_READONLY);
+        source.addTransactionalMethod("*",txAttr_REQUIRED_READONLY);
 
         return new TransactionInterceptor(transactionManager,source);
     }

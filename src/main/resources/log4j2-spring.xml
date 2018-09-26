@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Configuration>
     <Appenders>
 
@@ -24,9 +25,7 @@
             </Policies>
         </RollingFile>
 
-
     </Appenders>
-
     <Loggers>
         <Root level="DEBUG">
             <!--匹配每一个appender的名称-->
