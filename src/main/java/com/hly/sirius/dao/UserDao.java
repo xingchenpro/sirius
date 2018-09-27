@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @date 2018年9月12日 下午7:21:50
  */
 @Component
-
 public interface UserDao {
 	/**
 	 * 用户注册
@@ -23,7 +22,5 @@ public interface UserDao {
 	 * @return
 	 */
 	public User selectUserById(String userId);
-	
-	
 }
 
