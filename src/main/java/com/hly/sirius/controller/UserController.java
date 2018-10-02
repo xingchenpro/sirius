@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @author hly
  * @blog:https://blog.csdn.net/Sirius_hly
@@ -32,18 +34,19 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/login")
-   public ModelAndView login(@RequestParam(value="user_id",required=false) String userId,@RequestParam(value="user_password",required=false)String userPassword){
+   public ModelAndView login(@RequestParam(value="user_id",required=false) String userId, @RequestParam(value="user_password",required=false)String userPassword, HttpSession session){
+
 		ModelAndView mView = new ModelAndView();
 		Subject subject = SecurityUtils.getSubject();
 		UsernamePasswordToken token = new UsernamePasswordToken(userId, CryptographyUtil.md5(userPassword,userId));
 		try {
 			subject.login(token);
-			mView.setViewName("/index");
+			session.setAttribute("userId",userId);
+			mView.setViewName("/admin");
 			return mView;
 		} catch (AuthenticationException e) {
 			System.err.println("用户名或密码错误");
 			e.printStackTrace();
-			mView.addObject("error", "用户名或密码错误");
 			mView.setViewName("/login");
 			return mView;
 		}
@@ -77,6 +80,17 @@ public class UserController {
 	public ModelAndView index(){
 		ModelAndView mView = new ModelAndView();
 		mView.setViewName("/index");
+		return mView;
+	}
+
+	/**
+	 * 主页
+	 * @return
+	 */
+	@RequestMapping("/admin")
+	public ModelAndView admin(){
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("/admin");
 		return mView;
 	}
 

@@ -1,0 +1,41 @@
+/**
+*@author :hly
+*@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+*@date :2018/8/13
+*/
+{
+    margin: 0px;
+    padding: 0px;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body {
+
+    background-color: rgba(252, 255, 232, 0.7);
+}
+
+a {
+    text-decoration: none;
+    color: #0f0f0f;
+    transition: all 1s ease;
+}
+a:hover{
+    text-decoration: none;
+    color: #23d8ff;
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.article_detail_panel{
+    width: 870px;
+    float: left;
+    margin-top: 20px;
+    height: auto;
+    margin-bottom: 10px;
+    overflow: auto;
+}

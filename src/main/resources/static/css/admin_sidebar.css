@@ -1,0 +1,126 @@
+/**
+*@author :hly
+*@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+*@date :2018/8/14
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #d9e0e7;
+    font-size: 12px;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #707478
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: #242a30
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    font-weight: 300;
+    color: #7c7f83
+}
+
+a {
+    transition: color 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out;
+    -webkit-transition: color 100ms ease-in-out
+}
+a:hover{
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+
+}
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+.sidebar{
+
+    width: 220px;
+    background-color: #205b8f;
+    position: absolute;
+    left: 0;
+    top: 0px;
+   bottom: 0;
+    z-index: 10;
+    height:auto;
+
+}
+
+.sidebar .nav >li> a {
+    padding: 8px 20px;
+    color: #ffec10;
+    line-height: 20px;
+}
+.sidebar .nav >li> a:hover,.sidebar .nav >li> a:focus{
+    background: #232a2f;
+    color: #fe3d14;
+
+}
+
+.sidebar .nav >li>a i{
+    float: left;
+    margin-right: 15px;
+    width: 14px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #23d8ff;
+}
+
+.sidebar .nav >li>a .caret{
+    float: right;
+    margin-top: 9px;
+}
+
+/*最外层事件才有效不能写成.has-sub a:hover .sub-menu*/
+/*.has-sub:hover .sub-menu{
+    display: block;
+    color: white;
+}*/
+
+.sidebar .sub-menu{
+    padding: 10px 0 10px 30px;
+    background: #1a2229;
+    display: none;
+}
+
+.sidebar .sub-menu > li> a{
+    padding: 5px 20px;
+    display: block;
+    font-weight: 300;
+    color: #6d91ea;
+    /*用作绝对定位的容器*/
+    position: relative;
+}
+/*将元素之前插入内容*/
+.sidebar .sub-menu > li > a:before{
+    content: '\f13d';
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    font-size: 7px;
+    top: 50%;
+    margin-top: -4px;
+    margin-left: -6px;
+
+}
+ .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
+    color: #ff19d1
+}
+
+

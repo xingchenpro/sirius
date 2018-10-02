@@ -1,0 +1,217 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/4
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>write_article</title>
+    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css">
+    <link href="../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/admin.css" rel="stylesheet" type="text/css">
+    <script src="../libs/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li class="left_float"><a href="#">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a></li>
+                <li class="left_float"><a href="javascript:;"><h4>文章管理中心</h4></a></li>
+                <li class="right_float"><a href="javascript:;">退出</a></li>
+                <li class="right_float"><a href="javascript:;">Hly</a></li>
+                <li class="right_float"><a href="admin_index.html"><img
+                        src="../../static/images/article_images/img_17.jpg"></a></li>
+                <li class="right_float"><a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp写文章
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--导航结束-->
+    <!--start main-->
+    <div class="main" id="main">
+        <!--侧边栏-->
+        <div id="sidebar" class="sidebar">
+            <!--begin sidebar scroller -->
+            <div id="my-scrollbar">
+                <!--data-scrollbar="true" data-height="100%"-->
+                <!--begin sidebar nav-->
+                <ul class="nav">
+
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <b class="caret pull-right"></b>
+                            <span>文章管理</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">写文章</a></li>
+                            <li><a href="javascript:;">文章管理</a></li>
+                            <li><a href="javascript:;">评论管理</a></li>
+                            <li><a href="javascript:;">类别管理</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-rocket"></i>
+                            <b class="caret pull-right"></b>
+                            <span>专栏管理</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">全部专栏</a></li>
+                            <li><a href="javascript:;">添加专栏</a></li>
+                            <li><a href="javascript:;">管理专栏</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-user"></i>
+                            <b class="caret pull-right"></b>
+                            <span>个人信息管理</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">修改个人信息</a></li>
+                            <li><a href="javascript:;">查看个人信息</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-comments"></i>
+                            <b class="caret pull-right"></b>
+                            <span>评论管理</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">全部评论</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-group"></i>
+                            <b class="caret pull-right"></b>
+                            <span>用户管理</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">全部用户</a></li>
+                            <li><a href="javascript:;">添加用户</a></li>
+                            <li><a href="javascript:;">删除用户</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <i class="fa fa-cogs"></i>
+                            <b class="caret pull-right"></b>
+                            <span>设置</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">菜单</a></li>
+                            <li><a href="javascript:;">签名</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!--end sidebar nav-->
+
+            </div>
+            <!--end sidebar scroller-->
+        </div>
+        <!--end sidebar-->
+        <!--start article_edit-->
+        <div class="article_edit" id="article_edit">
+
+            <input class="title" type="text" placeholder="请输入文章标题">
+
+            <div class="my_editor" id="my_editor">
+
+                <iframe src="simple.html" width="1250px" height="1000px" scrolling="no" frameborder="0"></iframe>
+
+            </div>
+            <!--start type-->
+            <ul class="article_type_select">
+                <li>文章类型:</li>
+                <li>
+                    <select>
+                        <option>原创</option>
+                        <option>翻译</option>
+                        <option>转载</option>
+                    </select>
+                </li>
+                <li>文章分类:</li>
+                <li>
+                    <select>
+                        <option>健身</option>
+                        <option>美食</option>
+                        <option>运动</option>
+                        <option>烹饪</option>
+                        <option>用药</option>
+                        <option>工作</option>
+
+                    </select>
+                </li>
+
+            </ul>
+
+            <!--end type-->
+            <!--start btns-->
+            <div class="article_operation">
+                <input type="button" value="发布文章" class="submit_article">
+                <input type="button" value="保存草稿" class="article_save_draft">
+                <input type="button" value="返回" class="go_back">
+
+            </div>
+
+            <!--end my_editor-->
+        </div>
+        <!--end article edit-->
+    </div>
+    <!--end main-->
+
+    <!--页脚-->
+    <div class="foot">
+        <ul>
+            <li><a href="https://blog.csdn.net/sirius_hly" target="_blank">联系作者</a></li>
+            <li><a href="javascript:;" target="_blank">网站首页</a></li>
+            <li><a href="javascript:;" target="_blank">企业合作</a></li>
+            <li><a href="javascript:;" target="_blank">人才招聘</a></li>
+            <li><a href="javascript:;" target="_blank">招程序猿</a></li>
+            <li><a href="javascript:;" target="_blank">常见问题</a></li>
+            <li><a href="javascript:;" target="_blank">意见反馈</a></li>
+            <li><a href="javascript:;" target="_blank">拜师求学</a></li>
+            <li><a href="javascript:;" target="_blank"></a></li>
+            <li><a href="javascript:;" target="_blank"></a></li>
+            <li><a href="javascript:;" target="_blank"></a></li>
+        </ul>
+        <div id="ower">
+            Copyright&nbsp&copy&nbsp2018&nbsp huangliangyun.top &nbspAll Rights Reserved&nbsp|&nbsp琼&nbspICP备01号
+        </div>
+    </div>
+
+    <!--页脚结束-->
+    <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
+</div>
+
+<!--container end-->
+<script src="../libs/js/jquery.min.js"></script>
+<script src="../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+<!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
+<script src="../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="../js/apps.js"></script>
+<script>
+    $(document).ready(function () {
+        App.init();
+    });
+</script>
+</body>
+</html>

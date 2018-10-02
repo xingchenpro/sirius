@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>Editor.md</title>
+    <link rel="stylesheet" href="../libs/assets/editor.md-master/examples/css/style.css"/>
+    <link rel="stylesheet" href="../libs/assets/editor.md-master/css/editormd.css"/>
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+
+</head>
+<body>
+<div id="layout">
+    <header></header>
+    <div id="test-editormd">
+        <textarea style="display:none;"></textarea>
+        <textarea class="editor-md-html" name="editor-md-html"></textarea>
+    </div>
+</div>
+
+<script src="../libs/assets/editor.md-master/examples/js/jquery.min.js"></script>
+<script src="../libs/assets/editor.md-master/editormd.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "92%",//编辑器大小官方默认90%
+            height: 900,
+            syncScrolling: "single",
+            path: "../libs/assets/editor.md-master/lib/",//这个编辑器文件的lib路径,一定要写对不然404
+            saveHTMLToTextarea : true,//注意3：这个配置，textarea可以提交
+            /*编辑设置*/
+            emoji: true,//emoji表情，默认关闭
+            tocm : true, // Using [TOCM]
+            tex : true, // 开启科学公式TeX语言支持，默认关闭
+            flowChart : true, // 开启流程图支持，默认关闭
+            /**上传图片相关配置如下*/
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "<%=path%>/fileUpload/editorMDUpload",//注意你后端的上传图片服务地址
+            onload: function () { //上传成功之后的回调
+
+            },
+            //editorTheme: "pastel-on-dark",//编辑器的主题颜色
+            theme: "gray",//顶部的主题
+            previewTheme: "dark"//显示的主题
+        });
+
+    });
+</script>
+</body>
+</html>

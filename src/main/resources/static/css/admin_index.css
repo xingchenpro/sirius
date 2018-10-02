@@ -1,0 +1,478 @@
+/**
+*@author :hly
+*@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+*@date :2018/8/1
+*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+body {
+
+    background-color: rgba(252, 255, 232, 0.7);
+}
+
+a {
+    text-decoration: none;
+    color: #0f0f0f;
+    transition: all 1s ease;
+}
+a:hover{
+    text-decoration: none;
+    transition: all 1s ease;
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background-color: #070705;
+}
+
+header nav {
+    margin: 0 auto;
+    width: 1200px;
+    /*border: 1px solid red;*/
+    padding-top: 15px;
+    text-align: center;
+    background-color: black;
+    height: 75px;
+}
+
+header nav ul li {
+    /*display: inline;*/
+    line-height: 45px;
+}
+
+header nav ul li a {
+    color: #ff1b62;
+    padding: 0 20px;
+    margin: 10px;
+    display: block;
+    float: left;
+}
+
+header nav ul li a:hover, #current_nav {
+    color: white;
+    background-color: rgba(20, 20, 20, 0.8);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
+}
+
+/*导航部分结束*/
+/*内容开始*/
+/*外层高度设为自动，随内层高度增加，加上overflow，可以显示页脚？*/
+#main {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/*图片*/
+.article_image {
+    clear: both;
+    width: 1200px;
+    margin: 10px auto;
+
+    /*border: 1px solid red;*/
+}
+
+.article_image figure {
+    display: block;
+    /*border: 1px solid green;*/
+    position: relative;
+}
+
+.article_image figure figcaption {
+    padding: 20px;
+    position: absolute;
+    background-color: rgba(240, 246, 243, 0.7);
+    top: 10%;
+    opacity: 0;
+    left: 300px;
+}
+
+.article_image figure:hover figcaption {
+    opacity: 1;
+}
+
+.article_image figure img {
+    width: 1200px;
+    height: 270px;
+}
+
+.articles {
+    width: 1200px;
+    margin: 0 auto 20px;
+    /*border: 1px solid black;*/
+}
+
+/*文章列表开始*/
+
+.article_lists {
+    width: 866px;
+    float: left;
+
+}
+
+.article_lists > li {
+    border-right: 2px solid black;
+
+    /*列表之间的距离*/
+    padding: 3px 0;
+    margin-top: 0px;
+}
+
+.article_list {
+    background-color: rgba(8, 108, 46, 0.7);
+    color: white;
+    width: 830px;
+    border-radius: 6px;
+    position: relative;
+
+}
+
+.article_list h2.article_title {
+    padding-left: 20px;
+    font: 16px/50px "微软雅黑";
+    color: #353535;
+}
+
+.article_list h2 a:hover {
+    padding-left: 20px;
+    color: #FFF;
+}
+
+.article_list p {
+    text-overflow: ellipsis;
+}
+
+.article_Info {
+    height: 150px;
+}
+
+.article_Info img {
+    width: 150px;
+    padding: 4px;
+    float: left;
+    margin: 0px 20px 20px;
+    transition: all 0.2s ease;
+
+}
+
+.article_Info img:hover {
+    transform: scale(1.1);
+}
+
+.article_Info p {
+    line-height: 24px;
+    padding: 0px 20px 20px;
+    text-indent: 2em;
+}
+
+.article_detail {
+    background-color: rgba(8, 108, 46, 0.7);
+    border-radius: 0px 0px 6px 6px;
+    padding: 0px 10px;
+}
+
+.article_detail li {
+
+    line-height: 26px;
+    display: inline;
+    font-size: 9px;
+    margin-right: 10px;
+
+}
+
+.article_detail li a:hover {
+    color: rgba(240, 246, 243, 0.7);
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.article_like, .article_comment {
+    float: right;
+    padding-left: 14px;
+}
+
+.article_create_time {
+    padding-left: 14px;
+}
+
+/*文章列表结束*/
+
+/*右边栏部分*/
+aside {
+    right: 160px;
+    /*right: 160px;
+     top: 380px;
+     position:fixed;*/
+    font-size: 14px;
+    width: 310px;
+    float: right;
+    margin: 20px 0px;
+    overflow: hidden;
+    /*border: 1px solid red;*/
+
+}
+
+aside h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px black;
+    color: white;
+    margin-top: 5px;
+}
+
+aside div {
+
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+
+}
+
+/*个人资料开始*/
+.personal_Info {
+    height: 250px;
+    background-color: rgba(184, 255, 255, 0.7);
+}
+
+.personal_Info hr {
+    margin: 5px 0;
+}
+
+.user_achieve {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.user_achieve ul {
+    margin-top: 5px;
+}
+
+.user_achieve li {
+    float: left;
+    margin: 15px 20px 0px;
+
+}
+
+.personal_Info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+/*
+.id_achieve{
+margin-top: 40px;
+
+}
+.id_achieve li:nth-child(odd){
+    float: left;
+    margin: 5px 25px 20px 5px;
+}
+
+.id_achieve li:nth-child(even){
+    float: left;
+    margin: 5px 25px 20px 5px;
+}
+*/
+
+/*个人资料结束*/
+/*最新评论开始*/
+.article_new_comment {
+    background-color: rgba(191, 255, 152, 0.7);
+}
+
+.article_new_comment li {
+    margin-top: 8px;
+}
+
+.article_new_comment li p {
+    text-indent: 2em;
+}
+
+.article_new_comment h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: black;
+}
+
+.article_new_comment p {
+    margin-top: 2px;
+}
+
+/*最新评论结束*/
+
+/*热门文章开始*/
+.hot_article {
+    background-color: rgba(22, 176, 255, 0.7);
+    box-shadow: 0px 1px 0px rgba(6, 108, 55, 0.7);
+}
+
+.hot_article li {
+    /*文本不进行换行*/
+    white-space: nowrap;
+    /*显示省略符号来代表被修剪的文本*/
+    text-overflow: ellipsis;
+
+}
+
+.hot_article li span {
+    margin-right: 10px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+/*第三个开始倒数*/
+.hot_article li:nth-child(-n+3) span {
+    width: 39px;
+    color: #cdffec;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.hot_article li:first-child span {
+    color: rgba(255, 27, 98, 0.7);
+    font-size: 26px;
+}
+
+.hot_article a:hover {
+    padding-left: 10px;
+    color: white;
+}
+
+/*第三个开始正数*/
+.hot_article li:nth-child(n+3) {
+    line-height: 24px;
+    color: white;
+}
+
+/*热门文章结束*/
+/*文章分类和归档开始*/
+
+.article_classify {
+    background-color: #ffc30d;
+}
+
+.article_archived {
+    background-color: rgba(255, 70, 17, 0.7);
+}
+
+.article_classify ul, .article_archived ul {
+    margin-top: 10px;
+}
+
+.article_type, .article_month {
+    float: left;
+}
+
+.article_type_num, .article_month_num {
+    float: right;
+}
+
+/*文章分类和归档结束*/
+
+/*分页查询*/
+
+.page {
+    text-align: center;
+    margin: 40px auto 0px;
+    font-size: 12px;
+
+}
+
+.page ul.pagination {
+    /*https://www.cnblogs.com/hy-sunny/p/5602236.html*/
+    /*行内块元素*/
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.page ul.pagination li {
+    /*与其他元素在同一行上*/
+    display: inline-block;
+    margin: 5px 5px;
+
+}
+
+.page ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 10px 16px;
+    transition: background-color .3s;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.page ul.pagination li a.active {
+    color: white;
+    background-color: black;
+}
+
+.page ul.pagination li a:hover:not(.active) {
+    background-color: #fe6c0b;
+    color: #dddddd;
+}
+
+/*页脚开始*/
+.foot {
+    margin-top: 20px;
+    width: 100%;
+    height: 110px;
+    background-color: #1c1f21;
+    font-size: 12px;
+}
+
+.foot ul {
+    margin-left: 140px;
+}
+
+.foot ul li {
+    margin-top: 30px;
+    margin-left: 35px;
+    display: inline-block;
+}
+
+.foot ul li a {
+    float: left;
+    text-decoration: none;
+    color: white;
+}
+
+#ower {
+    margin-left: 175px;
+    color: #dddddd;
+}
+
+/*页脚结束*/
+
+
+
+
+
+
+
+
+
+

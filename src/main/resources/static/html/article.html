@@ -1,0 +1,61 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/4
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../libs/assets/editor.md-master/examples/css/style.css"/>
+    <link rel="stylesheet" href="../libs/assets/editor.md-master/css/editormd.css"/>
+   <!-- <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>-->
+</head>
+<body>
+<
+<div class="panel panel-success article_detail_panel" style="width: 860px">
+    <div class="panel-heading">
+        <h3 class="panel-title">文章标题</h3>
+    </div>
+    <div class="panel-body" id="content">
+    <textarea style="display:none;">
+## adsdasd
+# sadsadasdasd
+asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    </textarea>
+    </div>
+
+    </div>
+</div>
+
+<script src="../libs/assets/editor.md-master/examples/js/jquery.min.js"></script>
+<script src="../libs/assets/editor.md-master/editormd.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/flowchart.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/jquery.flowchart.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/marked.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/prettify.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/raphael.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/sequence-diagram.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/underscore.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+    $(function () {
+        testEditor = editormd.markdownToHTML("content", {//注意：这里是上面DIV的id
+            htmlDecode: "style,script,iframe",
+            emoji: true,
+            taskList: true,
+            tex: true, // 默认不解析
+            flowChart: true, // 默认不解析
+            sequenceDiagram: true, // 默认不解析
+            codeFold: true,
+            //editorTheme: "pastel-on-dark",//编辑器的主题颜色
+            theme: "gray",//顶部的主题
+            previewTheme: "dark"//显示的主题
+        });
+        $("#article_edit").value= testEditor;
+    });
+</script>
+</body>
+</html>
