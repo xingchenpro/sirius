@@ -93,6 +93,14 @@
 			<version>1.2.16</version>
 		</dependency>-->
 
+		<!--https://www.webjars.org/-->
+		<!--管理前端框架-->
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>vue</artifactId>
+			<version>1.0.21</version>
+		</dependency>
+
 		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>

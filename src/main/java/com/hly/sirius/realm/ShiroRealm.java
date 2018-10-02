@@ -41,7 +41,7 @@ public class ShiroRealm extends AuthorizingRealm {
         User user = userService.selectUserById(userId);
         //System.err.println(user.toString());
         if (user != null) {
-            //System.err.println(user.toString());
+            System.err.println(user.toString());
             //保存当前用户到session
             SecurityUtils.getSubject().getSession().setAttribute("currentUser", user);
             AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUserId(), user.getUserPassword(), "realmName");

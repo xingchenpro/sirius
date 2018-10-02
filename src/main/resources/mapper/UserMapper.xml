@@ -3,16 +3,16 @@
 <mapper namespace="com.hly.sirius.dao.UserDao">
 
 	<resultMap id="UserResult" type="User">
-		<result property="userId" column="user_id" />
-		<result property="userPassword" column="user_password"/>
+		<result property="userId" column="username" />
+		<result property="userPassword" column="password"/>
 	</resultMap>
 
 	<select id="selectUserById" parameterType="string" resultMap="UserResult">
-		select * from userinfo where user_id = #{userId}
+		select * from user where username = #{userId}
 	</select>
 	
 	<insert id ="insertUser" parameterType="User">
-	insert into userinfo(user_id,user_password)values(#{userId},#{userPassword})
+	insert into user(username,password)values(#{userId},#{userPassword})
 	</insert>
 
 </mapper>
