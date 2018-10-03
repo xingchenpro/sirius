@@ -1,3 +1,4 @@
+# Thymeleaf模板引擎
 spring:
   profiles:
     active: jdbc
@@ -11,19 +12,37 @@ spring:
     mode: HTML5
     cache: true
 
+    # Redis NoSQL数据库
+  redis:
+    # Redis数据库索引，默认为0
+    database: 0
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis密码，默认为空
+    password:
+    # Redis连接池最大连接数(负值表示没有限制
+    jedis:
+      pool:
+        max-active: 10
+        # 连接池最大阻塞等待时间
+        max-wait: -1
+        # 连接池最大空闲链接
+        max-idle: 10
+        # 连接池最小空闲链接
+        min-idle: 0
+    # 链接超时使劲
+    timeout: 0
+
+# Mybatis映射
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hly.sirius.domain
 
+# 端口设置
 server:
   port: 8080
-
-
-
-
-
-
-
 
 
 
