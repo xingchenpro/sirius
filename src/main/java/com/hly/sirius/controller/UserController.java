@@ -1,12 +1,17 @@
 package com.hly.sirius.controller;
 import com.hly.sirius.domain.User;
+import com.hly.sirius.filter.VisitorFilter;
 import com.hly.sirius.service.UserService;
 import com.hly.sirius.util.CryptographyUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +29,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/")
 public class UserController {
+
 
 	@Autowired
 	UserService userService;
@@ -89,9 +95,11 @@ public class UserController {
 	 */
 	@RequestMapping("/admin")
 	public ModelAndView admin(){
+
 		ModelAndView mView = new ModelAndView();
 		mView.setViewName("/admin");
 		return mView;
+
 	}
 
 	/**

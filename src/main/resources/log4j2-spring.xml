@@ -23,9 +23,10 @@
             </Policies>
         </RollingFile>
 
+        <!--保存到数据库配置文件-->
         <JDBC name="databaseAppender" tableName="log">
-            <ConnectionFactory class="com.hly.sirius.config.ConnectionFactoryConfig" method="getDatabaseConnection()"/>
-            <Column name="users" pattern="%X{userId}"/>
+            <ConnectionFactory class="com.hly.sirius.config.ConnectionFactoryConfig" method="getDatabaseConnection"/>
+            <Column name="username" pattern="%X{userId}"/>
             <Column name="userIP" pattern="%X{userIP}"/>
             <Column name="actionClassName" pattern="%c"/>
             <Column name="actionDate" pattern="%d{yyyy-MM-dd hh:mm:ss}"/>
@@ -41,8 +42,8 @@
             <AppenderRef ref="RollingFile"/>
         </Root>
 
-        <logger level="trace">
-            <appender-ref ref="databaseAppender" level="trace"/>
+        <logger name="com.hly.sirius" level="error">
+            <AppenderRef ref="databaseAppender" level="error"/>
         </logger>
     </Loggers>
 
