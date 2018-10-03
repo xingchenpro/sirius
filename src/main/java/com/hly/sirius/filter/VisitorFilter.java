@@ -19,6 +19,7 @@ package com.hly.sirius.filter;
  * @blog :blog.csdn.net/Sirius_hly
  * @date :2018/10/2
  */
+//这种方法的filter按文件名顺序执行
 @WebFilter(filterName = "VisitorFilter",urlPatterns = "/index")
 public class VisitorFilter extends OncePerRequestFilter {
 
@@ -34,6 +35,8 @@ public class VisitorFilter extends OncePerRequestFilter {
         System.err.println("登录用户："+userId);
         System.err.println("登录IP："+userIP);
         logger.error("用户："+userId);
+        //寻找下一个链，没有则跳转页面
+        filterChain.doFilter(request,response);
 
     }
 }
