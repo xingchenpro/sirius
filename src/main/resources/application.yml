@@ -2,6 +2,8 @@
 spring:
   profiles:
     active: jdbc
+
+    # 配置前端模板引擎
   thymeleaf:
     prefix: classpath:/templates/
     check-template-location: true

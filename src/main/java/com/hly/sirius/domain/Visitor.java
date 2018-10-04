@@ -12,7 +12,8 @@ import javax.persistence.*;
 public class Visitor {
 
     @Id
-    //修改主键生成规则，不会自动生成hibernate_sequence表
+    //修改主键生成规则，不会自动生成hibernate_sequence表，https://www.imooc.com/qadetail/263950
+    //根据底层数据库自动增长方式
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int visitorId;
     private String visitorName;
