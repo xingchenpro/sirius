@@ -21,11 +21,6 @@ import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Redis缓存配置类
- * @author wangH
- *
- */
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {

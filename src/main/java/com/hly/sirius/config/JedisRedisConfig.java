@@ -26,10 +26,10 @@ public class JedisRedisConfig {
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
         JedisConnectionFactory factory = new JedisConnectionFactory();
-        factory.setHostName(host);
+        /*factory.setHostName(host);
         factory.setPort(port);
         factory.setTimeout(timeout);
-        factory.setPassword(password);
+        factory.setPassword(password);*/
         return factory;
     }
     @Bean
@@ -37,7 +37,6 @@ public class JedisRedisConfig {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
         jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
-
         JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password);
         return jedisPool;
     }
