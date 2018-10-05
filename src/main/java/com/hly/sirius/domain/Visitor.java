@@ -101,4 +101,18 @@ public class Visitor {
     public void setVisitorIP(String visitorIP) {
         this.visitorIP = visitorIP;
     }
+
+    @Override
+    public String toString() {
+        return "Visitor{" +
+                "visitorId=" + visitorId +
+                ", visitorName='" + visitorName + '\'' +
+                ", visitorQQ='" + visitorQQ + '\'' +
+                ", visitorTel='" + visitorTel + '\'' +
+                ", visitorEmail='" + visitorEmail + '\'' +
+                ", visitorBlog='" + visitorBlog + '\'' +
+                ", visitorGithub='" + visitorGithub + '\'' +
+                ", visitorIP='" + visitorIP + '\'' +
+                '}';
+    }
 }

@@ -1,6 +1,8 @@
 package com.hly.sirius.dao;
 
 import com.hly.sirius.domain.Visitor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -20,5 +22,8 @@ public interface VisitorDao extends JpaRepository<Visitor,Integer> {
 
     //模糊查询
     List<Visitor> findByVisitorNameLike(String name);
+
+    //分页查询加模糊查询
+    Page<Visitor> findByVisitorNameLike(String name, Pageable pageable);
 
 }

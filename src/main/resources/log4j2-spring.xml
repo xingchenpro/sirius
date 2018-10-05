@@ -37,7 +37,7 @@
     <Loggers>
         <Root level="DEBUG">
             <!--匹配每一个appender的名称-->
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Console" level="info"/>
             <AppenderRef ref="Sirius"/>
             <AppenderRef ref="RollingFile"/>
         </Root>
