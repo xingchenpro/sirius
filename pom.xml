@@ -85,6 +85,12 @@
 			<artifactId>jedis</artifactId>
 		</dependency>
 
+		<!--MongoDB支持-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			</dependency>
+
 		<!--JPA支持-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

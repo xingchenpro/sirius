@@ -1,9 +1,8 @@
-# Thymeleaf模板引擎
 spring:
   profiles:
     active: jdbc
 
-    # 配置前端模板引擎
+    # 配置前端Thymeleaf模板引擎
   thymeleaf:
     prefix: classpath:/templates/
     check-template-location: true
@@ -54,6 +53,13 @@ spring:
         properties:
            hibernate:
               dialect: org.hibernate.dialect.MySQL5Dialect
+
+  data:
+   mongodb:
+   # spring.data.mongodb.uri=mongodb://name:pass@localhost:27017/test
+   # 没密码如下
+     uri: mongodb://localhost:27017/mongo
+
 
 # Mybatis映射
 mybatis:
