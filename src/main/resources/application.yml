@@ -13,7 +13,7 @@ spring:
     mode: HTML5
     cache: true
 
-    # Redis NoSQL数据库
+    # 集成Redis NoSQL数据库
   redis:
     # Redis数据库索引，默认为0
     database: 0
@@ -36,6 +36,7 @@ spring:
     # 链接超时使劲
     timeout: 0
 
+  # 集成JPA
   jpa:
         database: mysql
         show-sql: true
@@ -54,15 +55,16 @@ spring:
            hibernate:
               dialect: org.hibernate.dialect.MySQL5Dialect
 
+  # 集成MongoDB NoSQL数据库
   data:
    mongodb:
-   # spring.data.mongodb.uri=mongodb://name:pass@localhost:27017/test
+   # uri=mongodb://name:pass@localhost:27017/dbName
    # 没密码如下
      uri: mongodb://localhost:27017/mongo
 
-
-# Mybatis映射
+# 集成Mybatis
 mybatis:
+  # Mybatis映射
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hly.sirius.domain
 
