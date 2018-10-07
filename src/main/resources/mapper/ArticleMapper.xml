@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hly.sirius.dao.ArticleDao">
+
+    <resultMap id="ArticleResult" type="Article">
+        <result property="articleId" column="article_id"/>
+        <result property="articleCreatorId" column="article_creator_id"/>
+        <result property="articleTitle" column="article_title"/>
+        <result property="articleContent" column="article_content"/>
+        <result property="articleCategoryIds" column="article_category_ids"/>
+        <result property="articleTags" column="article_tags"/>
+        <result property="articleViewCount" column="article_view_count"/>
+        <result property="articleCommentCount" column="article_comment_count"/>
+        <result property="articleLikeCount" column="article_like_count"/>
+        <result property="articleCreateTime" column="article_create_time"/>
+        <result property="articleCommentStatus" column="article_comment_status"/>
+        <result property="articleStatus" column="article_status"/>
+    </resultMap>
+    <!--Dao数据接口方法，传入参数，返回结果集-->
+    <select id="articleList" parameterType="Map" resultMap="ArticleResult">
+        SELECT TOP ${size} * FROM article WHERE article_id NOT IN(SELECT TOP ${(page-1)*size} article_id FROM article ORDER BY article_id DESC)ORDER BY article_id DESC;
+        <!--select * from article where article_id
+        <if test="page!=null and size!=null">
+            between ${start} and ${start+size-1} ORDER BY article_id DESC
+        </if>-->
+    </select>
+
+    <select id="articleCount" parameterType="Map" resultType="Integer">
+        select COUNT (*) from article
+    </select>
+
+</mapper>

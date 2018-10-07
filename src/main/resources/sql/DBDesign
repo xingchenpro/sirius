@@ -1,0 +1,165 @@
+use MidnightSun
+--1.文章
+
+CREATE TABLE article(
+--起始为1，自动增加为1，mysql呢
+article_id INT NOT NULL IDENTITY(0,1),
+article_user_id INT DEFAULT '1',
+article_title VARCHAR(255) DEFAULT NULL,
+--超过 8,000 个字符的字符串和大于 8,000 字节的二进制数据存储为名为 text 和 image 的特殊数据类型。
+--超过 4,000 个字符的 Unicode 字符串存储为 ntext 数据类型。
+article_content TEXT,
+article_parent_category_id INT DEFAULT NULL,
+article_child_category_id INT DEFAULT NULL,
+article_tag_ids VARCHAR(500) DEFAULT NULL,
+article_view_count INT DEFAULT '0',
+article_comment_count INT DEFAULT'0',
+article_like_count INT DEFAULT '0',
+article_post_time DATETIME DEFAULT NULL,
+article_update_time DATETIME DEFAULT NULL,
+article_is_comment INT DEFAULT NUll,
+article_statuc INT DEFAULT '1',
+article_order INT DEFAULT NULL,
+PRIMARY KEY(article_id),
+);
+--2.类别
+CREATE TABLE category(
+catetory_id INT NOT null IDENTITY(0,1),
+catetory_pid INT DEFAULT NULL,
+catetory_name VARCHAR(255) DEFAULT NULL,
+catetory_description VARCHAR(255) DEFAULT NULL,
+catetory_order INT DEFAULT '1',
+catetory_icon VARCHAR(20) DEFAULT NULL,
+catetory_status INT DEFAULT '1',
+PRIMARY KEY(catetory_id),
+);
+--3.评论
+CREATE TABLE comment(
+comment_id INT NOT NULL IDENTITY(0,1),
+comment_pid INT DEFAULT '0',
+comment_pname VARCHAR(255) DEFAULT NULL,
+comment_article_id INT DEFAULT NULL,
+comment_author_name VARCHAR(50),
+comment_author_id INT DEFAULT NULL,
+comment_author_mail VARCHAR(255) DEFAULT NULL,
+comment_author_url VARCHAR(255) DEFAULT NULL,
+comment_content VARCHAR(1000) DEFAULT NULL,
+comment_agent VARCHAR(255) DEFAULT NULL,
+comment_ip VARCHAR(50) DEFAULT NULL,
+comment_create_time DATETIME DEFAULT NULL,
+comment_role INT DEFAULT NULL,
+comment_status INT DEFAULT NULL,
+PRIMARY KEY(comment_id),
+);
+
+--4.连接
+CREATE TABLE link(
+link_id INT NOT NULL IDENTITY(0,1),
+link_url VARCHAR(255) DEFAULT NULL,
+link_name VARCHAR(255) DEFAULT NULL,
+link_image VARCHAR(255) DEFAULT NULL,
+link_description VARCHAR(255) DEFAULT NULL,
+link_owner_name VARCHAR(255) DEFAULT NULL,
+link_update_time DATETIME DEFAULT NULL,
+link_create_time DATETIME DEFAULT NULL,
+link_order INT DEFAULT '1',
+link_status INT DEFAULT '1',
+PRIMARY KEY(link_id),
+);
+
+--5.菜单
+CREATE TABLE menu(
+menu_id INT NOT NULL IDENTITY(0,1),
+menu_name VARCHAR(255) DEFAULT NULL,
+menu_url VARCHAR(255) DEFAULT NULL,
+menu_lever VARCHAR(255) DEFAULT NULL,
+menu_icon VARCHAR(255) DEFAULT NULL,
+menu_order INT DEFAULT '1',
+menu_status INT DEFAULT '1',
+PRIMARY KEY(menu_id),
+);
+
+
+--6.公告,通知
+CREATE TABLE notice(
+notice_id INT NOT NULL IDENTITY(0,1),
+notice_title VARCHAR(255) DEFAULT NULL,
+notice_content VARCHAR(255) DEFAULT NULL,
+notice_create_time DATETIME DEFAULT NULL,
+notice_update_time DATETIME DEFAULT NULL,
+notice_status INT DEFAULT '1',
+notice_order INT DEFAULT '1',
+PRIMARY KEY(notice_id),
+);
+
+--7.个人信息
+
+CREATE TABLE options(
+option_id INT NOT NULL,
+option_site_title VARCHAR(255) DEFAULT NULL,
+option_site_description VARCHAR(255) DEFAULT NULL,
+option_mate_description VARCHAR(255) DEFAULT NULL,
+option_aboutsite_avatar VARCHAR(255) DEFAULT NULL,
+option_aboutsite_title VARCHAR(255) DEFAULT NULL,
+option_aboutsite_coontent VARCHAR(255) DEFAULT NULL,
+option_aboutsite_wechat VARCHAR(255) DEFAULT NULL,
+option_aboutsite_qq VARCHAR(255) DEFAULT NULL,
+option_aboutsite_github VARCHAR(255) DEFAULT NULL,
+option_abotusite_blog VARCHAR(255) DEFAULT NULL,
+opiton_count VARCHAR(255) DEFAULT NULL,
+option_status INT DEFAULT '1',
+PRIMARY KEY(option_id),
+);
+
+--8.页
+
+CREATE TABLE page(
+page_id INT NOT NULL IDENTITY(0,1),
+--类标识
+page_key VARCHAR(255) DEFAULT NULL,
+page_title VARCHAR(255) DEFAULT NULL,
+page_content text DEFAULT NULL,
+page_create_time DATETIME DEFAULT NULL,
+page_update_time DATETIME DEFAULT NULL,
+page_view_count INT DEFAULT '0',
+page_comment_count INT DEFAULT '0',
+page_status INT DEFAULT '1',
+PRIMARY KEY(page_id),
+);
+
+
+--9.标签
+CREATE TABLE tag(
+tag_id INT NOT NULL IDENTITY(0,1),
+tag_name VARCHAR(255) DEFAULT NULL,
+tag_description VARCHAR(255) DEFAULT NULL,
+tag_status INT DEFAULT '1',
+PRIMARY KEY(tag_id),
+);
+
+
+--user
+
+CREATE TABLE [user](
+user_id INT NOT NULL IDENTITY(0,1),
+user_register_id VARCHAR(255)NOT NULL DEFAULT '',
+user_password VARCHAR(255) NOT NULL DEFAULT '',
+user_nickname VARCHAR(255) DEFAULT NULL,
+user_email VARCHAR(255) DEFAULT NULL,
+user_avatar VARCHAR(255) DEFAULT NULL,
+user_last_login_ip VARCHAR(255) DEFAULT NULL,
+user_register_time DATETIME DEFAULT NULL,
+user_last_login_time DATETIME DEFAULT NULL,
+user_status INT DEFAULT '1',
+PRIMARY KEY(user_register_id),
+);
+INSERT INTO [user](user_register_id,user_password,user_nickname)VALUES('4','123','hly');
+SELECT * FROM [user];
+
+
+
+
+
+
+
+
