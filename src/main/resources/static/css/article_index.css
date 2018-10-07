@@ -133,7 +133,7 @@ header nav ul li a:hover, #current_nav {
 }
 
 .article_list {
-    background-color: rgba(146, 82, 255, 0.7);
+    background-color: rgba(67, 26, 255, 0.7);
     color: white;
     width: 830px;
     border-radius: 6px;
@@ -180,7 +180,7 @@ header nav ul li a:hover, #current_nav {
 }
 
 .article_detail {
-    background-color: rgba(146, 82, 255, 0.7);
+    background-color: rgba(67, 26, 255, 0.7);
     border-radius: 0px 0px 6px 6px;
     padding: 0px 10px;
 }
