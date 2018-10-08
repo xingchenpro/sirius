@@ -2,6 +2,7 @@ package com.hly.sirius.dao;
 
 
 import com.hly.sirius.domain.Article;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import java.util.Map;
  * @blog :blog.csdn.net/Sirius_hly
  * @date :2018/8/11
  */
+@Component
 public interface ArticleDao {
 
     /**

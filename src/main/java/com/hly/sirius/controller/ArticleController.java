@@ -2,6 +2,7 @@ package com.hly.sirius.controller;
 
 
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.Page;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,23 +36,25 @@ public class ArticleController {
     @RequestMapping("/article")
     public ModelAndView articleList(@RequestParam(value = "page" ,required = false)String page, HttpServletRequest request){
         ModelAndView mv = new ModelAndView();
-        /*if(page==null)
+        if(page==null)
             page="1";
-        //Page pageList = new Page(Integer.parseInt(page),7);
+        //当前页数，每页条数
+        Page pageList = new Page(Integer.parseInt(page),7);
         Map<String,Object> listMap = new HashMap<String, Object>();
-        //开始记录数
-        //listMap.put("start",pageList.getStart());
+        //开始查询的记录数
+        listMap.put("start",pageList.getStart());
         //一页总记录数
-        listMap.put("size",7);
+        listMap.put("size",pageList.getlistNum());
         //当前页数
-        listMap.put("page",Integer.parseInt(page));
+        //listMap.put("page",Integer.parseInt(page));
         List<Article> articleList = articleService.articleList(listMap);
         for(Article article:articleList){
             System.err.println(article.toString());
         }
         mv.addObject("articleList",articleList);
         System.err.println("文章总数:"+articleService.articleCount(listMap));
-        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));*/
+        //System.err.println("page:"+PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
+        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
         mv.setViewName("article/article_index");
         return mv;
     }

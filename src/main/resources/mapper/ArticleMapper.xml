@@ -21,11 +21,16 @@
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
         SELECT TOP ${size} * FROM article WHERE article_id NOT IN(SELECT TOP ${(page-1)*size} article_id FROM article ORDER BY article_id DESC)ORDER BY article_id DESC;
     </select>-->
-
+    <select id="articleList" parameterType="Map" resultMap="ArticleResult">
+        SELECT * FROM article
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
 
 
     <select id="articleCount" parameterType="Map" resultType="Integer">
-        select COUNT (*) from article
+        select COUNT(*) from article
     </select>
 
 </mapper>

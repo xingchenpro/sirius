@@ -7,8 +7,11 @@ package com.hly.sirius.domain;
  * @date :2018/8/11
  */
 public class Page {
+    //当前页
     private int currentPage;
+    //每页记录
     private int listNum;
+    //起始页
     private int start;
 
     public Page(int currentPage, int listNum) {
@@ -32,7 +35,7 @@ public class Page {
         this.listNum = listNum;
     }
 
-    /*当前页数减1乘项数*/
+    /*当前页数减1乘项数：从第几条记录开始查询*/
     public int getStart() {
         return (currentPage-1)*listNum;
     }
