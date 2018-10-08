@@ -11,7 +11,17 @@ spring:
     servlet:
       content-type: text/html
     mode: HTML5
-    cache: true
+    # 禁止后实现前端热部署
+    cache: false
+
+  # 热部署
+  #devtools:
+   # restart:
+    # enabled: true
+    # 添加那个目录的文件需要restart
+    # additional-paths: src/main/java
+    # 排除那个目录的文件不需要restart
+    # exclude: static/**
 
     # 集成Redis NoSQL数据库
   redis:

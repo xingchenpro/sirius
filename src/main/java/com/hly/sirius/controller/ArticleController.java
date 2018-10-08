@@ -35,7 +35,7 @@ public class ArticleController {
     @RequestMapping("/article")
     public ModelAndView articleList(@RequestParam(value = "page" ,required = false)String page, HttpServletRequest request){
         ModelAndView mv = new ModelAndView();
-        if(page==null)
+        /*if(page==null)
             page="1";
         //Page pageList = new Page(Integer.parseInt(page),7);
         Map<String,Object> listMap = new HashMap<String, Object>();
@@ -51,8 +51,8 @@ public class ArticleController {
         }
         mv.addObject("articleList",articleList);
         System.err.println("文章总数:"+articleService.articleCount(listMap));
-        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
-        mv.setViewName("jsp/article/articleList");
+        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));*/
+        mv.setViewName("article/article_index");
         return mv;
     }
 
