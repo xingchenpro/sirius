@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>article</title>
-    <link rel="shortcut icon" href="/static/images/article_images/admin.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/static/images/article_images/admin.jpg" type="image/x-icon"/>
     <link href="../../static/css/article_index.css" th:href="@{/css/article_index.css}" type="text/css"
           rel="stylesheet">
 </head>
@@ -28,12 +28,13 @@
     </div>
     <!--导航图片结束-->
 
-    <div class="articles">
+    <div class="articles" th:each="article:${articleList}">
         <!--文章列表开始-->
-        <ul class="article_lists" th:each="article:${articleList} ">
+        <ul class="article_lists">
             <li>
                 <div class="article_list">
-                    <h2 class="article_title"><a th:text="${article.articleTitle}" href="article_detail.html">SpringBoot通</a></h2>
+                    <h2 class="article_title"><a th:text="${article.articleTitle}" href="article_detail.html">SpringBoot通</a>
+                    </h2>
                     <div class="article_Info">
                         <a href="article_detail.html"><img src="../../static/images/article_images/img_12.jpg"
                                                            th:src="@{'/images/article_images/img_1'+ ${article.articleId%10}+'.jpg'}"></a>
@@ -41,20 +42,21 @@
                             Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。</p>
                     </div>
                     <ul class="article_detail">
-                        <li class="article_like">点赞&nbsp<a th:text="${article.articleLikeCount}" href="#">99</a></li>
-                        <li class="article_comment">评论&nbsp<a th:text="${article.articleCommentCount}" href="#">66</a></li>
-                        <li class="article_create_time">时间&nbsp<a th:text="${article.articleCreateTime}" href="#">2018-08-1</a></li>
+                        <li class="article_like">点赞&nbsp<a th:text="${article.articleLikeCount}" href="#">22</a></li>
+                        <li class="article_comment">评论&nbsp<a th:text="${article.articleCommentCount}" href="#">66</a>
+                        </li>
+                        <li class="article_create_time">时间&nbsp<a th:text="${article.articleCreateTime}" href="#">2018-10-1</a>
+                        </li>
                     </ul>
                 </div>
             </li>
 
         </ul>
         <!--文章列表结束-->
-
-        <!--右边栏开始-->
         <aside th:replace="~{article/article_info::article_info}"></aside>
-
+        <!--右边栏开始-->
     </div>
+
     <!--文章部分结束-->
 </div>
 <!--main结束-->

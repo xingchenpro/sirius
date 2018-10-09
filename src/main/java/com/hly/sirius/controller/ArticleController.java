@@ -39,7 +39,7 @@ public class ArticleController {
         if(page==null)
             page="1";
         //当前页数，每页条数
-        Page pageList = new Page(Integer.parseInt(page),6);
+        Page pageList = new Page(Integer.parseInt(page),4);
         Map<String,Object> listMap = new HashMap<String, Object>();
         //开始查询的记录数
         listMap.put("start",pageList.getStart());
