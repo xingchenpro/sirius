@@ -30,21 +30,20 @@
 
     <div class="articles">
         <!--文章列表开始-->
-        <ul class="article_lists">
+        <ul class="article_lists" th:each="article:${articleList} ">
             <li>
                 <div class="article_list">
-                    <h2 class="article_title"><a href="article_detail.html">SpringBoot从入门到精通</a></h2>
+                    <h2 class="article_title"><a th:text="${article.articleTitle}" href="article_detail.html">SpringBoot通</a></h2>
                     <div class="article_Info">
                         <a href="article_detail.html"><img src="../../static/images/article_images/img_12.jpg"
-                                                           th:src="@{/images/article_images/img_12.jpg}"></a>
-                        <p>Spring
-                            Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring
-                            Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</p>
+                                                           th:src="@{'/images/article_images/img_1'+ ${article.articleId%10}+'.jpg'}"></a>
+                        <p th:text="${article.articleContent}">Spring
+                            Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。</p>
                     </div>
                     <ul class="article_detail">
-                        <li class="article_like">点赞&nbsp<a href="#">99</a></li>
-                        <li class="article_comment">评论&nbsp<a href="#">66</a></li>
-                        <li class="article_create_time">时间&nbsp<a href="#">2018-08-1</a></li>
+                        <li class="article_like">点赞&nbsp<a th:text="${article.articleLikeCount}" href="#">99</a></li>
+                        <li class="article_comment">评论&nbsp<a th:text="${article.articleCommentCount}" href="#">66</a></li>
+                        <li class="article_create_time">时间&nbsp<a th:text="${article.articleCreateTime}" href="#">2018-08-1</a></li>
                     </ul>
                 </div>
             </li>
@@ -62,6 +61,7 @@
 <!--分页开始-->
 
 <div class="page">
+    <!--uetxt能解析html-->
     <ul class="pagination" th:utext="${pageCode}">
 
     </ul>

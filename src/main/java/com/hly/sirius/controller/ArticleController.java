@@ -39,7 +39,7 @@ public class ArticleController {
         if(page==null)
             page="1";
         //当前页数，每页条数
-        Page pageList = new Page(Integer.parseInt(page),7);
+        Page pageList = new Page(Integer.parseInt(page),6);
         Map<String,Object> listMap = new HashMap<String, Object>();
         //开始查询的记录数
         listMap.put("start",pageList.getStart());
@@ -54,7 +54,7 @@ public class ArticleController {
         mv.addObject("articleList",articleList);
         System.err.println("文章总数:"+articleService.articleCount(listMap));
         //System.err.println("page:"+PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
-        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
+        mv.addObject("pageCode", PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),pageList.getlistNum()));
         mv.setViewName("article/article_index");
         return mv;
     }
