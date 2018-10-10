@@ -49,13 +49,13 @@ ul, ol {
 
 
 .sidebar{
-
+    /*display: block;*/
     width: 220px;
     background-color: #205b8f;
     position: absolute;
     left: 0;
-    top: 0px;
-   bottom: 0;
+    top: 0;
+    bottom: 0;
     z-index: 10;
     height:auto;
 
@@ -122,5 +122,9 @@ ul, ol {
  .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
     color: #ff19d1
 }
+
+ #sidebar-button{
+     margin-left: 50%;
+ }
 
 
