@@ -28,10 +28,10 @@
     </div>
     <!--导航图片结束-->
 
-    <div class="articles" th:each="article:${articleList}">
+    <div class="articles">
         <!--文章列表开始-->
         <ul class="article_lists">
-            <li>
+            <li th:each="article:${articleList}">
                 <div class="article_list">
                     <h2 class="article_title"><a th:text="${article.articleTitle}" href="article_detail.html">SpringBoot通</a>
                     </h2>
