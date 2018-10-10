@@ -37,12 +37,17 @@ var handleSidebarMenu = function () {
 };
 
 /*JQ控制不同方向的滑动：https://www.jb51.net/article/52347.htm*/
+/*animate: http://www.w3school.com.cn/jquery/effect_animate.asp*/
 var handlesSidebarStatus = function () {
     "use strict";
     $("#sidebar-button").click(function () {
         var $lefty=$("#sidebar");
+        var $articleEdit=$(".article_edit");
         $lefty.animate({
             left:parseInt($lefty.css('left'),10)==0 ? - $lefty.outerWidth()+10 : 0
+        });
+        $articleEdit.animate({
+            marginLeft:parseInt($articleEdit.css('margin-left'))==230?0:230
         });
     });
     

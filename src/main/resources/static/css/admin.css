@@ -135,19 +135,22 @@ header img {
     display: none;
 }*/
 .article_edit{
+
     overflow: auto;
-    /*border: 1px solid blue;*/
+    border: 1px solid blue;
+    /*230sideBar显示时*/
     margin-left: 230px;
     margin-top: 10px;
     height: 700px;
 }
 .my_editor{
+
     margin-top: 20px;
     overflow: hidden;
-    margin-left: 0;
-   /*border: 1px solid green;*/
+    margin-left: 15px;
+    border: 1px solid green;
     height: auto;
-    width: 90%;
+    width: 100%;
 
 }
 .article_edit .title{
