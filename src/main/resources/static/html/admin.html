@@ -10,7 +10,7 @@
     <title>write_article</title>
     <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css">
     <link href="../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="../css/admin_sidebar.css" rel="stylesheet" type="text/css">
     <link href="../css/admin.css" rel="stylesheet" type="text/css">
     <script src="../libs/assets/jquery/jquery-3.1.1.js"></script>
 </head>
@@ -122,19 +122,19 @@
                     </li>
 
                 </ul>
-                <!--end sidebar nav-->
 
+                <button type="button" id="sidebar-button"><i class="fa fa-angle-double-left"></i></button>
+                <!--end sidebar nav-->
             </div>
 
             <!--end sidebar scroller-->
         </div>
+
         <!--end sidebar-->
         <!--start article_edit-->
         <div class="article_edit" id="article_edit">
 
             <input class="title" type="text" placeholder="请输入文章标题">
-            <input type="button" value="button" id="sidebar-button">
-
             <div class="my_editor" id="my_editor">
 
                 <iframe src="simple.html" width="1250px" height="1000px" scrolling="no" frameborder="0"></iframe>

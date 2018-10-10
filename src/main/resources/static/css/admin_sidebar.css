@@ -34,7 +34,8 @@ a {
     -moz-transition: color 100ms ease-in-out;
     -webkit-transition: color 100ms ease-in-out
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
 
@@ -42,13 +43,13 @@ a:focus {
     outline: 0;
 
 }
+
 ul, ol {
     text-decoration: none;
     list-style-type: none;
 }
 
-
-.sidebar{
+.sidebar {
     /*display: block;*/
     width: 220px;
     background-color: #205b8f;
@@ -56,23 +57,24 @@ ul, ol {
     left: 0;
     top: 0;
     bottom: 0;
-    z-index: 10;
-    height:auto;
+    /*z-index: 6;*/
+    height: auto;
 
 }
 
-.sidebar .nav >li> a {
+.sidebar .nav > li > a {
     padding: 8px 20px;
     color: #ffec10;
     line-height: 20px;
 }
-.sidebar .nav >li> a:hover,.sidebar .nav >li> a:focus{
+
+.sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
     background: #232a2f;
     color: #fe3d14;
 
 }
 
-.sidebar .nav >li>a i{
+.sidebar .nav > li > a i {
     float: left;
     margin-right: 15px;
     width: 14px;
@@ -82,7 +84,7 @@ ul, ol {
     color: #23d8ff;
 }
 
-.sidebar .nav >li>a .caret{
+.sidebar .nav > li > a .caret {
     float: right;
     margin-top: 9px;
 }
@@ -93,13 +95,13 @@ ul, ol {
     color: white;
 }*/
 
-.sidebar .sub-menu{
+.sidebar .sub-menu {
     padding: 10px 0 10px 30px;
     background: #1a2229;
     display: none;
 }
 
-.sidebar .sub-menu > li> a{
+.sidebar .sub-menu > li > a {
     padding: 5px 20px;
     display: block;
     font-weight: 300;
@@ -107,8 +109,9 @@ ul, ol {
     /*用作绝对定位的容器*/
     position: relative;
 }
+
 /*将元素之前插入内容*/
-.sidebar .sub-menu > li > a:before{
+.sidebar .sub-menu > li > a:before {
     content: '\f13d';
     font-family: FontAwesome;
     position: absolute;
@@ -119,12 +122,21 @@ ul, ol {
     margin-left: -6px;
 
 }
- .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
+
+.sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
     color: #ff19d1
 }
 
- #sidebar-button{
-     margin-left: 50%;
- }
+#sidebar-button {
+    margin-left:93%;
+    margin-top: 45%;
+    height: 50px;
+    width: 17px;
+    border-radius: 5px;
+    background-color: rgba(254,61,20,0.7);
+    color: black;
+    border: none;
+    outline: none;
+}
 
 
