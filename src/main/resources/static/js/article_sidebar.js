@@ -47,7 +47,8 @@ var handlesSidebarStatus = function () {
             left:parseInt($lefty.css('left'),10)==0 ? - $lefty.outerWidth()+10 : 0
         });
         $articleEdit.animate({
-            marginLeft:parseInt($articleEdit.css('margin-left'))==230?0:230
+            /*动态改变位置*/
+            marginLeft:parseInt($articleEdit.css('margin-left'),10)==230?0:230
         });
     });
     
