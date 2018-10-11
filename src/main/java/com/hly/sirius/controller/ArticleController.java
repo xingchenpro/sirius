@@ -59,4 +59,13 @@ public class ArticleController {
         return mv;
     }
 
+
+    @RequestMapping("/writeArticle")
+    public ModelAndView writeArticle(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("admin/admin");
+        return mv;
+
+    }
+
 }

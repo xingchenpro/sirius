@@ -1,0 +1,55 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/4
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>write_article</title>
+    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css" th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}">
+    <link href="../../static/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" th:href="@{/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css}" >
+    <link rel="stylesheet" type="text/css" href="../../static/css/admin_nav.css" th:href="@{/css/admin_nav.css}">
+    <link href="../../static/css/admin_sidebar.css" rel="stylesheet" type="text/css" th:href="@{/css/admin_sidebar.css}">
+    <link href="../../static/css/admin.css" rel="stylesheet" type="text/css"  th:href="@{/css/admin.css}" >
+    <script src="../../static/libs/assets/jquery/jquery-3.1.1.js" th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
+    <script src="../../static/libs/js/jquery.min.js" th:src="@{/libs/js/jquery.min.js}"></script>
+    <script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js" th:src="@{/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js}"></script>
+    <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
+    <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js" th:src="@{/libs/assets/slimscroll/jquery.slimscroll.min.js}"></script>
+
+    <script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+</head>
+<body>
+<div id="page-container">
+    <header th:replace="admin/admin_nav ::admin_nav "></header>
+
+    <!--导航结束-->
+    <!--start main-->
+    <div class="main" id="main">
+        <!--start sidebar-->
+        <div id="sidebar" class="sidebar" th:replace="admin/admin_sidebar::sidebar"></div>
+        <!--end sidebar-->
+
+        <!--start article_edit-->
+        <div class="article_edit" id="article_edit" th:replace="article/article_editor::article_editor"></div>
+        <!--end article edit-->
+
+    </div>
+    <!--end main-->
+    <!--页脚-->
+    <div th:include="common/foot::footer" class="foot"></div>
+
+    <!--页脚结束-->
+    <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
+</div>
+<!--container end-->
+
+</body>
+</html>

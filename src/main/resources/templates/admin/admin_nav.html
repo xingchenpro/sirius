@@ -1,0 +1,37 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/4
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_nav</title>
+    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/admin_nav.css">
+    <script src="../../static/libs/assets/jquery/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div id="page-container">
+<header th:fragment="admin_nav">
+    <nav>
+        <ul>
+            <li class="left_float"><a href="#">
+                <span class="glyphicon glyphicon-home"></span>
+            </a></li>
+            <li class="left_float"><a href="javascript:"><h4>文章管理中心</h4></a></li>
+            <li class="right_float"><a href="javascript:">退出</a></li>
+            <li class="right_float"><a href="javascript:">Hly</a></li>
+            <li class="right_float"><a href="javascript:"><img src="../../static/images/article_images/img_17.jpg" th:src="@{/images/article_images/img_17.jpg}"></a></li>
+            <li class="right_float"><a href="#" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp写文章
+            </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!--导航结束-->
+</div>
+</body>
+</html>
