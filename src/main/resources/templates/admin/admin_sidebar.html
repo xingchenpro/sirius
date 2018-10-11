@@ -14,8 +14,9 @@
 </head>
 <body>
 <div id="page-container">
+
     <!--begin sidebar-->
-    <div id="sidebar" class="sidebar" th:fragment="sidebar">
+    <div id="admin-sidebar" class="sidebar" th:fragment="sidebar">
         <!--begin sidebar scroller -->
         <div id="my-scrollbar">
             <!--data-scrollbar="true" data-height="100%"-->
@@ -103,7 +104,7 @@
                 </li>
 
             </ul>
-            <button type="button" id="sidebar-button"><i class="fa fa-angle-double-left"></i></button>
+            <button type="button" id="admin-sidebar-button"><i class="fa fa-angle-double-left"></i></button>
             <!--end sidebar nav-->
         </div>
         <!--end sidebar scroller-->
@@ -117,7 +118,7 @@
 <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
 <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
 
-<script src="../../static/js/article_sidebar.js"></script>
+<script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
 <script>
     $(document).ready(function() {
         App.init();

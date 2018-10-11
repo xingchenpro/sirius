@@ -40,8 +40,8 @@ var handleSidebarMenu = function () {
 /*animate: http://www.w3school.com.cn/jquery/effect_animate.asp*/
 var handlesSidebarStatus = function () {
     "use strict";
-    $("#sidebar-button").click(function () {
-        var $lefty=$("#sidebar");
+    $("#admin-sidebar-button").click(function () {
+        var $lefty=$("#admin-sidebar");
         var $articleEdit=$(".article_edit");
         $lefty.animate({
             left:parseInt($lefty.css('left'),10)==0 ? - $lefty.outerWidth()+10 : 0
@@ -59,7 +59,7 @@ var App = function () {
     return {
         init: function () {
             handleSidebarMenu();
-            handleSlimScroll();
+            //handleSlimScroll();
             handlesSidebarStatus();
         }
     }
