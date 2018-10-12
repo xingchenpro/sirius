@@ -7,19 +7,20 @@
 /*http://www.jq22.com/demo/jQuery-slimScroll-141223223505/*/
 var handleSlimScroll = function () {
     "use strict";
-   $('#article_edit').slimScroll({
-
-       height:700,
-       railVisible: true,
-       railColor: '#ff0b56'
-    });
-
 
     $('#my-scrollbar').slimScroll({
         height: '100%',
         railVisible: true,
         railColor: '#ff0f04'
     });
+
+    /*todo 加上会影响sideBar滑动和点击，未解决*/
+   /* $('#article_edit').slimScroll({
+
+        height:'100%',
+        railVisible: true,
+        railColor: '#ff0b56'
+    });*/
 
 };
 
@@ -59,8 +60,8 @@ var App = function () {
     return {
         init: function () {
             handleSidebarMenu();
-            //handleSlimScroll();
             handlesSidebarStatus();
+            handleSlimScroll();
         }
     }
 }()

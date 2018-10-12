@@ -31,7 +31,7 @@ public class ArticleController {
 
     /**
      * 请求文章列表
-     * @return
+     * @return article list
      */
     @RequestMapping("/article")
     public ModelAndView articleList(@RequestParam(value = "page" ,required = false)String page, HttpServletRequest request){
@@ -59,13 +59,24 @@ public class ArticleController {
         return mv;
     }
 
-
+    /**
+     * 返回文章编辑界面
+     * @return editor article
+     */
     @RequestMapping("/writeArticle")
     public ModelAndView writeArticle(){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("admin/admin");
         return mv;
+    }
 
+    /**
+     * 返回文章编辑器
+     * @return MDEditor
+     */
+    @RequestMapping("/articleEdit")
+    public String articleEdit(){
+        return "article/simple";
     }
 
 }
