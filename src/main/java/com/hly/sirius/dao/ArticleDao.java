@@ -2,6 +2,7 @@ package com.hly.sirius.dao;
 
 
 import com.hly.sirius.domain.Article;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -36,5 +37,12 @@ public interface ArticleDao {
      * @return
      */
     public boolean insertArticle(Article article);
+
+    /**
+     * 根据文章id查询文章信息
+     * @param articleId
+     * @return
+     */
+    public Article getArticleById(@Param("articleId") Integer articleId);
 
 }

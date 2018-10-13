@@ -35,4 +35,9 @@ public class ArticleServiceImpl implements ArticleService {
     public boolean insertArticle(Article article) {
         return articleDao.insertArticle(article);
     }
+
+    @Override
+    public Article getArticleById(Integer articleId) {
+        return articleDao.getArticleById(articleId);
+    }
 }

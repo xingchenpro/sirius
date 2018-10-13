@@ -1,0 +1,3 @@
+1.无法通过JS获取视图返回的HTML页面中的某个节点的值
+2.There is no getter for property named 'XXX' in 'class java.lang.String'
+解决：dao层加上 ：@Param(value="tno") String tno ；mapper层：tno = #{tno}

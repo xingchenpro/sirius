@@ -1,0 +1,133 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/1
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+    <link href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css"
+          th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link href="../../static/css/article_detail.css" th:href="@{/css/article_detail.css}" rel="stylesheet"
+          type="text/css">
+    <link href="../../static/css/article_index.css" th:href="@{/css/article_index.css}" type="text/css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../../static/libs/assets/editor.md-master/editormd.css" th:href="@{/libs/assets/editor.md-master/css/editormd.css}"/>
+
+    <script type="text/javascript">
+        window.onload =
+            function () {
+                var oDiv = document.getElementById("fixPara"),
+                    /*H大点好*/
+                    H = 1480
+                window.onscroll = function () {
+                    var s = document.body.scrollTop || document.documentElement.scrollTop;
+                    if (s > H) {
+                        oDiv.style = "position:fixed;top:-1080px;";
+
+                    } else {
+                        oDiv.style = '';
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+<header>
+    <nav id="nav">
+        <ul>
+            <li><a href="/article" title="首页">首页</a></li>
+            <li><a href="javascript:" title="推荐">推荐</a></li>
+            <li><a href="javascript:" title="视频">视频</a></li>
+            <li><a href="/writeArticle" title="管理">管理</a></li>
+
+        </ul>
+        <script src="../../static/js/article_current_nav.js" type="text/javascript"
+                th:src="@{/js/article_current_nav.js}"></script>
+    </nav>
+</header>
+<!--导航结束-->
+
+<div id="main">
+    <div class="article_image">
+        <figure>
+            <img src="../../static/images/article_images/night.jpg" th:src="@{/images/article_images/night.jpg}"/>
+            <figcaption>
+                欢迎访问我的网站
+            </figcaption>
+        </figure>
+
+    </div>
+    <!--导航图片结束-->
+
+    <div class="articles">
+        <!--文章内容开始-->
+        <div class="panel panel-info article_detail_panel">
+            <div class="panel-heading">
+                <h3 class="panel-title" th:text="${article.articleTitle}">文章标题</h3>
+            </div>
+            <!--这里修改显示代码颜色-->
+            <div class="panel-body content editormd-preview-theme-dark" id="content" >
+               <textarea style="display:none;" th:text="${article.articleContent}">
+                   # 文章内容
+               </textarea>
+            </div>
+        </div>
+        <!--文章内容结束-->
+        <!--右边栏开始-->
+        <aside th:replace="~{article/article_info::article_info}"></aside>
+        <!--右边栏结束-->
+    </div>
+    <!--文章部分结束-->
+</div>
+<!--main结束-->
+<!--分页开始-->
+
+<div class="page">
+    <ul class="pagination">
+        <li><a href="javascript:">首页</a></li>
+        <li class="disabled"><a href="javascript:">上一页</a></li>
+        <li><a class="active" href="javascript:">1</a></li>
+        <li><a href="javascript:">2</a></li>
+        <li><a href="javascript:">3</a></li>
+        <li><a href="javascript:">下一页</a></li>
+        <li><a href="javascript:">尾页</a></li>
+    </ul>
+</div>
+<!--分页结束-->
+<!--页脚-->
+
+<!--页脚-->
+<div th:include="common/foot::footer" class="foot"></div>
+
+<script src="../../static/libs/assets/editor.md-master/examples/js/jquery.min.js" th:src="@{/libs/assets/editor.md-master/examples/js/jquery.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/editormd.min.js" th:src="@{/libs/assets/editor.md-master/editormd.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/marked.min.js" th:src="@{/libs/assets/editor.md-master/lib/marked.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/flowchart.min.js" th:src="@{/libs/assets/editor.md-master/lib/flowchart.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/jquery.flowchart.min.js" th:src="@{/libs/assets/editor.md-master/lib/jquery.flowchart.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/prettify.min.js" th:src="@{/libs/assets/editor.md-master/lib/prettify.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/raphael.min.js" th:src="@{/libs/assets/editor.md-master/lib/raphael.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/sequence-diagram.min.js" th:src="@{/libs/assets/editor.md-master/lib/sequence-diagram.min.js}"></script>
+<script src="../../static/libs/assets/editor.md-master/lib/underscore.min.js" th:src="@{/libs/assets/editor.md-master/lib/underscore.min.js}"></script>
+<script type="text/javascript">
+    var testEditor;
+    $(function () {
+        testEditor = editormd.markdownToHTML("content", {//注意：这里是上面DIV的id
+            htmlDecode: "style,script,iframe",
+            emoji: true,
+            taskList: true,
+            tex: true, // 默认不解析
+            flowChart: true, // 默认不解析
+            sequenceDiagram: true, // 默认不解析
+            codeFold: true,
+            //editorTheme: "pastel-on-dark",//编辑器的主题颜色
+            //theme: "gray",//顶部的主题
+            previewTheme: "dark"//显示的主题
+        });
+
+    });
+</script>
+</body>
+</html>

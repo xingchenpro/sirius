@@ -90,19 +90,6 @@ public class UserController {
 	}
 
 	/**
-	 * 主页
-	 * @return
-	 */
-	@RequestMapping("/admin")
-	public ModelAndView admin(){
-
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("/admin");
-		return mView;
-
-	}
-
-	/**
 	 * 初始化页面
 	 * @return
 	 */

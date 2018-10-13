@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <title>Editor.md</title>
-    <link rel="stylesheet" href="../libs/assets/editor.md-master/examples/css/style.css"/>
     <link rel="stylesheet" href="../libs/assets/editor.md-master/css/editormd.css"/>
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 
@@ -19,6 +18,13 @@
 
 <script src="../libs/assets/editor.md-master/examples/js/jquery.min.js"></script>
 <script src="../libs/assets/editor.md-master/editormd.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/marked.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/flowchart.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/jquery.flowchart.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/prettify.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/raphael.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/sequence-diagram.min.js"></script>
+<script src="../libs/assets/editor.md-master/lib/underscore.min.js"></script>
 <script type="text/javascript">
     var testEditor;
 
@@ -42,8 +48,10 @@
 
             },
             //editorTheme: "pastel-on-dark",//编辑器的主题颜色
-            theme: "gray",//顶部的主题
-            previewTheme: "dark"//显示的主题
+            //theme : "dark",//顶部的主题
+            previewTheme : "dark"
+
+
         });
 
     });

@@ -1,6 +1,48 @@
+create table `article`(
+     `articleId` int(11) NOT NULL AUTO_INCREMENT,
+     `articleCreatorId` varchar(255) DEFAULT NULL,
+     `articleTitle` varchar(255) DEFAULT NULL,
+     `articleContent` varchar(6000) DEFAULT NULL,
+     `articleCategoryIds` varchar(255) DEFAULT NULL,
+     `articleTags` varchar(255) DEFAULT NULL,
+     `articleCreateTime` varchar(255) DEFAULT NULL,
+     `articleCommentStatus` varchar(255) DEFAULT NULL,
+     `articleStatus` varchar(255) DEFAULT NULL,
+     `articleViewCount` int(11) DEFAULT 0,
+     `articleCommentCount` int(11) DEFAULT NULL,
+     `articleLikeCount` int(11) DEFAULT 0,
+     PRIMARY KEY(`articleId`)
+     )ENGINE=InnoDB AUTO_INCREMENT =1 DEFAULT CHARSET = utf8;
+
+     create table `visitor`(
+          `visitorId` int(11) NOT NULL AUTO_INCREMENT,
+          `visitorName` varchar(255) DEFAULT NULL,
+          `visitorQQ` varchar(255) DEFAULT NULL,
+          `visitorTel` varchar(255) DEFAULT NULL,
+          `visitorEmail` varchar(255) DEFAULT NULL,
+          `visitorBlog` varchar(255) DEFAULT NULL,
+          `visitorGithub` varchar(255) DEFAULT NULL,
+          `visitorIP` varchar(255) DEFAULT NULL,
+          PRIMARY KEY(`visitorId`)
+          )ENGINE=InnoDB AUTO_INCREMENT =1 DEFAULT CHARSET = utf8;
+
+          create table `log`(
+               `id` int(11) NOT NULL AUTO_INCREMENT,
+               `username` varchar(255) DEFAULT NULL,
+               `userIP` varchar(255) DEFAULT NULL,
+               `actionClassName` varchar(6000) DEFAULT NULL,
+               `actionDate` varchar(255) DEFAULT NULL,
+               `result` varchar(6000) DEFAULT NULL,
+               PRIMARY KEY(`id`)
+               )ENGINE=InnoDB AUTO_INCREMENT =1 DEFAULT CHARSET = utf8;
+
+
+
+
+
 INSERT INTO `article`(`articleCreatorId`,`articleTitle`,`articleContent`,`articleCategoryIds`,`articleTags`,`articleCreateTime`,`articleCommentStatus`,`articleStatus`,`articleViewCount`,`articleCommentCount`,`articleLikeCount`)
- VALUES('17865168830','java入门','java从入门到跑路','1,2','java,sql','2018-8-1','1','1',99,99,99);
+ VALUES('17865168830','java入门','java从入门到跑路','1,2','java,sql','2018-7-13 07:49:22','1','1',99,99,99);
 
 
 INSERT INTO `article`(`articleCreatorId`,`articleTitle`,`articleContent`,`articleCategoryIds`,`articleTags`,`articleCreateTime`,`articleCommentStatus`,`articleStatus`,`articleViewCount`,`articleCommentCount`,`articleLikeCount`)
- VALUES('17865168830','SpringBoot从入门到精通','Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者','1,2','java,sql','2018-8-1','1','1',99,99,99);
+ VALUES('17865168830','SpringBoot从入门到精通','Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者','1,2','java,sql','2018-8-13 07:49:22','1','1',99,99,99);

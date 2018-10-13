@@ -27,8 +27,19 @@ public interface ArticleService {
      */
     public int getArticleCount(Map<String, Object> map);
 
+    /**
+     * 添加文章
+     * @param article
+     * @return
+     */
     public boolean insertArticle(Article article);
 
+    /**
+     * 根据id查询文章信息
+     * @param articleId
+     * @return
+     */
+    public Article getArticleById(Integer articleId);
 
 
 }

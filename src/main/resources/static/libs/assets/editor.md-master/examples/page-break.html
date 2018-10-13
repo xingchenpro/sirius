@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Page break - Editor.md examples</title>
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="../css/editormd.css" />
+        <link rel="stylesheet" href="../css/editormd.min.css" />
         <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
     </head>
     <body>
@@ -70,7 +70,7 @@
                 $("#print-btn").click(function(){
                     var html = testEditor.preview.html();
                     
-                    document.write('<link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="../css/editormd.css" />' + html);
+                    document.write('<link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="../css/editormd.min.css" />' + html);
                     window.print();
                 });
                 

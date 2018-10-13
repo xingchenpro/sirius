@@ -8,10 +8,7 @@ import com.hly.sirius.util.DateUtil;
 import com.hly.sirius.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -52,9 +49,9 @@ public class ArticleController {
         //当前页数
         //listMap.put("page",Integer.parseInt(page));
         List<Article> articleList = articleService.getArticleList(listMap);
-        for (Article article : articleList) {
+        /*for (Article article : articleList) {
             System.err.println(article.toString());
-        }
+        }*/
         mv.addObject("articleList", articleList);
         System.err.println("文章总数:" + articleService.getArticleCount(listMap));
         //System.err.println("page:"+PageUtil.pageInfo(request.getContextPath()+"/article",articleService.articleCount(listMap),Integer.parseInt(page),7));
@@ -72,12 +69,24 @@ public class ArticleController {
     public ModelAndView articleContent(@RequestBody Article article) {
         System.err.println("文章标题\n"+article.getArticleTitle());
         System.err.println("MD文本:\n"+article.getArticleContent());
+        System.err.println("articleStatus:\n"+article.getArticleStatus());
         article.setArticleCreateTime(DateUtil.getCurrentDateString());
         System.err.println(article.toString());
         articleService.insertArticle(article);
         return null;
     }
 
+    @RequestMapping("/articleDetail/{id}")
+    public ModelAndView articleDetail(@PathVariable("id")Integer id){
+
+        ModelAndView mv = new ModelAndView();
+        Article article  = articleService.getArticleById(id);
+        mv.addObject("article",article);
+        System.err.println(article.toString());
+        mv.setViewName("article/article_detail");
+        return mv;
+
+    }
 
     /**
      * 返回文章编辑界面

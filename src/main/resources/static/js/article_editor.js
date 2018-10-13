@@ -21,18 +21,15 @@ $(document).ready(function () {
             url: "/editorContent",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
-                /*11属性*/
-                articleCreatorId:'',
+                /*8属性*/
+                articleCreatorId:'hly',
                 articleTitle: articleTitle,
                 articleContent: articleContent,
                 articleCategoryIds:'',
                 articleTags:'',
                 articleCreateTime:'',
-                articleCommentStatus:'',
-                articleStatus:'',
-                articleViewCount:'',
-                articleCommentCount:'',
-                articleLikeCount:'',
+                articleCommentStatus:"1",
+                articleStatus:"1"
 
             }),
             type: "POST",

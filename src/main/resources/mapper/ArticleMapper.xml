@@ -17,31 +17,45 @@
         <result property="articleLikeCount" column="articleLikeCount"/>
     </resultMap>
 
+    <!--8属性-->
     <sql id="addArticle">
-        articleCreatorId,articleTitle,articleContent,articleCategoryIds,articleTags,articleCreateTime,articleCommentStatus,articleStatus,articleViewCount,articleCommentCount,articleLikeCount
+        articleCreatorId,articleTitle,articleContent,articleCategoryIds,articleTags,articleCreateTime,articleCommentStatus,articleStatus
     </sql>
     <!--SQLServer查询算符-->
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
         SELECT TOP ${size} * FROM article WHERE article_id NOT IN(SELECT TOP ${(page-1)*size} article_id FROM article ORDER BY article_id DESC)ORDER BY article_id DESC;
     </select>-->
+    <!--获得文章列表-->
     <select id="getArticleList" parameterType="Map" resultMap="ArticleResult">
-        SELECT * FROM article
+        SELECT * FROM article order by articleId desc
         <if test="start!=null and size!=null">
             limit #{start},#{size}
         </if>
     </select>
 
 
+    <!--获得文章数目-->
     <select id="getArticleCount" parameterType="Map" resultType="Integer">
         select COUNT(*) from article
     </select>
 
+    <!--添加文章-->
     <insert id="insertArticle" parameterType="Article">
         INSERT INTO article(
         <include refid="addArticle"/>
         )VALUES
-        (#{articleCreatorId},#{articleTitle},#{articleContent},#{articleCategoryIds},#{articleTags},#{articleCreateTime},#{articleCommentStatus},#{articleStatus},#{articleViewCount},#{articleCommentCount},#{articleLikeCount});
-
+        (#{articleCreatorId},#{articleTitle},#{articleContent},#{articleCategoryIds},#{articleTags},#{articleCreateTime},#{articleCommentStatus},#{articleStatus});
     </insert>
+
+    <!--根据文章id查询文章-->
+    <select id="getArticleById" parameterType="integer" resultMap="ArticleResult">
+        SELECT * FROM article
+        <where>
+            <if test="articleId!=null and articleId!=''">
+                articleId = #{articleId}
+            </if>
+        </where>
+
+    </select>
 
 </mapper>
