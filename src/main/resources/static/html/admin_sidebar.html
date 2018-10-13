@@ -10,12 +10,13 @@
     <title>Title</title>
     <link href="../libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/admin_sidebar.css" rel="stylesheet" type="text/css">
     <script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
 </head>
 <body>
 <div id="page-container">
     <!--begin sidebar-->
-    <div id="sidebar" class="sidebar">
+    <div id="admin-sidebar" class="sidebar">
         <!--begin sidebar scroller -->
         <div id="my-scrollbar">
             <!--data-scrollbar="true" data-height="100%"-->
@@ -54,7 +55,7 @@
                     <a href="javascript:">
                         <i class="fa fa-user"></i>
                         <b class="caret pull-right"></b>
-                        <span>个人信息管理</span>
+                        <span>个人信息</span>
                     </a>
                     <ul class="sub-menu">
                         <li><a href="javascript:">修改个人信息</a> </li>
@@ -103,7 +104,7 @@
                 </li>
 
             </ul>
-            <button type="button" id="sidebar-button"><i class="fa fa-angle-double-left"></i></button>
+            <button type="button" id="admin-sidebar-button"><i class="fa fa-angle-double-left"></i></button>
             <!--end sidebar nav-->
         </div>
         <!--end sidebar scroller-->

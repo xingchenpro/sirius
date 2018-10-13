@@ -123,7 +123,7 @@ header img {
 /*start article_editor*/
 .main {
     min-width: 1300px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     height: 715px;
     position: absolute;
     top: 70px;
@@ -139,7 +139,7 @@ header img {
 .article_edit{
 
     overflow: auto;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     /*230sideBar显示时*/
     margin-left: 230px;
     margin-top: 10px;
@@ -150,7 +150,7 @@ header img {
     margin-top: 20px;
     overflow: hidden;
     margin-left: 15px;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
     height: auto;
     width: 98%;
 
@@ -246,7 +246,7 @@ header img {
 /*end article_editor*/
 /*start admin_sidebar*/
 
-#page-container .sidebar {
+.sidebar {
     /*display: block;*/
     width: 220px;
     background-color: #205b8f;
@@ -259,19 +259,19 @@ header img {
 
 }
 
-#page-container .sidebar .nav > li > a {
+.sidebar .nav > li > a {
     padding: 8px 20px;
     color: #ffec10;
     line-height: 20px;
 }
 
-#page-container .sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
+.sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
     background: #232a2f;
     color: #fe3d14;
 
 }
 
-#page-container .sidebar .nav > li > a i {
+.sidebar .nav > li > a i {
     float: left;
     margin-right: 15px;
     width: 14px;
@@ -281,7 +281,7 @@ header img {
     color: #23d8ff;
 }
 
-#page-container .sidebar .nav > li > a .caret {
+.sidebar .nav > li > a .caret {
     float: right;
     margin-top: 9px;
 }
@@ -292,17 +292,17 @@ header img {
     color: white;
 }*/
 
-#page-container .sidebar .sub-menu {
+.sidebar .sub-menu {
     padding: 10px 0 10px 30px;
     background: #1a2229;
     display: none;
 }
 
-#page-container .sidebar .has-sub a{
+.sidebar .has-sub a{
 text-align: left;
 }
 
-#page-container .sidebar .sub-menu > li > a {
+.sidebar .sub-menu > li > a {
     padding: 5px 20px;
     display: block;
     font-weight: 300;
@@ -312,7 +312,7 @@ text-align: left;
 }
 
 /*将元素之前插入内容*/
-#page-container .sidebar .sub-menu > li > a:before {
+ .sidebar .sub-menu > li > a:before {
     content: '\f13d';
     font-family: FontAwesome;
     position: absolute;
@@ -324,13 +324,16 @@ text-align: left;
 
 }
 
-#page-container .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
+.sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
     color: #ff19d1
 }
 
-#my-scrollbar #admin-sidebar-button {
+#admin-sidebar-button {
     position: absolute;
+    /*动态页面百分比*/
     margin-left:42%;
+    /*静态页面百分比*/
+    /*margin-left:92%;*/
     margin-top: 45%;
     height: 50px;
     width: 17px;

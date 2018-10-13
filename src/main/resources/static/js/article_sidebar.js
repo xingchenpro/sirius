@@ -42,10 +42,11 @@ var handlesSidebarStatus = function () {
     "use strict";
     $("#admin-sidebar-button").click(function () {
         var $lefty=$("#admin-sidebar");
-        var $articleEdit=$(".article_edit");
         $lefty.animate({
             left:parseInt($lefty.css('left'),10)==0 ? - $lefty.outerWidth()+10 : 0
         });
+
+        var $articleEdit=$(".article_edit");
         $articleEdit.animate({
             /*动态改变位置*/
             marginLeft:parseInt($articleEdit.css('margin-left'),10)==230?0:230

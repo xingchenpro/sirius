@@ -15,16 +15,30 @@ $(document).ready(function () {
     });
 
     function submit_article() {
-        var title = $("#article_title").val();
-        var htmlContent = $("#editor-md-html").val();
-        var markdownContent = $("#editor-md-doc").val();
+        var articleTitle = $("#article_title").val();
+        var articleContent = $("#editor-md-doc").val();
         $.ajax({
             url: "/editorContent",
-            data: JSON.stringify({title: title, htmlContent: htmlContent, markdownContent: markdownContent}),
+            /*这里属性名字和后端一直就行，顺序无所谓*/
+            data: JSON.stringify({
+                /*11属性*/
+                articleCreatorId:'',
+                articleTitle: articleTitle,
+                articleContent: articleContent,
+                articleCategoryIds:'',
+                articleTags:'',
+                articleCreateTime:'',
+                articleCommentStatus:'',
+                articleStatus:'',
+                articleViewCount:'',
+                articleCommentCount:'',
+                articleLikeCount:'',
+
+            }),
             type: "POST",
             contentType: 'application/json',
             success: function () {
-                alert("发布成功"+htmlContent);
+                alert("发布成功" + articleContent);
 
             },
             error: function () {

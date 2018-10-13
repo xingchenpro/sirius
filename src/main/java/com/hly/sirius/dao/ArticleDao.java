@@ -21,14 +21,20 @@ public interface ArticleDao {
      * @param map
      * @return
      */
-    public List<Article> articleList(Map<String, Object> map);
-
+    public List<Article> getArticleList(Map<String, Object> map);
 
     /**
      * 返回文章的总数量
      * @param map
      * @return
      */
-    public int articleCount(Map<String, Object> map);
+    public int getArticleCount(Map<String, Object> map);
+
+    /**
+     * 添加文章
+     * @param article
+     * @return
+     */
+    public boolean insertArticle(Article article);
 
 }

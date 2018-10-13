@@ -15,13 +15,16 @@
         <result property="articleViewCount" column="articleViewCount"/>
         <result property="articleCommentCount" column="articleCommentCount"/>
         <result property="articleLikeCount" column="articleLikeCount"/>
-
     </resultMap>
+
+    <sql id="addArticle">
+        articleCreatorId,articleTitle,articleContent,articleCategoryIds,articleTags,articleCreateTime,articleCommentStatus,articleStatus,articleViewCount,articleCommentCount,articleLikeCount
+    </sql>
     <!--SQLServer查询算符-->
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
         SELECT TOP ${size} * FROM article WHERE article_id NOT IN(SELECT TOP ${(page-1)*size} article_id FROM article ORDER BY article_id DESC)ORDER BY article_id DESC;
     </select>-->
-    <select id="articleList" parameterType="Map" resultMap="ArticleResult">
+    <select id="getArticleList" parameterType="Map" resultMap="ArticleResult">
         SELECT * FROM article
         <if test="start!=null and size!=null">
             limit #{start},#{size}
@@ -29,8 +32,16 @@
     </select>
 
 
-    <select id="articleCount" parameterType="Map" resultType="Integer">
+    <select id="getArticleCount" parameterType="Map" resultType="Integer">
         select COUNT(*) from article
     </select>
+
+    <insert id="insertArticle" parameterType="Article">
+        INSERT INTO article(
+        <include refid="addArticle"/>
+        )VALUES
+        (#{articleCreatorId},#{articleTitle},#{articleContent},#{articleCategoryIds},#{articleTags},#{articleCreateTime},#{articleCommentStatus},#{articleStatus},#{articleViewCount},#{articleCommentCount},#{articleLikeCount});
+
+    </insert>
 
 </mapper>

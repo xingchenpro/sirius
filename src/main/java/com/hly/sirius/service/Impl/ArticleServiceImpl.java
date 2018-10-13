@@ -22,12 +22,17 @@ public class ArticleServiceImpl implements ArticleService {
     ArticleDao articleDao;
 
     @Override
-    public List<Article> articleList(Map<String, Object> map) {
-        return articleDao.articleList(map);
+    public List<Article> getArticleList(Map<String, Object> map) {
+        return articleDao.getArticleList(map);
     }
 
     @Override
-    public int articleCount(Map<String, Object> map) {
-        return articleDao.articleCount(map);
+    public int getArticleCount(Map<String, Object> map) {
+        return articleDao.getArticleCount(map);
+    }
+
+    @Override
+    public boolean insertArticle(Article article) {
+        return articleDao.insertArticle(article);
     }
 }

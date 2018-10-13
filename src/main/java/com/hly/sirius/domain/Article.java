@@ -11,6 +11,7 @@ package com.hly.sirius.domain;
  * 文章实体类
  */
 public class Article {
+    //12属性
     private Integer articleId;
     private String articleCreatorId;
     private String articleTitle;

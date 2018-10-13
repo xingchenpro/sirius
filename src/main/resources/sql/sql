@@ -1,0 +1,6 @@
+INSERT INTO `article`(`articleCreatorId`,`articleTitle`,`articleContent`,`articleCategoryIds`,`articleTags`,`articleCreateTime`,`articleCommentStatus`,`articleStatus`,`articleViewCount`,`articleCommentCount`,`articleLikeCount`)
+ VALUES('17865168830','java入门','java从入门到跑路','1,2','java,sql','2018-8-1','1','1',99,99,99);
+
+
+INSERT INTO `article`(`articleCreatorId`,`articleTitle`,`articleContent`,`articleCategoryIds`,`articleTags`,`articleCreateTime`,`articleCommentStatus`,`articleStatus`,`articleViewCount`,`articleCommentCount`,`articleLikeCount`)
+ VALUES('17865168830','SpringBoot从入门到精通','Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者','1,2','java,sql','2018-8-1','1','1',99,99,99);
