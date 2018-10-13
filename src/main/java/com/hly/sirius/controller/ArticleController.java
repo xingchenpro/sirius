@@ -2,12 +2,15 @@ package com.hly.sirius.controller;
 
 
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.ArticleContent;
 import com.hly.sirius.domain.Page;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -58,6 +61,28 @@ public class ArticleController {
         mv.setViewName("article/article_index");
         return mv;
     }
+
+    /**
+     * 获得编辑的文章内容
+     * @param articleContent
+     * @return
+     */
+    @RequestMapping(value = "editorContent",method = RequestMethod.POST)
+    public ModelAndView articleContent(@RequestBody ArticleContent articleContent){
+        System.err.println("文章标题");
+        System.err.println(articleContent.getTitle());
+        System.err.println("MD文本:");
+        System.err.println(articleContent.getMarkdownContent());
+        System.err.println("HTML文本:");
+        System.err.println(articleContent.getHtmlContent());
+
+       /* ModelAndView mv = new ModelAndView();
+        mv.addObject("html",articleContent.getHtmlContent());
+        mv.addObject("md",articleContent.getMarkdownContent());
+        mv.setViewName("writeArticle");*/
+        return  null;
+    }
+
 
     /**
      * 返回文章编辑界面

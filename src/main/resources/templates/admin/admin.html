@@ -9,20 +9,32 @@
     <meta charset="UTF-8">
     <title>write_article</title>
 
-    <!--编辑器前端放在bootstrap上面，否则影响界面-->
-    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css" th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}">
-    <link href="../../static/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" th:href="@{/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css}" >
-    <link href="../../static/css/admin.css" rel="stylesheet" type="text/css"  th:href="@{/css/admin.css}" >
-    <script src="../../static/libs/assets/jquery/jquery-3.1.1.js" th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
-    <script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js" th:src="@{/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js}"></script>
+    <!--bootstrap-3.3.7-->
+    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css"
+          th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}">
+    <!--font-awesome-4.1.0-->
+    <link href="../../static/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+          th:href="@{/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css}">
+    <link href="../../static/css/admin.css" rel="stylesheet" type="text/css" th:href="@{/css/admin.css}">
+
+    <!--隐藏滑轮依赖-->
+    <script src="../../static/libs/assets/jquery/jquery-3.1.1.js"
+            th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
+    <script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"
+            th:src="@{/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js}"></script>
     <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
-    <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js" th:src="@{/libs/assets/slimscroll/jquery.slimscroll.min.js}"></script>
+    <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js"
+            th:src="@{/libs/assets/slimscroll/jquery.slimscroll.min.js}"></script>
+    <!--sidebar JS-->
     <script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
+    <script th:src="@{/js/article_editor.js}" src="../../static/js/article_editor.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             App.init();
         });
+
     </script>
+
 </head>
 <body>
 <div id="page-container">
@@ -44,6 +56,7 @@
     <!--页脚-->
     <div th:include="common/foot::footer" class="foot"></div>
     <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
+
     <!--页脚结束-->
 
 </div>

@@ -3,6 +3,7 @@
 *@github :github.com/SiriusHly
 @blog :blog.csdn.net/Sirius_hly
 *@date :2018/8/16
+* admin相关所有css整合
 */
 * {
     margin: 0;
@@ -54,7 +55,7 @@ ul, ol {
     text-decoration: none;
     list-style-type: none;
 }
-
+/*start admin_nav*/
 header {
     position: absolute;
     left: 0;
@@ -113,12 +114,13 @@ header img {
     width: 40px;
     height: 40px;
 }
-
+/*end admin_nav*/
 #page-container{
     position: relative;
     height: 870px;
 }
 /*文章编辑开始*/
+/*start article_editor*/
 .main {
     min-width: 1300px;
     border: 1px solid red;
@@ -240,10 +242,11 @@ header img {
     color: white;
 }
 
-/*文章编辑end*/
-/*start aside*/
+/*文章编辑结束*/
+/*end article_editor*/
+/*start admin_sidebar*/
 
-.sidebar {
+#page-container .sidebar {
     /*display: block;*/
     width: 220px;
     background-color: #205b8f;
@@ -256,19 +259,19 @@ header img {
 
 }
 
-.sidebar .nav > li > a {
+#page-container .sidebar .nav > li > a {
     padding: 8px 20px;
     color: #ffec10;
     line-height: 20px;
 }
 
-.sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
+#page-container .sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
     background: #232a2f;
     color: #fe3d14;
 
 }
 
-.sidebar .nav > li > a i {
+#page-container .sidebar .nav > li > a i {
     float: left;
     margin-right: 15px;
     width: 14px;
@@ -278,7 +281,7 @@ header img {
     color: #23d8ff;
 }
 
-.sidebar .nav > li > a .caret {
+#page-container .sidebar .nav > li > a .caret {
     float: right;
     margin-top: 9px;
 }
@@ -289,13 +292,17 @@ header img {
     color: white;
 }*/
 
-.sidebar .sub-menu {
+#page-container .sidebar .sub-menu {
     padding: 10px 0 10px 30px;
     background: #1a2229;
     display: none;
 }
 
-.sidebar .sub-menu > li > a {
+#page-container .sidebar .has-sub a{
+text-align: left;
+}
+
+#page-container .sidebar .sub-menu > li > a {
     padding: 5px 20px;
     display: block;
     font-weight: 300;
@@ -305,7 +312,7 @@ header img {
 }
 
 /*将元素之前插入内容*/
-.sidebar .sub-menu > li > a:before {
+#page-container .sidebar .sub-menu > li > a:before {
     content: '\f13d';
     font-family: FontAwesome;
     position: absolute;
@@ -317,13 +324,13 @@ header img {
 
 }
 
-.sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
+#page-container .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
     color: #ff19d1
 }
 
-#admin-sidebar-button {
+#my-scrollbar #admin-sidebar-button {
     position: absolute;
-    margin-left:92%;
+    margin-left:42%;
     margin-top: 45%;
     height: 50px;
     width: 17px;
@@ -333,9 +340,9 @@ header img {
     border: none;
     outline: none;
 }
+/*end admin_sidebar*/
 
-
-/*end aside*/
+/*start foot*/
 /*页脚开始*/
 .foot {
     min-width: 1300px;
@@ -380,4 +387,5 @@ header img {
 }
 
 /*页脚结束*/
+/*end foot*/
 

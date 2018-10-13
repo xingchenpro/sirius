@@ -61,7 +61,9 @@ ul, ol {
     height: auto;
 
 }
-
+.sidebar .has-sub a{
+    text-align: left;
+}
 .sidebar .nav > li > a {
     padding: 8px 20px;
     color: #ffec10;

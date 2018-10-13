@@ -16,7 +16,6 @@ var handleSlimScroll = function () {
 
     /*todo 加上会影响sideBar滑动和点击，未解决*/
    /* $('#article_edit').slimScroll({
-
         height:'100%',
         railVisible: true,
         railColor: '#ff0b56'
@@ -52,7 +51,7 @@ var handlesSidebarStatus = function () {
             marginLeft:parseInt($articleEdit.css('margin-left'),10)==230?0:230
         });
     });
-    
+
 };
 
 var App = function () {
