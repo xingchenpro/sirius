@@ -348,13 +348,14 @@ text-align: left;
 /*start foot*/
 /*页脚开始*/
 .foot {
+
     min-width: 1300px;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 85px;
+    height: 95px;
     background-color: #1c1f21;
     font-size: 12px;
 }
@@ -364,7 +365,7 @@ text-align: left;
 }
 
 .foot ul li {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 35px;
     display: inline-block;
 }
@@ -383,12 +384,13 @@ text-align: left;
 /*页脚结束*/
 
 .foot-iframe {
-    /*border: 1px solid red;*/
+    border: 1px solid red;
     width: 100%;
     position: absolute;
     top: 0;
 }
 
 /*页脚结束*/
+
 /*end foot*/
 

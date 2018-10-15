@@ -4,9 +4,9 @@
 @blog :blog.csdn.net/Sirius_hly
 *@date :2018/8/13
 */
-{
-    margin: 0px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
 }
 body::-webkit-scrollbar{
     display: none;
