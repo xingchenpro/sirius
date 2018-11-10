@@ -1,0 +1,105 @@
+/**
+*@author :hly
+*@github :https://github.com/huangliangyun
+@blog :blog.csdn.net/Sirius_hly
+*@date :2018/11/10
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+
+    width: 100%;
+    background: white;
+    font-size: 12px;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #707478
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: #242a30
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    font-weight: 300;
+}
+
+a {
+    transition: color 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out;
+    -webkit-transition: color 100ms ease-in-out
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.admin-articles-list-part {
+    float: left;
+    border: 1px solid red;
+    margin-left: 230px;
+    width: 90%;
+
+}
+
+.admin-articles-select {
+    border: 1px solid blue;
+    height: 70px;
+    margin-top: 20px;
+    background-color: rgba(244, 244, 244, 0.7);
+
+}
+
+.admin-articles-select h5 {
+    color: black;
+    float: left;
+    margin-left: 75px;
+    line-height: 50px;
+}
+
+.admin-articles-select .search {
+    margin-top: 17px;
+
+}
+.admin-articles-select-button li {
+    line-height: 70px;
+    float: left;
+    margin-left: 20px;
+    font-size: 13px;
+    color: black;
+}
+
+.admin-articles-select-button li select {
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    /*去掉点击后的边框*/
+    outline: none;
+
+}
+
+.admin-article-list{
+
+}

@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author hly
- * @blog:https://blog.csdn.net/Sirius_hly
- * @github:https://github.com/SiriusHly
+ * @blog: https://blog.csdn.net/Sirius_hly
+ * @github: https://github.com/huangliangyun
  * @date 2018年9月13日 下午6:25:46
  */
 @Service

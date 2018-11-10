@@ -118,13 +118,14 @@ header img {
 #page-container{
     position: relative;
     height: 870px;
+    border: 1px solid black;
 }
 /*文章编辑开始*/
 /*start article_editor*/
 .main {
     min-width: 1300px;
-    /*border: 1px solid red;*/
-    height: 715px;
+    border: 1px solid red;
+    height:100%;
     position: absolute;
     top: 70px;
     width: 100%;
@@ -139,7 +140,7 @@ header img {
 .article_edit{
 
     overflow: auto;
-    /*border: 1px solid blue;*/
+    border: 1px solid blue;
     /*230sideBar显示时*/
     margin-left: 230px;
     margin-top: 10px;
@@ -257,6 +258,7 @@ header img {
     /*z-index: 6;*/
     height: auto;
 
+
 }
 
 .sidebar .nav > li > a {
@@ -344,6 +346,10 @@ text-align: left;
     outline: none;
 }
 /*end admin_sidebar*/
+
+
+
+
 
 /*start foot*/
 /*页脚开始*/

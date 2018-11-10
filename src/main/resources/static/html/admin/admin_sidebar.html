@@ -8,10 +8,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="../libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/admin_sidebar.css" rel="stylesheet" type="text/css">
-    <script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
+    <link href="../../libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/admin/admin_sidebar.css" rel="stylesheet" type="text/css">
+    <script src="../../js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
 </head>
 <body>
 <div id="page-container">
@@ -31,9 +31,10 @@
                     </a>
                     <ul class="sub-menu">
                         <li><a href="javascript:">写文章</a> </li>
-                        <li><a href="javascript:">文章管理</a></li>
-                        <li><a href="javascript:">评论管理</a></li>
-                        <li><a href="javascript:">类别管理</a></li>
+                        <li><a href="javascript:">已发表</a></li>
+                        <li><a href="javascript:">私密</a></li>
+                        <li><a href="javascript:">草稿箱</a></li>
+                        <li><a href="javascript:">回收站</a></li>
                     </ul>
                 </li>
 
@@ -104,7 +105,7 @@
                 </li>
 
             </ul>
-            <button type="button" id="admin-sidebar-button"><i class="fa fa-angle-double-left"></i></button>
+            <button type="button" id="admin-sidebar-button" ><i class="fa fa-angle-double-left"></i></button>
             <!--end sidebar nav-->
         </div>
         <!--end sidebar scroller-->
@@ -113,12 +114,12 @@
 </div>
 
 
-<script src="../libs/assets/jquery/jquery-3.1.1.js"></script>
-<script src="../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+<script src="../../libs/assets/jquery/jquery-3.1.1.js"></script>
+<script src="../../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
 <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
-<script src="../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
 
-<script src="../js/article_sidebar.js"></script>
+<script src="../../js/article_sidebar.js"></script>
 <script>
     $(document).ready(function() {
         App.init();

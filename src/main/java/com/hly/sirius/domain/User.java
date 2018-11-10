@@ -3,7 +3,7 @@ package com.hly.sirius.domain;
 /**
  * @author hly
  * @blog:https://blog.csdn.net/Sirius_hly
- * @github:https://github.com/SiriusHly
+ * @github: https://github.com/huangliangyun
  * @date 2018年9月12日 下午7:21:50
  */
 public class User {
