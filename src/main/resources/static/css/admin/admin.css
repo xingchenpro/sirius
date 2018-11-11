@@ -122,13 +122,15 @@ header img {
 }
 /*文章编辑开始*/
 /*start article_editor*/
+/*定义最小宽度*/
 .main {
-    min-width: 1300px;
-    border: 1px solid #431aff;
+
+    /*border: 1px solid #431aff;*/
     height:100%;
     position: absolute;
     top: 70px;
     width: 100%;
+    min-width: 1300px;
 
     /*border: 1px solid red;*/
 }
