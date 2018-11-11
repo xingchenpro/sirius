@@ -118,13 +118,13 @@ header img {
 #page-container{
     position: relative;
     height: 870px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 /*文章编辑开始*/
 /*start article_editor*/
 .main {
     min-width: 1300px;
-    border: 1px solid red;
+    border: 1px solid #431aff;
     height:100%;
     position: absolute;
     top: 70px;
