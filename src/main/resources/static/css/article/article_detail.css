@@ -10,6 +10,7 @@
 }
 body::-webkit-scrollbar{
     display: none;
+
 }
 body {
 
@@ -32,6 +33,7 @@ ul, ol {
 }
 
 .article_detail_panel{
+    /*min-height: 3500px;*/
     width: 870px;
     float: left;
     margin-top: 20px;

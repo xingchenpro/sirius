@@ -16,13 +16,13 @@
             function(){
                 var oDiv = document.getElementById("fixPara"),
                     /*H大点好*/
-                    H = 1480
+                    H = 980
 
                 window.onscroll = function()
                 {
                     var s = document.body.scrollTop || document.documentElement.scrollTop;
                     if(s>H) {
-                        oDiv.style = "position:fixed;top:-1080px;";
+                        oDiv.style = "position:fixed;top:-500px;";
 
                     } else {
                         oDiv.style = '';
@@ -35,27 +35,29 @@
 <header>
     <nav id="nav">
         <ul>
-            <li><a href="javascript:" title="首页">首页</a></li>
-            <li><a href="javascript:" title="推荐">推荐</a></li>
-            <li><a href="javascript:" title="视频" >视频</a></li>
-            <li><a href="../admin/admin.html" title="管理">管理</a></li>
+            <li><a href="../admin/admin.html">ADMIN</a></li>
+            <li><a href="#">HISTORY</a></li>
+            <li><a href="#">ABOUT ME</a></li>
+            <li><a href="#"  title="首页">HOME</a></li>
         </ul>
-        <script src="../../js/article_current_nav.js" type="text/javascript"></script>
+        <!-- <script src="../../js/article_current_nav.js" type="text/javascript"></script>-->
     </nav>
-</header>
-<!--导航结束-->
-
-<div id="main">
     <div class="article_image">
         <figure>
-            <img src="../../images/article_images/night.jpg"/>
+
             <figcaption>
-                健康生活，从此时此刻开始
+                黄良运的博客
+                <p>种一棵树最好的时间是十年前，其次是现在。</p>
             </figcaption>
         </figure>
 
     </div>
     <!--导航图片结束-->
+</header>
+<!--导航结束-->
+
+<div id="main">
+
 
     <div class="articles">
         <!--文章内容开始-->
@@ -70,7 +72,7 @@
 
         <!--文章内容结束-->
         <!--右边栏开始-->
-        <aside>
+        <aside id="fixPara">
 
             <div class="personal_Info">
                 <h2>个人资料</h2>
@@ -223,7 +225,7 @@
             </div>
             <!--文章归档结束-->
             <!--文章评论开始-->
-            <div class="article_new_comment">
+            <!--<div class="article_new_comment">
                 <h2>最新评论</h2>
                 <ul>
                     <li><h3><a href="#">SpringBoot从入门到精通</a></h3><p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程</p></li>
@@ -231,7 +233,7 @@
                     <li><h3><a href="#">SpringBoot从入门到精通</a></h3><p>Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程</p></li>
 
                 </ul>
-            </div>
+            </div>-->
 
         </aside>
     </div>

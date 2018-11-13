@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Set;
 
-@Configuration
+//@Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
     @Autowired

@@ -11,16 +11,30 @@
     <link href="../../static/css/article/article_index.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<header th:fragment="header">
-    <nav id="nav">
-        <ul>
-            <li><a href="#" title="首页">首页</a></li>
-            <li><a href="#">推荐</a></li>
-            <li><a href="#">视频</a></li>
-            <li><a href="/writeArticle">管理</a></li>
-        </ul>
-        <script src="../../static/js/article_current_nav.js" type="text/javascript"></script>
-    </nav>
-</header>
+
+    <header th:fragment="header">
+        <nav id="nav">
+            <ul>
+                <li><a href="../admin/admin.html">ADMIN</a></li>
+                <li><a href="#">HISTORY</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#"  title="首页">HOME</a></li>
+            </ul>
+            <!-- <script src="../../js/article_current_nav.js" type="text/javascript"></script>-->
+        </nav>
+        <div class="article_image">
+            <figure>
+
+                <figcaption>
+                    黄良运的博客
+                    <p>种一棵树最好的时间是十年前，其次是现在。</p>
+                </figcaption>
+            </figure>
+
+        </div>
+        <!--导航图片结束-->
+    </header>
+    <!--导航结束-->
+
 </body>
 </html>

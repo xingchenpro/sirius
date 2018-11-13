@@ -9,6 +9,23 @@
     <meta charset="UTF-8">
     <title>article</title>
     <link href="../../css/article/article_index.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+        window.onload =
+            function () {
+                var oDiv = document.getElementById("fixPara"),
+                    /*H大点好*/
+                    H = 1480
+                window.onscroll = function () {
+                    var s = document.body.scrollTop || document.documentElement.scrollTop;
+                    if (s > H) {
+                        oDiv.style = "position:fixed;top:-1080px;";
+
+                    } else {
+                        oDiv.style = '';
+                    }
+                }
+            }
+    </script>
 </head>
 <body>
         <!--右边栏开始-->
