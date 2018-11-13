@@ -1,6 +1,6 @@
 /**
 *@author :hly
-*@github :github.com/SiriusHly
+*@github :https://github.com/huangliangyun
 @blog :blog.csdn.net/Sirius_hly
 *@date :2018/8/1
 */
@@ -133,10 +133,8 @@ header nav ul li a:hover, #current_nav {
 
 .article_lists > li {
     border-right: 2px solid black;
-
     /*列表之间的距离*/
     padding: 3px 0;
-    margin-top: 0px;
 }
 
 .article_list {
@@ -275,7 +273,6 @@ aside div {
 .user_achieve li {
     float: left;
     margin: 15px 20px 0px;
-
 }
 
 .personal_Info img {

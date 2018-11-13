@@ -59,7 +59,6 @@ public class ArticleController {
         mv.setViewName("article/article_index");
         return mv;
     }
-
     /**
      * 获得编辑的文章内容与添加新的文章
      * @param article

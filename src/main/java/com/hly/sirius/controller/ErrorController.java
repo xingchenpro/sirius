@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/error")
 public class ErrorController {
-
     /**
      * 403页面
      */

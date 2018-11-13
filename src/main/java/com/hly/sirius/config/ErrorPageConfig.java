@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
  */
 @Configuration
 public class ErrorPageConfig implements ErrorPageRegistrar {
-
     /**
      * 配置错误页面
      * @param errorPageRegistry

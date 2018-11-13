@@ -16,7 +16,6 @@ import java.util.Map;
  */
 @Component
 public interface ArticleDao {
-
     /**
      * 分页查询文章列表
      * @param map

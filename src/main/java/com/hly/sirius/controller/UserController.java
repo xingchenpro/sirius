@@ -30,7 +30,6 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/")
 public class UserController {
 
-
 	@Autowired
 	UserService userService;
 	/**

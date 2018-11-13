@@ -22,7 +22,6 @@ public class JedisRedisConfig {
     private int maxIdle;
     @Value("${spring.redis.jedis.pool.max-wait}")
     private long maxWaitMillis;
-
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
         JedisConnectionFactory factory = new JedisConnectionFactory();

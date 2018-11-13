@@ -30,7 +30,6 @@ public class ConnectionFactoryConfig  {
         properties.put("url",url);
         properties.put("username",user);
         properties.put("password",password);
-
         try {
             dataSource = (DruidDataSource) DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {

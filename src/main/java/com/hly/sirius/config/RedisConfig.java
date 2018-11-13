@@ -24,7 +24,6 @@ import java.util.Set;
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
-
     @Autowired
     private JedisConnectionFactory jedisConnectionFactory;
 

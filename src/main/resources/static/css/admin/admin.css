@@ -1,6 +1,6 @@
 /**
 *@author :hly
-*@github :github.com/SiriusHly
+*@github :https://github.com/huangliangyun
 @blog :blog.csdn.net/Sirius_hly
 *@date :2018/8/16
 * admin相关所有css整合
@@ -64,7 +64,6 @@ header {
     width: 100%;
     height: 70px;
     background-color: #070705;
-
     /*border: 1px solid white;*/
 
 }
@@ -124,14 +123,12 @@ header img {
 /*start article_editor*/
 /*定义最小宽度*/
 .main {
-
     /*border: 1px solid #431aff;*/
     height:100%;
     position: absolute;
     top: 70px;
     width: 100%;
     min-width: 1300px;
-
     /*border: 1px solid red;*/
 }
 
@@ -177,18 +174,14 @@ header img {
     margin-left: 20px;
     font-size: 13px;
     color: black;
-
-
 }
 .article_type_select li:first-child{
    margin-left: 90px;
-
 }
 
 .article_type_select li:nth-child(odd){
     margin-top: 8px;
 }
-
 
 .article_type_select li select{
     width: 120px;
@@ -198,7 +191,6 @@ header img {
     border-radius: 5px;
     /*去掉点击后的边框*/
     outline: none;
-
 }
 
 /*end article type*/
@@ -211,8 +203,6 @@ header img {
     margin-bottom: 70px;
     height: 50px;
     width: 100%;
-
-
 }
 
 .article_operation input[type="button"]{
@@ -231,7 +221,6 @@ header img {
     color: white;
     background-color: #d32027;
 }
-
 
 .article_operation input[type="button"]:first-child{
     margin-left: 90px;
@@ -259,8 +248,6 @@ header img {
     bottom: 0;
     /*z-index: 6;*/
     height: auto;
-
-
 }
 
 .sidebar .nav > li > a {
@@ -272,7 +259,6 @@ header img {
 .sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus {
     background: #232a2f;
     color: #fe3d14;
-
 }
 
 .sidebar .nav > li > a i {
@@ -325,7 +311,6 @@ text-align: left;
     top: 50%;
     margin-top: -4px;
     margin-left: -6px;
-
 }
 
 .sidebar .sub-menu > li > a:focus, .sidebar .sub-menu > li > a:hover {
@@ -348,10 +333,6 @@ text-align: left;
     outline: none;
 }
 /*end admin_sidebar*/
-
-
-
-
 
 /*start foot*/
 /*页脚开始*/
@@ -399,6 +380,5 @@ text-align: left;
 }
 
 /*页脚结束*/
-
 /*end foot*/
 
