@@ -2,3 +2,33 @@
  /*z-index：正数，离用户更近*/
  css过度效果：http://www.w3school.com.cn/cssref/pr_transition.asp
  display ;https://www.cnblogs.com/Ry-yuan/p/6848197.html
+
+
+ display
+
+ inline
+ 1.行内元素特性，与其他内容共享一行，不会独占一行
+ 2.不改变元素的height,width的值，大小由内容撑开
+ 3.可以用padding,margin的left和right产生边距效果，top和bottom不行。
+
+ block
+ 1.元素变成块级，独占一行，不设置宽度，默认为父级元素宽度。
+ 2.能改变height和width的值
+ 3.可以设置padding和margin的各个属性的值
+
+ inline-block
+ 1.结合了inline第一个特点和block 2,3个特点
+ 2.不能独占一行的块级
+
+
+
+
+
+
+
+
+
+
+
+
+

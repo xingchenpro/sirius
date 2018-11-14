@@ -6,8 +6,8 @@
 */
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -15,7 +15,6 @@ body::-webkit-scrollbar {
 }
 
 body {
-
     background-color: rgba(252, 255, 232, 0.7);
 }
 
@@ -58,7 +57,6 @@ header nav {
 }
 
 
-
 header nav ul li a {
     color: #f4f4f4;
     padding: 0 15px;
@@ -67,7 +65,10 @@ header nav ul li a {
     float: right;
     line-height: 15px;
 }
-
+header nav ul li:first-child a{
+    font-size: 18px;
+    float: left;
+}
 header nav ul li a:hover, #current_nav {
     color: #892809;
     /*background-color: rgba(20, 20, 20, 0.8);
@@ -223,7 +224,7 @@ header .article_image figure  {
 }
 
 .article_Info p:hover {
-    color: #13f2ff;
+    color: #1babff;
 }
 
 .article_detail {

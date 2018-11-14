@@ -2,6 +2,13 @@
 *@author :hly
 *@github :https://github.com/huangliangyun
 @blog :blog.csdn.net/Sirius_hly
+*@date :2018/11/14
+*/
+
+/**
+*@author :hly
+*@github :https://github.com/huangliangyun
+@blog :blog.csdn.net/Sirius_hly
 *@date :2018/8/13
 */
 /**
@@ -134,7 +141,7 @@ header .article_image figure {
     width: 100%;
     /*这里最小宽度和#main最小宽度相同，响应式效果*/
     min-width: 1200px;
-    height: 420px;
+    height: 320px;
 }
 
 /*导航部分结束*/
@@ -147,6 +154,93 @@ header .article_image figure {
     /*这里最小宽度和图片最小宽度相同，响应式效果*/
     min-width: 1200px;
     /*border: 1px solid red;*/
+}
+
+.article-history {
+    background-color: white;
+    width: 1000px;
+    min-height: 700px;
+    /*border: 1px solid blue;*/
+    margin: 20px auto;
+}
+
+/*文章标签*/
+.article-history-tag {
+    width: inherit;
+    /*border: 1px solid black;*/
+    min-height: 50px;
+}
+
+.article-history-tag a {
+    font-size: 14px;
+    margin: 0 2px 8px;
+    line-height: 28px;
+    border: none;
+    display: inline-block;
+    border-radius: 999em;
+    /*inline只能设置left和right*/
+    padding: 0 10px 0 12px;
+    color: #feffe4;
+    background-color: #ff9b1a;
+    transition: all ease .4s;
+    cursor: pointer;
+}
+
+.article-history-tag a:first-child {
+    font-weight: 700;
+    background-color: white;
+    color: #005565;
+    box-shadow: rgba(0, 0, 0, .117647) 0 1px 6px, rgba(0, 0, 0, .239216) 0 1px 4px;
+}
+
+.article-history-tag a:hover {
+    background-color: #2f93b4;
+    color: white;
+}
+
+.article-history-tag a:focus {
+    box-shadow: rgba(0, 0, 0, .117647) 0 1px 6px, rgba(0, 0, 0, .239216) 0 1px 4px;
+}
+
+/*文章列表*/
+.article-history-lists {
+
+    /*border: 1px solid green;*/
+    width: inherit;
+    min-height: 200px;
+    margin: 35px auto 10px;
+}
+
+.article-history-lists ul{
+    margin: 0 auto ;
+    width: 950px;
+    /*border: 1px solid red;*/
+}
+
+.article-history-lists li {
+    margin: 0 auto 10px;
+    border-bottom:  1px solid #e3e2d7;
+    display: inline-block;
+    width: 950px;
+
+}
+
+.article-history-lists li a {
+    padding-bottom: 15px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    float: left;
+    transition: all linear 0.1s;
+}
+.article-history-lists li a:hover{
+    color: #2f93b4;
+}
+
+.article-history-lists li span {
+    padding-right: 15px;
+    float: right;
+    font-size: 18px;
 }
 
 /*页脚开始*/
@@ -181,64 +275,3 @@ header .article_image figure {
 }
 
 /*页脚结束*/
-
-.article_detail_panel {
-    /*min-height: 3500px;*/
-    min-height: 1600px;
-    width: 1100px;
-    /*float: left;*/
-    margin: 20px auto 10px;
-    height: auto;
-    overflow: auto;
-    border: none;
-}
-
-.article_chapter {
-    margin: 20px auto 0;
-    width: 1100px;
-    height: 80px;
-    /*border: 1px solid red;*/
-
-}
-
-.article_chapter li {
-   /* border: 1px solid #cee6e6;*/
-    height: 67px;
-    width: 280px;
-}
-
-.article_chapter li > a{
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    font-weight: bolder;
-    background-color: #d9ebe3;
-    /*https://www.cnblogs.com/Ry-yuan/p/6848197.html*/
-    /*使元素独占一行*/
-    display: inline-block;
-    padding: 13px;
-    /*相同时速过渡，快速变色*/
-    transition: linear;
-}
-
-.article_chapter li a:hover span{
-    color: white;
-}
-.article_chapter li a:hover{
-    background-color: #005565;
-    color: white;
-}
-
-.article_chapter li a span{
-    color: #e6bc77;
-    font-weight: normal;
-}
-
-.article_chapter .previous {
-
-    float: left;
-}
-
-.article_chapter .next {
-    float: right;
-}
