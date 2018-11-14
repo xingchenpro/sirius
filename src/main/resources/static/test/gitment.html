@@ -1,0 +1,29 @@
+<!--@author :hly
+@github :https://github.com/huangliangyun
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/11/14
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gitment</title>
+</head>
+<body>
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        owner: 'huangliangyun',
+        repo: 'sirius',
+        oauth: {
+            client_id: '2518ed86c51e0d4ab993',
+            client_secret: 'c3f88076ae14be2d1a44421e00851a5cc921938b',
+        },
+    });
+    gitment.render('gitmentContainer');
+</script>
+
+</body>
+</html>

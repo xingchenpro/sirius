@@ -4,14 +4,17 @@
 @date :2018/8/4
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>write_article</title>
+    <title>admin_all_article</title>
     <link rel="stylesheet" type="text/css" href="../../libs/assets/bootstrap-3.3.7/css/bootstrap.css">
-    <link href="../../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../../css/admin/admin.css" rel="stylesheet" type="text/css">
+    <link href="../../libs/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
     <script src="../../libs/js/jquery.min.js"></script>
+    <script src="../../libs/assets/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <link href="../../css/admin/admin.css" rel="stylesheet" type="text/css">
+    <link href="../../css/admin/admin_article_types.css" rel="stylesheet" type="text/css">
+
     <script src="../../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
     <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
     <script src="../../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
@@ -35,7 +38,7 @@
                 <li class="right_float"><a href="javascript:">退出</a></li>
                 <li class="right_float"><a href="javascript:">Hly</a></li>
                 <li class="right_float"><a href="../article/article_index.html"><img
-                        src="../../images/article_images/img_17.jpg"></a></li>
+                        src="../../images/article_images/img_4.jpg"></a></li>
                 <li class="right_float"><a href="#" class="btn btn-info btn-lg">
                     <span class="glyphicon glyphicon-pencil"></span>&nbsp写文章
                 </a>
@@ -48,7 +51,7 @@
     <!--start main-->
     <div class="main" id="main">
         <!--侧边栏-->
-        <div id="admin-sidebar" class="sidebar" >
+        <div id="admin-sidebar" class="sidebar">
             <!--begin sidebar scroller -->
             <div id="my-scrollbar">
                 <!--data-scrollbar="true" data-height="100%"-->
@@ -62,7 +65,7 @@
                             <span>文章管理</span>
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="javascript:">写文章</a> </li>
+                            <li><a href="javascript:">写文章</a></li>
                             <li><a href="javascript:">已发表</a></li>
                             <li><a href="javascript:">私&nbsp;&nbsp;&nbsp;&nbsp;密</a></li>
                             <li><a href="javascript:">草稿箱</a></li>
@@ -130,65 +133,37 @@
                             <li><a href="javascript:">签名</a></li>
                         </ul>
                     </li>
-
                 </ul>
 
-                <button type="button" id="admin-sidebar-button" style="margin-left:92%"><i class="fa fa-angle-double-left"></i></button>
+                <button type="button" id="admin-sidebar-button" style="margin-left:92%"><i
+                        class="fa fa-angle-double-left"></i></button>
                 <!--end sidebar nav-->
             </div>
-
             <!--end sidebar scroller-->
         </div>
-
         <!--end sidebar-->
-        <!--start article_edit-->
-        <div class="article_edit" id="article_edit">
 
-            <input class="title" type="text" placeholder="请输入文章标题">
+        <!--文章分类管理开始-->
 
-            <div class="my_editor" id="my_editor">
-
-                <iframe src="../simple.html" width="98%" height="1000px" scrolling="no" frameborder="0"></iframe>
-
+            <!--分页开始-->
+            <div class="page">
+                <ul class="pagination">
+                    <li><a href="#">首页</a></li>
+                    <li class="disabled"><a href="#">上一页</a></li>
+                    <li><a class="active" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">下一页</a></li>
+                    <li><a href="#">尾页</a></li>
+                </ul>
             </div>
-            <!--start type-->
-            <ul class="article_type_select">
-                <li>文章类型:</li>
-                <li>
-                    <select>
-                        <option>原创</option>
-                        <option>翻译</option>
-                        <option>转载</option>
-                    </select>
-                </li>
-                <li>文章分类:</li>
-                <li>
-                    <select>
-                        <option>Java</option>
-                        <option>Linux</option>
-                        <option>Docker</option>
-                        <option>MongoDB</option>
-                        <option>Redis</option>
-                        <option>SpringBoot</option>
+            <!--分页结束-->
 
-                    </select>
-                </li>
-            </ul>
+            <!--end article list part-->
 
-            <!--end type-->
-            <!--start btns-->
-            <div class="article_operation">
-                <input type="button" value="发布文章" class="submit_article">
-                <input type="button" value="保存草稿" class="article_save_draft">
-                <input type="button" value="返回" class="go_back">
-            </div>
-
-            <!--end my_editor-->
-        </div>
-        <!--end article edit-->
-
+        <!--end main-->
         <!--页脚-->
-        <div class="foot">
+       <!-- <div class="foot">
             <ul>
                 <li><a href="https://github.com/SiriusHly" target="_blank">联系作者</a></li>
                 <li><a href="javascript:" target="_blank">网站首页</a></li>
@@ -205,12 +180,9 @@
             <div id="ower">
                 Copyright&nbsp&copy&nbsp2018&nbsp huangliangyun.top &nbspAll Rights Reserved&nbsp|&nbsp琼&nbspICP备01号
             </div>
-        </div>
-
-        <!--页脚结束-->
+        </div>-->
     </div>
-    <!--end main-->
-
+    <!--页脚结束-->
     <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
 </div>
 <!--container end-->
