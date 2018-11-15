@@ -208,11 +208,12 @@ header .article_image figure {
 }
 
 .article_chapter li > a{
+    color: white;
     height: 100%;
     width: 100%;
     text-align: center;
     font-weight: bolder;
-    background-color: #d9ebe3;
+    background-color: #005565;
     /*https://www.cnblogs.com/Ry-yuan/p/6848197.html*/
     /*使元素独占一行*/
     display: inline-block;

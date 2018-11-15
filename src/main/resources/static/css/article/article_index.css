@@ -15,7 +15,9 @@ body::-webkit-scrollbar {
 }
 
 body {
-    background-color: rgba(252, 255, 232, 0.7);
+    /*background-color: rgba(252, 255, 232, 0.7);*/
+   /* background-color: rgb(37, 43, 68);*/
+    background: linear-gradient(#212741, rgb(37, 43, 68)); /* 标准的语法（必须放在最后） */
 }
 
 a {
@@ -232,7 +234,7 @@ header .article_image figure {
 }
 
 .article_detail {
-    background-color: rgba(16, 23, 51, 0.7);
+    background-color: rgb(16, 23, 51);
     border-radius: 0px 0px 6px 6px;
     padding: 0px 10px;
 }
@@ -257,7 +259,7 @@ header .article_image figure {
 }
 */
 
-.article_like, .article_comment {
+.article_like, .article-view {
     float: right;
     padding-left: 14px;
 }

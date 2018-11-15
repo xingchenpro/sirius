@@ -166,33 +166,13 @@ header img {
     text-indent: 1em;
 }
 
-/*start article type*/
-/*文章分类*/
-.article_type_select li{
-    float: left;
-    margin-left: 20px;
-    font-size: 13px;
-    color: black;
-}
-.article_type_select li:first-child{
-   margin-left: 90px;
-}
 
-.article_type_select li:nth-child(odd){
-    margin-top: 8px;
-}
+/*文章类型选择开始*/
+/*
 
-.article_type_select li select{
-    width: 120px;
-    height: 30px;
-    padding: 5px 10px 5px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    /*去掉点击后的边框*/
-    outline: none;
-}
+*/
 
-/*end article type*/
+/*文章类型选择结束*/
 
 /*编辑操作start*/
 
