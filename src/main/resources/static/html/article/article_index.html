@@ -10,7 +10,8 @@
     <title>article</title>
     <link href="../../libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../../css/article/article_index.css" type="text/css" rel="stylesheet">
-    <script src="../../js/header-sidebar.js"></script>
+
+
 </head>
 <body>
 
@@ -174,7 +175,7 @@
         <aside>
 
             <div class="web-info">
-                <h2>关于本站</h2>
+                <h2>关于作者</h2>
                 <ul class="user-info">
                     <li class="user-profile"><img src="../../images/thyme_images/img_99.jpg"/></li>
                     <li class="user-nickname">天狼星</li>
@@ -182,10 +183,19 @@
 
                     <li class="contact-user">
                         <ul>
-                            <li><a href="#"><img src="../../images/user/wechat.jpg"/></a></li>
-                            <li><a href="#"><img src="../../images/user/qq.jpg"/></a></li>
-                            <li><a href="#"><img src="../../images/user/github.jpg"/></a></li>
-                            <li><a href="#"><img src="../../images/user/csdn.jpg"/></a></li>
+                            <li>
+                                <a id="weChatBtn">
+                                    <img src="../../images/user/wechat.jpg"/>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a href="//shang.qq.com/wpa/qunwpa?idkey=4d1b248a81fd3e64c8eda3bdcf257adf6c6b17cfe6322ec5fcec3d669ec35bef"
+                                   target="_blank"><img src="../../images/user/qq.jpg"/></a></li>
+                            <li><a href="https://github.com/huangliangyun" target="_blank"><img
+                                    src="../../images/user/github.jpg"/></a></li>
+                            <li><a href="https://blog.csdn.net/Sirius_hly" target="_blank"><img
+                                    src="../../images/user/csdn.jpg"/></a></li>
                         </ul>
                     </li>
 
@@ -195,8 +205,6 @@
                     <li>文章&nbsp;<span>435</span></li>
                     <li>浏览&nbsp;<span>141241</span></li>
                 </ul>
-
-
             </div>
 
             <!-- <div class="hot_article">
@@ -257,21 +265,21 @@
             <div class="article-classify article-archived">
                 <h2>文章归档</h2>
                 <ul>
-                <li>
-                    <a href="javascript:">2018年10月<span>18篇</span></a>
-                </li>
-                <li>
-                    <a href="javascript:">2018年09月<span>18篇</span></a>
-                </li>
-                <li>
-                    <a href="javascript:">2018年08月<span>18篇</span></a>
-                </li>
-                <li>
-                    <a href="javascript:">2018年07月<span>18篇</span></a>
-                </li>
-                <li>
-                    <a href="javascript:">2018年06月<span>18篇</span></a>
-                </li>
+                    <li>
+                        <a href="javascript:">2018年10月<span>18篇</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:">2018年09月<span>18篇</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:">2018年08月<span>18篇</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:">2018年07月<span>18篇</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:">2018年06月<span>18篇</span></a>
+                    </li>
 
                 </ul>
 
@@ -319,5 +327,14 @@
     </div>
 </div>
 <!--页脚结束-->
+
 </body>
+<div id="weChatCode" class="hide">
+    <img src="../../images/user/qq.jpg">
+</div>
+
+<script src="../../libs/assets/jquery/jquery-3.1.1.js"></script>
+<script src="../../js/header-sidebar.js"></script>
+<script src="../../libs/assets/layer-v3.1.1/layer/layer.js"></script>
+<script src="../../js/article_index.js"></script>
 </html>

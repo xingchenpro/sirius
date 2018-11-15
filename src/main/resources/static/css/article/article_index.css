@@ -338,7 +338,7 @@ aside div {
 }
 
 /*联系作者*/
-.contact-user img {
+.contact-user ul li a > img {
     border-radius: 7px;
     width: 40px;
     height: 40px;
@@ -350,13 +350,24 @@ aside div {
    /* border: 1px solid red;*/
 }
 
+/*微信图标*/
+#weChatBtn{
+    cursor: pointer;
+
+}
+
+.hide{
+    display: none;
+
+}
 .contact-user li {
     width: 25%;
     float: left;
+
 }
 
 .blog-info {
-    margin: 10px auto 20px;
+    margin: 20px auto 30px;
     /*border: 1px solid red;*/
 }
 
