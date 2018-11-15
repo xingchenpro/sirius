@@ -28,18 +28,23 @@ a:hover {
     text-decoration: none;
 }
 
+a:focus {
+    text-decoration: none;
+}
+
 ul, ol {
     text-decoration: none;
     list-style-type: none;
 }
 
-header{
+header {
     width: 100%;
     /*border: 1px solid red;*/
     /*设置最小宽度和main最小宽度相同，缩小后布局完整*/
     min-width: 1200px;
     position: relative;
 }
+
 header nav {
     font-weight: bold;
     margin: 0 auto;
@@ -56,7 +61,6 @@ header nav {
     z-index: 1;
 }
 
-
 header nav ul li a {
     color: #f4f4f4;
     padding: 0 15px;
@@ -65,10 +69,12 @@ header nav ul li a {
     float: right;
     line-height: 15px;
 }
-header nav ul li:first-child a{
+
+header nav ul li:first-child a {
     font-size: 18px;
     float: left;
 }
+
 header nav ul li a:hover, #current_nav {
     color: #892809;
     /*background-color: rgba(20, 20, 20, 0.8);
@@ -103,11 +109,11 @@ header .article_image figure figcaption {
     position: absolute;
     top: 50%;
     left: 50%;
-   transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
 }
 
-header .article_image figure figcaption p{
+header .article_image figure figcaption p {
     font-weight: normal;
     font-size: 18px;
     text-align: center;
@@ -117,8 +123,8 @@ header .article_image figure figcaption p{
     opacity: 1;
 }*/
 
-header .article_image figure  {
-    background: url("../../images/thyme_images/img_99.jpg") ;
+header .article_image figure {
+    background: url("../../images/thyme_images/img_99.jpg");
     background-size: 100%;
     width: 100%;
     /*这里最小宽度和#main最小宽度相同，响应式效果*/
@@ -137,7 +143,6 @@ header .article_image figure  {
     min-width: 1200px;
     /*border: 1px solid red;*/
 }
-
 
 .articles {
 
@@ -179,10 +184,9 @@ header .article_image figure  {
 
 }
 
-.article_list .article_title a{
+.article_list .article_title a {
     color: #f4f4f4;
 }
-
 
 .article_list h2 a:hover {
     padding-left: 20px;
@@ -240,9 +244,11 @@ header .article_image figure  {
     margin-right: 10px;
     color: white;
 }
-.article_detail li a{
+
+.article_detail li a {
     color: white;
 }
+
 /*
 .article_detail li a:hover {
     color: rgba(240, 246, 243, 0.7);
@@ -262,7 +268,7 @@ header .article_image figure  {
 
 /*文章列表结束*/
 
-/*右边栏部分*/
+/*右边栏部分开始*/
 aside {
     right: 160px;
     /*right: 160px;
@@ -283,89 +289,125 @@ aside h2 {
     text-shadow: 1px 1px 1px black;
     color: white;
     margin-top: 5px;
+    font-weight: 500;
 }
 
 aside div {
-
     border-radius: 6px;
     padding: 15px;
     margin-bottom: 20px;
 
 }
 
-/*个人资料开始*/
-#main .personal_Info {
-    height: 250px;
-    background-color: rgba(184, 255, 255, 0.7);
+/*右边栏部分结束*/
+
+/*网站信息开始*/
+.web-info {
+    background-color: #101733;
 }
 
-#main .personal_Info hr {
-    margin: 5px 0;
-}
+/*用户信息*/
+.user-info {
 
-.user_achieve {
+    /*border: 1px solid blue;*/
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.user_achieve ul {
-    margin-top: 5px;
+.user-info li {
+    margin-top: 8px;
+
+}
+/*用户头像*/
+.user-profile img {
+
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
-.user_achieve li {
-    float: left;
-    margin: 15px 20px 0px;
+.user-nickname {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
-.personal_Info img {
+.user-wisdom {
+    font-size: 14px;
+    color: #e1143e;
+}
+
+/*联系作者*/
+.contact-user img {
+    border-radius: 7px;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    vertical-align: middle;
 }
 
-/*
-.id_achieve{
-margin-top: 40px;
-
+.contact-user {
+    width: 100%;
+    display: inline-block;
+   /* border: 1px solid red;*/
 }
-.id_achieve li:nth-child(odd){
+
+.contact-user li {
+    width: 25%;
     float: left;
-    margin: 5px 25px 20px 5px;
 }
 
-.id_achieve li:nth-child(even){
+.blog-info {
+    margin: 10px auto 20px;
+    /*border: 1px solid red;*/
+}
+
+.blog-info li {
+    color: white;
+    text-align: center;
+    /* border: 1px solid green;*/
+    display: block;
+    width: 50%;
     float: left;
-    margin: 5px 25px 20px 5px;
-}
-*/
-
-/*个人资料结束*/
-/*最新评论开始*/
-.article_new_comment {
-    background-color: rgba(191, 255, 152, 0.7);
 }
 
-.article_new_comment li {
-    margin-top: 8px;
+/*网站信息结束*/
+/*文章分类和归档开始*/
+
+.article-classify {
+    background-color: #ffc30d;
 }
 
-.article_new_comment li p {
-    text-indent: 2em;
+.article-classify ul {
+    width: 100%;
+    /*border: 1px solid red;*/
+
 }
 
-.article_new_comment h3 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 5px;
-    color: black;
+.article-classify ul li {
+    margin-top: 3px;
+    width: 100%;
+    /*行内块，元素单独显示一行，块状*/
+    display: inline-block;
+    /* border: 1px solid black;*/
 }
 
-.article_new_comment p {
-    margin-top: 2px;
+.article-classify ul > li a {
+    /*a宽度为100%，span写在a里边，给一整行添加点击事件*/
+    width: 100%;
+    float: left;
 }
 
-/*最新评论结束*/
+.article-classify ul > li a:hover {
+    color: #1babff;
+}
+
+.article-classify ul > li a span {
+    float: right;
+}
+
+/*文章归档背景*/
+.article-archived {
+    background-color: rgba(255, 70, 17, 0.7);
+}
 
 /*热门文章开始*/
 .hot_article {
@@ -412,27 +454,6 @@ margin-top: 40px;
 }
 
 /*热门文章结束*/
-/*文章分类和归档开始*/
-
-.article_classify {
-    background-color: #ffc30d;
-}
-
-.article_archived {
-    background-color: rgba(255, 70, 17, 0.7);
-}
-
-.article_classify ul, .article_archived ul {
-    margin-top: 10px;
-}
-
-.article_type, .article_month {
-    float: left;
-}
-
-.article_type_num, .article_month_num {
-    float: right;
-}
 
 /*文章分类和归档结束*/
 
