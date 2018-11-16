@@ -60,3 +60,21 @@ setTimeout(function () {
 setTimeout(function () {
     document.body.classList.add('document-loaded');
 }, 1800);
+
+//提取表单信息
+
+function checkUser() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if(username==""||username==undefined){
+        alert("请输入账号");
+        return false;
+    }
+    if(password == ""||password==undefined){
+        alert("请输入密码");
+        return false;
+    }
+    else{document.getElementById("loginForm").submit();}
+
+
+}

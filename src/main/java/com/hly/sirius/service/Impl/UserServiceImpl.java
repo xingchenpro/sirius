@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
 
 	//@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED,rollbackFor = Exception.class)
 	@Override
-	public User selectUserById(String userId) {
-		return userDao.selectUserById(userId);
+	public User selectUserById(String username) {
+		return userDao.selectUserById(username);
 	}
 
 	@Override

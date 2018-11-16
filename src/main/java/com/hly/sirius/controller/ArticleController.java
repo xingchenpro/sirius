@@ -68,7 +68,6 @@ public class ArticleController {
     public ModelAndView articleContent(@RequestBody Article article) {
         System.err.println("文章标题\n"+article.getArticleTitle());
         System.err.println("MD文本:\n"+article.getArticleContent());
-        System.err.println("articleStatus:\n"+article.getArticleStatus());
         article.setArticleCreateTime(DateUtil.getCurrentDateString());
         System.err.println(article.toString());
         articleService.insertArticle(article);

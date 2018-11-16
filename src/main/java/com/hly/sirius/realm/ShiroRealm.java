@@ -23,6 +23,11 @@ public class ShiroRealm extends AuthorizingRealm {
     @Autowired
     UserService userService;
 
+    /**
+     * 权限认证
+     * @param principalCollection
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
@@ -37,14 +42,14 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        String userId = (String) authenticationToken.getPrincipal();
-        User user = userService.selectUserById(userId);
+        String username = (String) authenticationToken.getPrincipal();
+        User user = userService.selectUserById(username);
         //System.err.println(user.toString());
         if (user != null) {
             System.err.println(user.toString());
             //保存当前用户到session
             SecurityUtils.getSubject().getSession().setAttribute("currentUser", user);
-            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUserId(), user.getUserPassword(), "realmName");
+            AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), "realmName");
             return authenticationInfo;
         } else {
             return null;

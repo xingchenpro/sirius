@@ -13,10 +13,10 @@ public interface UserService {
 	
 	/**
 	 * 查询用户
-	 * @param userId
+	 * @param username
 	 * @return
 	 */
-	public User selectUserById(String userId);
+	public User selectUserById(String username);
 	
 	/**
 	 * 添加用户

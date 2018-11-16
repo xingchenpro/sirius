@@ -41,7 +41,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: white;
 }
 
-
+ 防止编辑器css冲突造成的组件覆盖问题可用此方法
+ position: relative;
+ z-index: 10;
 
 
 

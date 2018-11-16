@@ -43,32 +43,43 @@
                 <div th:replace="article/simple::html"></div>
 
             </div>
-            <!--start type-->
-            <ul class="article_type_select">
-                <li>文章类型:</li>
-                <li>
-                    <select>
-                        <option>原创</option>
-                        <option>翻译</option>
-                        <option>转载</option>
-                    </select>
-                </li>
-                <li>文章分类:</li>
-                <li>
-                    <select>
-                        <option>Java</option>
-                        <option>Linux</option>
-                        <option>Docker</option>
-                        <option>MongoDB</option>
-                        <option>Redis</option>
-                        <option>SpringBoot</option>
 
-                    </select>
-                </li>
+            <!--文章类型选择开始-->
+            <!--添加类型开始-->
+            <div class="add-category">
+               <!-- <div class="input-category">
+                    <input type="text" placeholder="输入分类">
+                    <i class="del fa fa-remove"></i>
+                </div>-->
+                <span class="add-type">&nbsp;&nbsp;添加标签</span>
 
+            </div>
+
+            <!--添加类型结束-->
+
+            <!--单选按钮开始-->
+            <ul class="article-category-select">
+                <li><input type="checkbox" id="checkbox1" class="chk"/><label for="checkbox1">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox2" class="chk"/><label for="checkbox2">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox3" class="chk"/><label for="checkbox3">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox4" class="chk"/><label for="checkbox4">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox5" class="chk"/><label for="checkbox5">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox6" class="chk"/><label for="checkbox6">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox7" class="chk"/><label for="checkbox7">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox8" class="chk"/><label for="checkbox8">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox9" class="chk"/><label for="checkbox9">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
             </ul>
-
-            <!--end type-->
+            <!--单选按钮结束-->
+            <!--文章类型选择结束-->
             <!--start btns-->
             <div class="article_operation">
                 <input type="button" value="发布文章" class="submit_article" id="submit_article">

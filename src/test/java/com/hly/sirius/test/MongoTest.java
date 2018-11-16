@@ -30,8 +30,8 @@ public class MongoTest {
     @Test
     public void saveUser(){
         User user = new User();
-        user.setUserId("hly");
-        user.setUserPassword("123");
+        user.setUsername("hly");
+       user.setPassword("123");
         mongoTemplate.save(user);
     }
 

@@ -1,0 +1,5 @@
+1.一个页面引入其他页面时，静态资源只在当前页面引入有效，引入方式为thymeleaf语法
+2.thymeleaf引入其他页面时，会先加载本页面静态资源，然后加载其他页面静态资源，
+为防止其他页面静态资源覆盖本页面静态资源，可以把本页面静态资源放到待加载页面
+如把admin的 <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{css/admin/admin.css}">
+放到文章编辑页面。

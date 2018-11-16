@@ -31,8 +31,7 @@ public class ShiroConfig {
         //拦截器
         Map<String ,String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         //配置不会拦截的连接
-        filterChainDefinitionMap.put("/register","anon");
-        filterChainDefinitionMap.put("/login","anon");
+        filterChainDefinitionMap.put("/user/login","anon");
         filterChainDefinitionMap.put("/index","anon");
         //springboot默认会将static目录中的内容做为classes根目录的内容发布到web服务器,处理静态资源不能/static/**
         filterChainDefinitionMap.put("/css/**","anon");

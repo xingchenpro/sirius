@@ -166,24 +166,27 @@ header img {
 }
 
 .my_editor {
-
+    position: relative;
+    /*防止编辑器css冲突*/
+    z-index: 10;
     margin-top: 20px;
     overflow: hidden;
     margin-left: 15px;
     /*border: 1px solid green;*/
     height: auto;
     width: 98%;
+    clear: both;
 }
 
 .article_edit .title {
+    text-align: center;
     color: black;
     border: none;
     outline: none;
     background-color: #efefef;
     height: 30px;
-    margin-top: 35px;
-    width: 86%;
-    margin-left: 6%;
+    width: 100%;
+   margin: 35px auto 0;
     font-size: 15px;
     text-indent: 1em;
 }
@@ -217,9 +220,7 @@ header img {
 }
 
 /*分类输入*/
-.input-category {
 
-}
 
 .input-category input[type="text"] {
     line-height: 30px;
@@ -240,12 +241,11 @@ header img {
     color: white;
     cursor: pointer;
     width: 20px;
-    height: 30px;
+    height:inherit;
    /* border: 1px solid blue;*/
     float: left;
     padding-left: 5px;
     margin-right: 10px;
-
     background-color: #005565;
 }
 
@@ -302,7 +302,7 @@ header img {
     height: 16px;
     top: 6px;
     right: 9px;
-    z-index: 999;
+    z-index: 5;
     box-shadow: inset 0px 16px 40px #ff6311;
     display: none;
 }
@@ -329,6 +329,8 @@ header img {
     margin-bottom: 20px;
     height: 50px;
     width: 100%;
+    text-align: left;
+
 }
 
 .article_operation input[type="button"] {

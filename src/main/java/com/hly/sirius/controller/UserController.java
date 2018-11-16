@@ -27,32 +27,32 @@ import javax.servlet.http.HttpSession;
  * @date 2018年9月13日 下午6:22:04
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
 	UserService userService;
 	/**
 	 * 登录
-	 * @param userId
-	 * @param userPassword
+	 * @param username
+	 * @param password
 	 * @return
 	 */
 	@RequestMapping("/login")
-   public ModelAndView login(@RequestParam(value="user_id",required=false) String userId, @RequestParam(value="user_password",required=false)String userPassword, HttpSession session){
+   public ModelAndView login(@RequestParam(value="username",required=false) String username, @RequestParam(value="password",required=false)String password, HttpSession session){
 
 		ModelAndView mView = new ModelAndView();
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken(userId, CryptographyUtil.md5(userPassword,userId));
+		UsernamePasswordToken token = new UsernamePasswordToken(username, CryptographyUtil.md5(password,username));
 		try {
 			subject.login(token);
-			session.setAttribute("userId",userId);
-			mView.setViewName("/admin");
+			session.setAttribute("username",username);
+			mView.setViewName("/admin/admin");
 			return mView;
 		} catch (AuthenticationException e) {
 			System.err.println("用户名或密码错误");
 			e.printStackTrace();
-			mView.setViewName("/login");
+			mView.setViewName("/user/login");
 			return mView;
 		}
 	}
@@ -62,11 +62,11 @@ public class UserController {
 	 * @param
 	 * @return
 	 */
-	@RequestMapping("/register")
-	public ModelAndView register(@RequestParam(value="user_id",required=false)String userId,@RequestParam(value="user_password",required=false)String userPassword){
+	//@RequestMapping("/register")
+	public ModelAndView register(@RequestParam(value="username",required=false)String username,@RequestParam(value="password",required=false)String password){
 		ModelAndView mView = new ModelAndView();
 			try {
-				User user = new User(userId, CryptographyUtil.md5(userPassword,userId));
+				User user = new User(username, CryptographyUtil.md5(password,username));
 				System.err.println(user.toString());
 				userService.insertUser(user);
 				mView.setViewName("/login");
@@ -77,26 +77,6 @@ public class UserController {
 			}
 	}
 	
-	/**
-	 * 主页
-	 * @return
-	 */
-	@RequestMapping("/index")
-	public ModelAndView index(){
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("/index");
-		return mView;
-	}
 
-	/**
-	 * 初始化页面
-	 * @return
-	 */
-	@RequestMapping("/")
-	public ModelAndView preLogin(){
-		ModelAndView mView = new ModelAndView();
-		mView.setViewName("/login");
-		return mView;
-	}
 
 }

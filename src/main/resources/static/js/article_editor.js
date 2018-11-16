@@ -44,8 +44,6 @@ $(document).ready(function () {
         });
     }
 
-
-
     //添加分类
         $('.add-type').click(function () {
             var tpye = '<div class="input-category">'+

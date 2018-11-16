@@ -7,16 +7,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>write_article</title>
+    <title>admin</title>
 
     <!--bootstrap-3.3.7-->
     <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css"
           th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}">
-    <!--font-awesome-4.1.0-->
-    <link href="../../static/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
-          th:href="@{/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css}">
-    <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{/css/admin.css}">
+    <!--font-awesome-4.7.0-->
+    <link href="../../static/libs/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+          th:href="@{/libs/assets/font-awesome-4.7.0/css/font-awesome.min.css}">
 
+    <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{/css/admin/admin.css}">
     <!--隐藏滑轮依赖-->
     <script src="../../static/libs/assets/jquery/jquery-3.1.1.js"
             th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
@@ -51,13 +51,13 @@
         <div class="article_edit" id="article_edit" th:replace="article/article_editor::article_editor"></div>
         <!--end article edit-->
 
+        <!--页脚-->
+        <!--放到main里边解决布局混乱问题-->
+        <div th:include="common/foot::footer" class="foot"></div>
+        <!--页脚结束-->
     </div>
     <!--end main-->
-    <!--页脚-->
-    <div th:include="common/foot::footer" class="foot"></div>
-    <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
 
-    <!--页脚结束-->
 
 </div>
 <!--container end-->
