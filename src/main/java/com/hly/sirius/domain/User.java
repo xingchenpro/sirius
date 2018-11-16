@@ -1,46 +1,37 @@
 package com.hly.sirius.domain;
 
 /**
- * @author hly
- * @blog:https://blog.csdn.net/Sirius_hly
- * @github: https://github.com/huangliangyun
- * @date 2018年9月12日 下午7:21:50
+ * @author :hly
+ * @github :https://github.com/huangliangyun
+ * @blog :blog.csdn.net/Sirius_hly
+ * @date :2018/11/16
  */
 public class User {
-	
-	private String userId;
-	private String userPassword;
 
-	public User() {
-	}
+    private String username;
+    private String password;
 
-	public User(String userId, String userPassword) {
-		super();
-		this.userId = userId;
-		this.userPassword = userPassword;
-	}
-	
-	public String getUserId() {
-		return userId;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getUserPassword() {
-		return userPassword;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-				"userId='" + userId + '\'' +
-				", userPassword='" + userPassword + '\'' +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

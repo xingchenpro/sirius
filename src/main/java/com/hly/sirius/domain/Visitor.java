@@ -8,35 +8,24 @@ import javax.persistence.*;
  * @blog :blog.csdn.net/Sirius_hly
  * @date :2018/10/4
  */
-@Entity
+//@Entity
 public class Visitor {
-
-    @Id
+    //11属性
+    //@Id
     //修改主键生成规则，不会自动生成hibernate_sequence表，https://www.imooc.com/qadetail/263950
     //根据底层数据库自动增长方式
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int visitorId;
     private String visitorName;
+    private int visitorViewNum;
     private String visitorQQ;
     private String visitorTel;
+    private String visitorUnit;
     private String visitorEmail;
     private String visitorBlog;
     private String visitorGithub;
     private String visitorIP;
-
-    public Visitor() {
-    }
-
-    public Visitor(int visitorId, String visitorName, String visitorQQ, String visitorTel, String visitorEmail, String visitorBlog, String visitorGithub, String visitorIP) {
-        this.visitorId = visitorId;
-        this.visitorName = visitorName;
-        this.visitorQQ = visitorQQ;
-        this.visitorTel = visitorTel;
-        this.visitorEmail = visitorEmail;
-        this.visitorBlog = visitorBlog;
-        this.visitorGithub = visitorGithub;
-        this.visitorIP = visitorIP;
-    }
+    private String visitorWords;
 
     public int getVisitorId() {
         return visitorId;
@@ -54,6 +43,14 @@ public class Visitor {
         this.visitorName = visitorName;
     }
 
+    public int getVisitorViewNum() {
+        return visitorViewNum;
+    }
+
+    public void setVisitorViewNum(int visitorViewNum) {
+        this.visitorViewNum = visitorViewNum;
+    }
+
     public String getVisitorQQ() {
         return visitorQQ;
     }
@@ -68,6 +65,14 @@ public class Visitor {
 
     public void setVisitorTel(String visitorTel) {
         this.visitorTel = visitorTel;
+    }
+
+    public String getVisitorUnit() {
+        return visitorUnit;
+    }
+
+    public void setVisitorUnit(String visitorUnit) {
+        this.visitorUnit = visitorUnit;
     }
 
     public String getVisitorEmail() {
@@ -102,17 +107,28 @@ public class Visitor {
         this.visitorIP = visitorIP;
     }
 
+    public String getVisitorWords() {
+        return visitorWords;
+    }
+
+    public void setVisitorWords(String visitorWords) {
+        this.visitorWords = visitorWords;
+    }
+
     @Override
     public String toString() {
         return "Visitor{" +
                 "visitorId=" + visitorId +
                 ", visitorName='" + visitorName + '\'' +
+                ", visitorViewNum=" + visitorViewNum +
                 ", visitorQQ='" + visitorQQ + '\'' +
                 ", visitorTel='" + visitorTel + '\'' +
+                ", visitorUnit='" + visitorUnit + '\'' +
                 ", visitorEmail='" + visitorEmail + '\'' +
                 ", visitorBlog='" + visitorBlog + '\'' +
                 ", visitorGithub='" + visitorGithub + '\'' +
                 ", visitorIP='" + visitorIP + '\'' +
+                ", visitorWords='" + visitorWords + '\'' +
                 '}';
     }
 }

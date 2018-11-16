@@ -184,6 +184,9 @@ header .article_image figure {
     background-color: #ff9b1a;
     transition: all ease .4s;
     cursor: pointer;
+    box-shadow: inset 0 50px 37px -30px rgba(255, 222, 197, 0.3), 0 0 13px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid #ECA14F;
+
 }
 
 .article-history-tag a:first-child {
@@ -194,6 +197,7 @@ header .article_image figure {
 }
 
 .article-history-tag a:hover {
+    border-top: 1px solid #2f93b4;
     background-color: #2f93b4;
     color: white;
 }

@@ -1,0 +1,210 @@
+/**
+*@author :hly
+*@github :https://github.com/huangliangyun
+@blog :blog.csdn.net/Sirius_hly
+*@date :2018/11/10
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+
+    width: 100%;
+    background: white;
+    font-size: 12px;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #707478
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: #242a30
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-size: 60%;
+    font-weight: 300;
+}
+
+a {
+    color: black;
+    transition: color 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out;
+    -webkit-transition: color 100ms ease-in-out
+
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none;
+
+}
+
+ul, ol {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/*这里的宽度是相对于父类容器的宽度，也就是相对于main的宽度*/
+.admin-articles-list-part {
+    width: 82%;
+    float: left;
+    /*border: 1px solid red;*/
+    margin-left: 230px;
+
+}
+
+/*按条件查找div*/
+.admin-articles-select {
+
+    /* border: 1px solid blue;*/
+    height: 70px;
+    margin-top: 12px;
+    background-color: rgba(244, 244, 244, 0.7);
+
+}
+
+.admin-articles-select h5 {
+    color: black;
+    float: left;
+    margin-left: 75px;
+    line-height: 50px;
+}
+
+/*关键字搜索*/
+/*按关键字搜索，因为在搜做部分的里边，所以设置为上内边距*/
+.admin-articles-select .search {
+
+    overflow: no-display;
+    padding-top: 17px;
+
+}
+
+.admin-articles-select-button li {
+    line-height: 70px;
+    float: left;
+    margin-left: 20px;
+    font-size: 13px;
+    color: black;
+}
+
+.admin-articles-select-button li select {
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    /*去掉点击后的边框*/
+    outline: none;
+
+}
+
+/*文章列表管理开始*/
+.admin-article-list {
+
+    margin: 10px 0;
+    /*border: 1px solid #141aff;*/
+
+}
+
+/*每一篇文章的列表*/
+.admin-article-list > li {
+
+    margin: 10px 0;
+    height: 72px;
+    border-bottom: 1px solid #f4d7c7;
+    /*  border: 1px solid green;*/
+
+}
+
+.admin-article-list h4 {
+    margin-top: 15px;
+    margin-left: 18px;
+}
+
+.admin-article-info {
+    margin-left: 10px;
+    float: left;
+}
+
+.admin-article-operate {
+
+    margin-right: 20px;
+    float: right;
+}
+
+.admin-article-operate > li, .admin-article-info li {
+    margin: 5px 15px 0;
+    float: left;
+}
+.admin-article-operate > li:first-child, .admin-article-info li:first-child {
+    margin-left: 8px;
+}
+
+.admin-article-info li i, .admin-article-operate li i {
+    /*由于是在Li标签里面，所以用padding*/
+    padding-right: 3px;
+}
+
+/*分页查询*/
+
+.page {
+    text-align: center;
+    margin: 22px auto 0px;
+    font-size: 10px;
+
+}
+
+.page ul.pagination {
+    /*https://www.cnblogs.com/hy-sunny/p/5602236.html*/
+    /*行内块元素*/
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.page ul.pagination li {
+    /*与其他元素在同一行上*/
+    display: inline-block;
+    margin: 5px 5px;
+
+}
+
+.page ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 10px 16px;
+    transition: background-color .3s;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.page ul.pagination li a.active {
+    color: white;
+    background-color: black;
+}
+
+.page ul.pagination li a:hover:not(.active) {
+    background-color: #fe6c0b;
+    color: #dddddd;
+}
+
+/*文章列表管理结束*/
