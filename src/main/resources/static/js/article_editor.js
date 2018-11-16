@@ -44,5 +44,23 @@ $(document).ready(function () {
         });
     }
 
+
+
+    //添加分类
+        $('.add-type').click(function () {
+            var tpye = '<div class="input-category">'+
+                '<input type="text" placeholder="输入分类">'+
+                '<i class="del fa fa-remove">'+'</i>'+
+                '</div>';
+
+            $('.add-category').prepend(tpye);
+            $(".input-category input").focus();
+
+            // 删除表单
+            $('.del').click(function () {
+                $(this).parent().remove();
+            });
+        });
+
 });
 

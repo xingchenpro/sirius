@@ -9,17 +9,47 @@
     <meta charset="UTF-8">
     <title>write_article</title>
     <link rel="stylesheet" type="text/css" href="../../libs/assets/bootstrap-3.3.7/css/bootstrap.css">
-    <link href="../../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <link href="../../libs/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../../css/admin/admin.css" rel="stylesheet" type="text/css">
-    <script src="../../libs/assets/jquery/jquery-3.1.1.js"></script>
+    <script src="../../libs/js/jquery.min.js"></script>
+    <script src="../../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
+    <script src="../../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../js/article_editor.js"></script>
+    <script src="../../js/article_sidebar.js"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
 </head>
 <body>
 <div id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li class="left_float"><a href="#">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a></li>
+                <li class="left_float"><a href="javascript:"><h4>文章管理中心</h4></a></li>
+                <li class="right_float"><a href="javascript:">退出</a></li>
+                <li class="right_float"><a href="javascript:">Hly</a></li>
+                <li class="right_float"><a href="../article/article_index.html"><img
+                        src="../../images/article_images/img_5.jpg"></a></li>
+                <li class="right_float"><a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp写文章
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
+    <!--导航结束-->
     <!--start main-->
     <div class="main" id="main">
+        <!--侧边栏-->
 
+        <!--end sidebar-->
         <!--start article_edit-->
         <div class="article_edit" id="article_edit">
 
@@ -27,35 +57,46 @@
 
             <div class="my_editor" id="my_editor">
 
-                <iframe src="simple.html" width="1250px" height="1000px" scrolling="no" frameborder="0"></iframe>
+                <iframe src="../article/simple.html" width="98%" height="1000px" scrolling="no"
+                        frameborder="0"></iframe>
 
             </div>
-            <!--start type-->
-            <ul class="article_type_select">
-                <li>文章类型:</li>
-                <li>
-                    <select>
-                        <option>原创</option>
-                        <option>翻译</option>
-                        <option>转载</option>
-                    </select>
-                </li>
-                <li>文章分类:</li>
-                <li>
-                    <select>
-                        <option>Java</option>
-                        <option>Linux</option>
-                        <option>Docker</option>
-                        <option>MongoDB</option>
-                        <option>Redis</option>
-                        <option>SpringBoot</option>
+            <!--文章类型选择开始-->
+            <!--添加类型开始-->
+            <div class="add-category">
+                <div class="input-category">
+                    <input type="text" placeholder="输入分类">
+                    <i class="del fa fa-remove"></i>
+                </div>
+                <span class="add-type">&nbsp;&nbsp;添加标签</span>
 
-                    </select>
-                </li>
+            </div>
 
+            <!--添加类型结束-->
+
+            <!--单选按钮开始-->
+            <ul class="article-category-select">
+                <li><input type="checkbox" id="checkbox1" class="chk"/><label for="checkbox1">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox2" class="chk"/><label for="checkbox2">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox3" class="chk"/><label for="checkbox3">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox4" class="chk"/><label for="checkbox4">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox5" class="chk"/><label for="checkbox5">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox6" class="chk"/><label for="checkbox6">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox7" class="chk"/><label for="checkbox7">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox8" class="chk"/><label for="checkbox8">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox9" class="chk"/><label for="checkbox9">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
             </ul>
-
-            <!--end type-->
+            <!--单选按钮结束-->
+            <!--文章类型选择结束-->
             <!--start btns-->
             <div class="article_operation">
                 <input type="button" value="发布文章" class="submit_article">
@@ -65,45 +106,36 @@
 
             <!--end my_editor-->
         </div>
+
         <!--end article edit-->
+
+        <!--页脚-->
+        <div class="foot">
+            <ul>
+                <li><a href="https://github.com/SiriusHly" target="_blank">联系作者</a></li>
+                <li><a href="javascript:" target="_blank">网站首页</a></li>
+                <li><a href="javascript:" target="_blank">企业合作</a></li>
+                <li><a href="javascript:" target="_blank">人才招聘</a></li>
+                <li><a href="javascript:" target="_blank">招程序猿</a></li>
+                <li><a href="javascript:" target="_blank">常见问题</a></li>
+                <li><a href="javascript:" target="_blank">意见反馈</a></li>
+                <li><a href="javascript:" target="_blank">拜师求学</a></li>
+                <li><a href="javascript:" target="_blank"></a></li>
+                <li><a href="javascript:" target="_blank"></a></li>
+                <li><a href="javascript:" target="_blank"></a></li>
+            </ul>
+            <div id="ower">
+                Copyright&nbsp&copy&nbsp2018&nbsp huangliangyun.top &nbspAll Rights Reserved&nbsp|&nbsp琼&nbspICP备01号
+            </div>
+        </div>
+
+        <!--页脚结束-->
     </div>
     <!--end main-->
 
-    <!--页脚-->
-    <div class="foot">
-        <ul>
-            <li><a href="https://github.com/SiriusHly" target="_blank">联系作者</a></li>
-            <li><a href="javascript:" target="_blank">网站首页</a></li>
-            <li><a href="javascript:" target="_blank">企业合作</a></li>
-            <li><a href="javascript:" target="_blank">人才招聘</a></li>
-            <li><a href="javascript:" target="_blank">招程序猿</a></li>
-            <li><a href="javascript:" target="_blank">常见问题</a></li>
-            <li><a href="javascript:" target="_blank">意见反馈</a></li>
-            <li><a href="javascript:" target="_blank">拜师求学</a></li>
-            <li><a href="javascript:" target="_blank"></a></li>
-            <li><a href="javascript:" target="_blank"></a></li>
-            <li><a href="javascript:" target="_blank"></a></li>
-        </ul>
-        <div id="ower">
-            Copyright&nbsp&copy&nbsp2018&nbsp huangliangyun.top &nbspAll Rights Reserved&nbsp|&nbsp琼&nbspICP备01号
-        </div>
-    </div>
-
-    <!--页脚结束-->
     <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->
 </div>
-
 <!--container end-->
-<script src="../../libs/js/jquery.min.js"></script>
-<script src="../../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
-<!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
-<script src="../../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
 
-<script src="../../js/article_sidebar.js"></script>
-<script>
-    $(document).ready(function () {
-        App.init();
-    });
-</script>
 </body>
 </html>

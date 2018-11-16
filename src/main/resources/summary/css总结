@@ -21,7 +21,25 @@
  2.不能独占一行的块级
 
 
+line-height
+上下居中
 
+改变输入框提示的样式
+input::-webkit-input-placeholder {
+    color: white;
+}
+
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
 
 
 

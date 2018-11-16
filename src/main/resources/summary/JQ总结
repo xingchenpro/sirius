@@ -1,0 +1,2 @@
+光标自动定位
+$(".input-category input").focus();

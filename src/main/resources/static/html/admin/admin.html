@@ -9,13 +9,13 @@
     <meta charset="UTF-8">
     <title>write_article</title>
     <link rel="stylesheet" type="text/css" href="../../libs/assets/bootstrap-3.3.7/css/bootstrap.css">
-    <link href="../../libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../libs/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../../css/admin/admin.css" rel="stylesheet" type="text/css">
     <script src="../../libs/js/jquery.min.js"></script>
     <script src="../../libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
     <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
     <script src="../../libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
-
+    <script src="../../js/article_editor.js"></script>
     <script src="../../js/article_sidebar.js"></script>
     <script>
         $(document).ready(function () {
@@ -154,8 +154,40 @@
 
             </div>
             <!--文章类型选择开始-->
+            <!--添加类型开始-->
+            <div class="add-category">
+                <div class="input-category">
+                    <input type="text" placeholder="输入分类" >
+                    <i class="del fa fa-remove"></i>
+                </div>
+                <span class="add-type">&nbsp;&nbsp;添加分类</span>
 
+            </div>
 
+            <!--添加类型结束-->
+
+            <!--单选按钮开始-->
+            <ul class="article-category-select">
+                <li><input type="checkbox" id="checkbox1" class="chk"/><label for="checkbox1">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox2" class="chk"/><label for="checkbox2">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox3" class="chk"/><label for="checkbox3">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox4" class="chk"/><label for="checkbox4">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox5" class="chk"/><label for="checkbox5">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox6" class="chk"/><label for="checkbox6">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox7" class="chk"/><label for="checkbox7">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox8" class="chk"/><label for="checkbox8">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+                <li><input type="checkbox" id="checkbox9" class="chk"/><label for="checkbox9">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </li>
+            </ul>
+            <!--单选按钮结束-->
             <!--文章类型选择结束-->
             <!--start btns-->
             <div class="article_operation">
@@ -166,6 +198,7 @@
 
             <!--end my_editor-->
         </div>
+
         <!--end article edit-->
 
         <!--页脚-->
