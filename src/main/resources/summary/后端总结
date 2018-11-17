@@ -9,6 +9,7 @@
 替换符号	&lt;	&lt;=	&gt;	&gt;=	&amp;	&apos;	&quot;
 
 5.SpringBoot文件上传
+
 (1)SpringBoot上传的文件默认保存在C盘用户目录的/Temp下
 //String rootPath = request.getSession().getServletContext().getRealPath("/resource/upload/");
 (2)修改保存在项目下方法
@@ -30,3 +31,9 @@ System.out.println("dateFile:"+dateFile.getPath());
 对应如下：
 dateFile:D:\WEBPRODUCTION\HlyWeb\sirius\2018\11\17
 dateFile:2018\11\17
+
+(4)上传文件不能显示和斜杠有关/,斜杠不能漏
+
+6.解决编辑器无法加载csdn图片问题，图片做了访盗链
+http://www.udpwork.com/item/14184.html
+<meta name="referrer" content="no-referrer">

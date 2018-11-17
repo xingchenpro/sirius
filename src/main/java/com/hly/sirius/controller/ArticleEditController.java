@@ -61,8 +61,8 @@ public class ArticleEditController {
             request.setCharacterEncoding("utf-8");
             /*这里返回格式是html/txt才能上传*/
             response.setHeader("Content-Type", "application/json");
-            //String rootPath = request.getSession().getServletContext().getRealPath("/resource/upload/");
             //获得web项目的全路径,SpringBoot的图片保存在C盘用户路径的/Temp中,我们改变设置保存当当前项目下
+            //String upload = request.getSession().getServletContext().getRealPath("/resource/upload/");
             //获取跟目录
             File path = new File(ResourceUtils.getURL("classpath:").getPath());
             if(!path.exists()) path = new File("");
@@ -76,7 +76,6 @@ public class ArticleEditController {
             Calendar date = Calendar.getInstance();
             //获得日期路径,MONTH个值的初始值是0，因此我们要用它来表示正确的月份时就需要加1。
             File dateFile = new File(date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/" + (date.get(Calendar.DATE)));
-
             //获得文件最初的路径
             String originalFile = file.getOriginalFilename();
             //得到完整路径名
@@ -89,11 +88,13 @@ public class ArticleEditController {
             file.transferTo(newFile);
             //System.out.println("/resources/upload/"+dateFile+File.separator+originalFile);
             System.out.println(dateFile + "/" + file.getOriginalFilename());
-            //JSON格式
-            response.getWriter().write("{\"success\":1,\"message\":\"上传成功\",\"url\":\"images/upload/" + dateFile.getPath().replace('\\','/') + "/" + file.getOriginalFilename() + "\"}");
+            /*JSON格式*/
+            response.getWriter().write("{\"success\":1,\"message\":\"上传成功\",\"url\":\"/images/upload/" + dateFile.getPath().replace('\\','/') + "/" + file.getOriginalFilename() + "\"}");
 
         } catch (Exception e) {
             response.getWriter().write("{\"success\":0}");
+
         }
     }
+
 }
