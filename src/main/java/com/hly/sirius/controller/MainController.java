@@ -28,11 +28,6 @@ public class MainController {
     ArticleService articleService;
 
     /**
-     * 初始化页面
-     * @return
-     */
-
-    /**
      * 请求文章列表
      *
      * @return article list

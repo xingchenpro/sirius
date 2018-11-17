@@ -12,9 +12,8 @@
         <result property="articleLikeCount" column="articleLikeCount"/>
     </resultMap>
 
-    <!--8属性-->
     <sql id="addArticle">
-        username,articleTitle,articleContent
+        username,articleTitle,articleContent,articleCreateTime
     </sql>
     <!--SQLServer查询算符-->
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
@@ -39,7 +38,7 @@
         INSERT INTO article(
         <include refid="addArticle"/>
         )VALUES
-        (#{username},#{articleTitle},#{articleContent});
+        (#{username},#{articleTitle},#{articleContent},#{articleCreateTime});
     </insert>
 
     <!--根据文章id查询文章-->
@@ -52,5 +51,31 @@
         </where>
 
     </select>
+
+    <!--更新浏览量-->
+    <update id="updateArticleViewCount" parameterType="integer">
+        UPDATE article SET articleViewCount = articleViewCount+1 WHERE articleId = #{articleId}
+    </update>
+
+    <!--前一篇，序号大的，现在写的-->
+    <select id="getPreArticle" parameterType="integer" resultMap="ArticleResult">
+        SELECT * FROM article
+          <where>
+              articleId &gt; #{articleId}
+          </where>
+        ORDER BY  articleId
+        limit 1
+    </select>
+
+    <!--后一篇，序号小的，过去写的-->
+    <select id="getNextArticle" parameterType="integer" resultMap="ArticleResult">
+        SELECT * FROM article
+        <where>
+            articleId &lt; #{articleId}
+        </where>
+        ORDER BY  articleId DESC
+        limit 1
+    </select>
+
 
 </mapper>

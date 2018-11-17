@@ -40,4 +40,19 @@ public class ArticleServiceImpl implements ArticleService {
     public Article getArticleById(Integer articleId) {
         return articleDao.getArticleById(articleId);
     }
+
+    @Override
+    public void updateArticleViewCount(Integer articleId) {
+        articleDao.updateArticleViewCount(articleId);
+    }
+
+    @Override
+    public Article getPreArticle(Integer articleId) {
+        return articleDao.getPreArticle(articleId);
+    }
+
+    @Override
+    public Article getNextArticle(Integer articleId) {
+        return articleDao.getNextArticle(articleId);
+    }
 }

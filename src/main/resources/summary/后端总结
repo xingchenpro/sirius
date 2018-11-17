@@ -4,3 +4,29 @@
 
 3.return+路径就是纯粹用于跳转页面。 而return+redirect就用于再次转向controller。
 
+4.mybatis符号报错
+原符号	  <	   <=	   >	   >=	    &	     '	      "
+替换符号	&lt;	&lt;=	&gt;	&gt;=	&amp;	&apos;	&quot;
+
+5.SpringBoot文件上传
+(1)SpringBoot上传的文件默认保存在C盘用户目录的/Temp下
+//String rootPath = request.getSession().getServletContext().getRealPath("/resource/upload/");
+(2)修改保存在项目下方法
+//获取跟目录
+File path = new File(ResourceUtils.getURL("classpath:").getPath());
+if(!path.exists()) path = new File("");
+System.out.println("path:"+path.getAbsolutePath());
+
+File upload = new File(path.getAbsolutePath(),"static/images/upload/");
+if(!upload.exists()) upload.mkdirs();
+System.out.println("upload url:"+upload.getAbsolutePath());
+
+(3)
+绝对路径：getAbsolutePath()
+相对路径：getPath()
+File dateFile = new File(date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/" + (date.get(Calendar.DATE)));
+System.out.println("dateFile:"+dateFile.getAbsolutePath());
+System.out.println("dateFile:"+dateFile.getPath());
+对应如下：
+dateFile:D:\WEBPRODUCTION\HlyWeb\sirius\2018\11\17
+dateFile:2018\11\17

@@ -29,22 +29,6 @@ public class AdminController {
         return "/admin/admin";
     }
 
-    /**
-     * 获得编辑的文章内容与添加新的文章
-     * @param article
-     * @return
-     */
-    @RequestMapping(value = "editorContent", method = RequestMethod.POST)
-    public ModelAndView postArticleContent(@RequestBody Article article, HttpSession session) {
-        article.setUsername((String) session.getAttribute("username"));
-        article.setArticleCreateTime(DateUtil.getCurrentDateString());
-        article.setArticleCreateTime(DateUtil.getCurrentDateString());
-        System.err.println("文章标题\n"+article.getArticleTitle());
-        System.err.println("MD文本:\n"+article.getArticleContent());
-        System.err.println(article.toString());
-        articleService.insertArticle(article);
-        return null;
-    }
 
 
 }

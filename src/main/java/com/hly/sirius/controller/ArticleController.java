@@ -2,19 +2,12 @@ package com.hly.sirius.controller;
 
 
 import com.hly.sirius.domain.Article;
-import com.hly.sirius.domain.Page;
 import com.hly.sirius.service.ArticleService;
-import com.hly.sirius.util.DateUtil;
-import com.hly.sirius.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 /**
  * @author :hly
@@ -37,9 +30,16 @@ public class ArticleController {
     @RequestMapping("/articleDetail/{id}")
     public ModelAndView getArticleDetail(@PathVariable("id")Integer id){
         ModelAndView mv = new ModelAndView();
+        articleService.updateArticleViewCount(id);
         Article article  = articleService.getArticleById(id);
+        Article preArticle = articleService.getPreArticle(id);
+        Article nextArticle = articleService.getNextArticle(id);
+        //System.err.println(article.getArticleTitle()+" "+preArticle.toString()+" "+nextArticle.toString());
         mv.addObject("article",article);
-        System.err.println(article.toString());
+        if(preArticle!=null)
+            mv.addObject("preArticle",preArticle);
+        if(nextArticle!=null)
+            mv.addObject("nextArticle",nextArticle);
         mv.setViewName("article/article_detail");
         return mv;
     }

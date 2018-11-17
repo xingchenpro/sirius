@@ -19,12 +19,13 @@ $(document).ready(function () {
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
         $.ajax({
-            url: "/editorContent",
+            url: "/articleWriting",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
                 /*8属性*/
                 articleTitle: articleTitle,
-                articleContent: articleContent
+                articleContent: articleContent,
+
             }),
             type: "POST",
             contentType: 'application/json',

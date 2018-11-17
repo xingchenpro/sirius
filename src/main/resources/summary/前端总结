@@ -5,3 +5,35 @@
 放到文章编辑页面。
 
 3.而HTTP中的GET，POST，PUT，DELETE就对应着对这个资源的查，改，增，删4个操作
+4.
+ <li class="previous"><a th:href="@{'/articleDetail/'+${(preArticle.articleId!=null?preArticle.articleId:Article.articleId)}}">PREVIOUS<br><span th:text="${(preArticle.articleTitle!=null?preArticle.articleTitle:'已是第一篇')}">已是第一篇</span></a></li>
+ <li class="next"><a th:href="@{'/articleDetail/'+${(nextArticle.articleId!=null?nextArticle.articleId:Article.articleId)}}">NEXT<br/><span th:text="${(nextArticle.articleTitle!=null?nextArticle.articleTitle:'已是最后一篇')}">已是最后一篇</span></a></li>
+ 无法实现判断空值问题
+ th:if="${nextArticle!=null}" 可以判断,如不符合，整条html都不会执行，样式也不会显示
+
+5.RESTFUL API
+
+(1).动词
+GET:读取(Read)
+POST:新建(Create)
+PUT:更新(Update)
+PATCH:更新(Update)通常是部分更新
+DELETE:删除(Delete)
+
+(2).宾语
+宾语是API的URL
+宾语必须是名词
+避免多级URL
+/article这个URL是正确的，负数/articles
+/getArticle是错误的
+
+(3).状态码5个级别
+1XX 相关信息
+2XX 操作成功
+3XX 重定向
+4XX 客户端错误
+5XX 服务器错误
+
+
+
+

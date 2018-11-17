@@ -1,6 +1,7 @@
 package com.hly.sirius.service;
 
 import com.hly.sirius.domain.Article;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -41,5 +42,24 @@ public interface ArticleService {
      */
     public Article getArticleById(Integer articleId);
 
+    /**
+     * 更新文章浏览次数
+     * @param articleId
+     */
+    public void updateArticleViewCount(Integer articleId);
 
+
+    /**
+     * 获得上一篇文章
+     * @param articleId
+     * @return
+     */
+    public Article getPreArticle(Integer articleId);
+
+    /**
+     * 获得下一篇文章
+     * @param articleId
+     * @return
+     */
+    public Article getNextArticle(Integer articleId);
 }

@@ -159,6 +159,7 @@ header .article_image figure {
     /*border: 1px solid blue;*/
     width: 866px;
     float: left;
+    min-height: 1550px;
 }
 
 .article_lists > li {

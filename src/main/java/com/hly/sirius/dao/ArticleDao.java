@@ -44,4 +44,23 @@ public interface ArticleDao {
      */
     public Article getArticleById(@Param("articleId") Integer articleId);
 
+    /**
+     * 更新文章浏览量
+     */
+    public void updateArticleViewCount(Integer articleId);
+
+    /**
+     * 获得上一篇文章
+     * @param articleId
+     * @return
+     */
+    public Article getPreArticle(Integer articleId);
+
+    /**
+     * 获得下一篇文章
+     * @param articleId
+     * @return
+     */
+    public Article getNextArticle(Integer articleId);
+
 }

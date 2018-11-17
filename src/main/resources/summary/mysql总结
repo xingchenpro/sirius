@@ -11,3 +11,5 @@ MYSQL
   -- 修改字段属性
   -- ALTER TABLE tb_name MODIFY 字段名称 字段类型 [完整性约束条件]
   --alter table `article` modify `articleContent` varchar(6000) DEFAULT NULL;
+
+6.ORDER BY 语句默认按照升序对记录进行排序。
