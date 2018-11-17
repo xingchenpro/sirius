@@ -229,7 +229,7 @@ header .article_image figure {
     text-indent: 2em;
 }
 
-.article_Info p:hover {
+.article_Info p a:hover {
     color: #1babff;
 }
 

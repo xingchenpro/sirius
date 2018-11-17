@@ -2,3 +2,5 @@
 2.There is no getter for property named 'XXX' in 'class java.lang.String'
 解决：dao层加上 ：@Param(value="tno") String tno ；mapper层：tno = #{tno}
 
+3.return+路径就是纯粹用于跳转页面。 而return+redirect就用于再次转向controller。
+

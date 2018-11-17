@@ -12,6 +12,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +27,7 @@ import javax.servlet.http.HttpSession;
  * @github: https://github.com/huangliangyun
  * @date 2018年9月13日 下午6:22:04
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -38,22 +39,19 @@ public class UserController {
 	 * @param password
 	 * @return
 	 */
-	@RequestMapping("/login")
-   public ModelAndView login(@RequestParam(value="username",required=false) String username, @RequestParam(value="password",required=false)String password, HttpSession session){
+	@RequestMapping("/blogger")
+   public String blogger(@RequestParam(value="username",required=false) String username, @RequestParam(value="password",required=false)String password, HttpSession session){
 
-		ModelAndView mView = new ModelAndView();
 		Subject subject = SecurityUtils.getSubject();
 		UsernamePasswordToken token = new UsernamePasswordToken(username, CryptographyUtil.md5(password,username));
 		try {
 			subject.login(token);
 			session.setAttribute("username",username);
-			mView.setViewName("/admin/admin");
-			return mView;
+			return "redirect:/admin";
 		} catch (AuthenticationException e) {
 			System.err.println("用户名或密码错误");
 			e.printStackTrace();
-			mView.setViewName("/user/login");
-			return mView;
+			return "/user/login";
 		}
 	}
 
@@ -75,6 +73,33 @@ public class UserController {
 				mView.setViewName("/register");
 				return mView;
 			}
+	}
+
+	/**
+	 * 登录
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("login")
+	public String login(HttpSession session){
+		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
+			return "/admin/admin";
+		}
+		return "/user/login";
+	}
+
+	/**
+	 * 注销
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/logout")
+	public String logout(HttpSession session){
+		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
+			session.removeAttribute("username");
+			System.err.println("注销成功!");
+		}
+		return "redirect:/index";
 	}
 	
 

@@ -4,22 +4,17 @@
 
     <resultMap id="ArticleResult" type="Article">
         <result property="articleId" column="articleId"/>
-        <result property="articleCreatorId" column="articleCreatorId"/>
+        <result property="username" column="username"/>
         <result property="articleTitle" column="articleTitle"/>
         <result property="articleContent" column="articleContent"/>
-        <result property="articleCategoryIds" column="articleCategoryIds"/>
-        <result property="articleTags" column="articleTags"/>
         <result property="articleCreateTime" column="articleCreateTime"/>
-        <result property="articleCommentStatus" column="articleCommentStatus"/>
-        <result property="articleStatus" column="articleStatus"/>
         <result property="articleViewCount" column="articleViewCount"/>
-        <result property="articleCommentCount" column="articleCommentCount"/>
         <result property="articleLikeCount" column="articleLikeCount"/>
     </resultMap>
 
     <!--8属性-->
     <sql id="addArticle">
-        articleCreatorId,articleTitle,articleContent,articleCategoryIds,articleTags,articleCreateTime,articleCommentStatus,articleStatus
+        username,articleTitle,articleContent
     </sql>
     <!--SQLServer查询算符-->
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
@@ -44,7 +39,7 @@
         INSERT INTO article(
         <include refid="addArticle"/>
         )VALUES
-        (#{articleCreatorId},#{articleTitle},#{articleContent},#{articleCategoryIds},#{articleTags},#{articleCreateTime},#{articleCommentStatus},#{articleStatus});
+        (#{username},#{articleTitle},#{articleContent});
     </insert>
 
     <!--根据文章id查询文章-->

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-
+    <link rel="shortcut icon" href="../../static/images/user/hly.jpg" type="image/x-icon" th:href="@{/images/user/hly.jpg}"/>
     <link rel="stylesheet" href="../../static/css/user/login.css" th:href="@{/css/user/login.css}">
 
 </head>
 
 <body>
 <main>
-    <form class="form" id="loginForm" method="post" action="/user/login" th:action="@{/user/login}">
+    <form class="form" id="loginForm" method="post" action="/user/blogger" th:action="@{/user/blogger}" autocomplete="off">
         <div class="form__cover"></div>
         <div class="form__loader">
             <div class="spinner active">

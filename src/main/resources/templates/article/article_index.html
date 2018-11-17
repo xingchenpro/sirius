@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>article</title>
     <link href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css" th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="/static/images/article_images/admin.jpg" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../../static/images/user/hly.jpg" type="image/x-icon" th:href="@{/images/user/hly.jpg}"/>
     <link href="../../static/css/article/article_index.css" th:href="@{/css/article/article_index.css}" type="text/css"
           rel="stylesheet">
 </head>
@@ -35,14 +35,15 @@
                             Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。</a></p>
                     </div>
                     <ul class="article_detail">
-                        <li class="article_like">点赞&nbsp<a th:text="${article.articleLikeCount}" href="#">22</a></li>
-                        <li class="article_comment">评论&nbsp<a th:text="${article.articleCommentCount}" href="#">66</a>
-                        </li>
-                        <li class="article_create_time">时间&nbsp<a th:text="${article.articleCreateTime}" href="#">2018-10-1</a>
+                        <li class="article_like">浏览&nbsp;<a th:text="${article.articleViewCount}">22</a></li>
+                        <li class="article_create_time">时间&nbsp;<a th:text="${article.articleCreateTime}">2018-10-1 12:123:01</a>
                         </li>
                     </ul>
                 </div>
             </li>
+
+
+
 
         </ul>
         <!--文章列表结束-->
@@ -69,4 +70,8 @@
 <!--页脚结束-->
 
 </body>
+<script src="../../static/libs/assets/jquery/jquery-3.1.1.js" th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
+<script src="../../static/js/header-sidebar.js" th:src="@{/js/header-sidebar.js}"></script>
+<script src="../../static/libs/assets/layer-v3.1.1/layer/layer.js" th:src="@{/libs/assets/layer-v3.1.1/layer/layer.js}"></script>
+<script src="../../static/js/article_index.js" th:src="@{/js/article_index.js}"></script>
 </html>

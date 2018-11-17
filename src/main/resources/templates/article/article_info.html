@@ -13,158 +13,99 @@
 <body>
 <!--右边栏开始-->
 <aside th:fragment="article_info">
-    <div class="personal_Info">
-        <h2>个人资料</h2>
-        <a href="admin.html"><span><img src="../../static/images/article_images/admin.jpg"
-                                        th:src="@{/images/article_images/admin.jpg}"/><span
-                class="user_name">&nbspHly</span> </span></a>
-        <hr/>
+    <div class="web-info">
+        <h2>关于作者</h2>
+        <ul class="user-info">
+            <li class="user-profile"><img src="../../static/images/thyme_images/img_99.jpg"
+                                          th:src="@{/images/thyme_images/img_99.jpg}"/></li>
+            <li class="user-nickname">天狼星</li>
+            <li class="user-wisdom">相信时间的力量，做时间的朋友</li>
 
-        <ul class="user_achieve">
-            <li><p>原创</p>
-                <p>62</p></li>
-            <li><p>粉丝</p>
-                <p>2万</p></li>
-            <li><p>喜欢</p>
-                <p>3万</p></li>
-            <li><p>评论</p>
-                <p>9999</p></li>
-            <li><p>等级</p>
-                <p>8</p></li>
-            <li><p>访问</p>
-                <p>80万</p></li>
-            <li><p>积分</p>
-                <p>8000</p></li>
-            <li><p>排名</p>
-                <p>7</p></li>
+            <li class="contact-user">
+                <ul>
+                    <li>
+                        <a id="weChatBtn">
+                            <img src="../../static/images/user/wechat.jpg" th:src="@{/images/user/wechat.jpg}"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//shang.qq.com/wpa/qunwpa?idkey=4d1b248a81fd3e64c8eda3bdcf257adf6c6b17cfe6322ec5fcec3d669ec35bef"
+                           target="_blank"><img src="../../static/images/user/qq.jpg" th:src="@{/images/user/qq.jpg}"/></a>
+                    </li>
+                    <li><a href="https://github.com/huangliangyun" target="_blank"><img
+                            src="../../static/images/user/github.jpg" th:src="@{/images/user/github.jpg}"/></a></li>
+                    <li><a href="https://blog.csdn.net/Sirius_hly" target="_blank"><img
+                            src="../../static/images/user/csdn.jpg" th:src="@{/images/user/csdn.jpg}"/></a></li>
+                </ul>
+            </li>
+
         </ul>
 
-    </div>
-    <!--个人资料结束-->
-
-    <div class="hot_article">
-        <h2>热门文章</h2>
-        <ul>
-            <li><span>1</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>2</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>3</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>4</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>5</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>6</span><a href="#">SpringBoot从入门到精通</a></li>
-            <li><span>7</span><a href="#">SpringBoot从入门到精通</a></li>
+        <ul class="blog-info">
+            <li>文章&nbsp;<span>435</span></li>
+            <li>浏览&nbsp;<span>141241</span></li>
         </ul>
     </div>
-    <!--热门文章结束-->
 
-    <div class="article_classify">
+    <div class="article-classify">
         <h2>文章分类</h2>
 
-        <ul><a href="javascript:">
-            <li class="article_type">大数据</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#2">
-            <li class="article_type">数据库</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#3">
-            <li class="article_type">高并发</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#3">
-            <li class="article_type">虚拟机</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#3">
-            <li class="article_type">区块链</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#3">
-            <li class="article_type">物联网</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="#3">
-            <li class="article_type">微服务</li>
-            <li class="article_type_num">12篇</li>
-        </a></ul>
-        <br/>
+        <ul>
+            <li>
+                <a href="javascript:">微服务<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">Docker<span>19篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">SpringCloud<span>17篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">SpringBoot<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">J2EE<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">SSM框架<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">Java<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">数据库<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">区块链<span>18篇</span></a>
+            </li>
+        </ul>
 
     </div>
     <!--文章分类结束-->
     <!--文章归档-->
 
-    <div class="article_archived">
+    <div class="article-classify article-archived">
         <h2>文章归档</h2>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
-
-        <ul><a href="javascript:">
-            <li class="article_month">2018年1月</li>
-            <li class="article_month_num">12篇</li>
-        </a></ul>
-
-        <br/>
+        <ul>
+            <li>
+                <a href="javascript:">2018年10月<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">2018年09月<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">2018年08月<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">2018年07月<span>18篇</span></a>
+            </li>
+            <li>
+                <a href="javascript:">2018年06月<span>18篇</span></a>
+            </li>
+        </ul>
     </div>
     <!--文章归档结束-->
-
 </aside>
 </body>
+
 </html>

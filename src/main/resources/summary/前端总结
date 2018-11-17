@@ -3,3 +3,5 @@
 为防止其他页面静态资源覆盖本页面静态资源，可以把本页面静态资源放到待加载页面
 如把admin的 <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{css/admin/admin.css}">
 放到文章编辑页面。
+
+3.而HTTP中的GET，POST，PUT，DELETE就对应着对这个资源的查，改，增，删4个操作

@@ -8,50 +8,31 @@
 <head>
     <meta charset="UTF-8">
     <title>article</title>
+    <link rel="shortcut icon" href="../../static/images/user/hly.jpg" type="image/x-icon" th:href="@{/images/user/hly.jpg}"/>
     <link href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css"
           th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}" rel="stylesheet" type="text/css">
-    <link href="../../static/css/article/article_detail.css" th:href="@{/css/article/article_detail.css}" rel="stylesheet"
-          type="text/css">
-    <link href="../../static/css/article/article_index.css" th:href="@{/css/article/article_index.css}" type="text/css"
-          rel="stylesheet">
+
     <link rel="stylesheet" href="../../static/libs/assets/editor.md-master/css/editormd.css" th:href="@{/libs/assets/editor.md-master/css/editormd.css}"/>
 
-    <script type="text/javascript">
-        window.onload=
-            function(){
-                var oDiv = document.getElementById("fixPara"),
-                    /*H大点好*/
-                    H = 980
 
-                window.onscroll = function()
-                {
-                    var s = document.body.scrollTop || document.documentElement.scrollTop;
-                    if(s>H) {
-                        oDiv.style = "position:fixed;top:-500px;";
-
-                    } else {
-                        oDiv.style = '';
-                    }
-                }
-            }
-    </script>
 </head>
 <body>
 <header>
     <nav id="nav">
         <ul>
-            <li><a href="../admin/admin.html">ADMIN</a></li>
-            <li><a href="#">HISTORY</a></li>
-            <li><a href="#">ABOUT ME</a></li>
-            <li><a href="#"  title="首页">HOME</a></li>
+            <li><a th:href="@{/index}" target="_blank">黄良运的博客</a></li>
+            <li><a th:href="@{/user/login}" target="_blank">ADMIN</a></li>
+            <li><a th:href="@{/admin}" target="_blank">HISTORY</a></li>
+            <li><a th:href="@{/admin}" target="_blank">ABOUT ME</a></li>
+            <li><a th:href="@{/index}" title="首页" target="_blank">HOME</a></li>
         </ul>
         <!-- <script src="../../js/article_current_nav.js" type="text/javascript"></script>-->
     </nav>
     <div class="article_image">
         <figure>
 
-            <figcaption>
-                黄良运的博客
+            <figcaption >
+                <p th:text="${article.articleTitle}">黄良运的博客</p>
                 <p>种一棵树最好的时间是十年前，其次是现在。</p>
             </figcaption>
         </figure>
@@ -77,27 +58,15 @@
             </div>
         </div>
         <!--文章内容结束-->
-        <!--右边栏开始-->
-        <aside th:replace="~{article/article_info::article_info}" ></aside>
-        <!--右边栏结束-->
     </div>
     <!--文章部分结束-->
-</div>
-<!--main结束-->
-<!--分页开始-->
-
-<div class="page">
-    <ul class="pagination">
-        <li><a href="javascript:">首页</a></li>
-        <li class="disabled"><a href="javascript:">上一页</a></li>
-        <li><a class="active" href="javascript:">1</a></li>
-        <li><a href="javascript:">2</a></li>
-        <li><a href="javascript:">3</a></li>
-        <li><a href="javascript:">下一页</a></li>
-        <li><a href="javascript:">尾页</a></li>
+    <!---->
+    <ul class="article_chapter">
+        <li class="previous"><a href="javascript:">PREVIOUS<br><span>SpringBoot快速入门</span></a></li>
+        <li class="next"><a href="javascript:">NEXT<br/><span>Docker快速入门</span></a></li>
     </ul>
 </div>
-<!--分页结束-->
+<!--main结束-->
 <!--页脚-->
 
 <!--页脚-->
@@ -131,4 +100,6 @@
     });
 </script>
 </body>
+<link href="../../static/css/article/article_detail.css" th:href="@{/css/article/article_detail.css}" rel="stylesheet"
+      type="text/css">
 </html>

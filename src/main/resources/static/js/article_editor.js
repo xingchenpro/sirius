@@ -14,6 +14,7 @@ $(document).ready(function () {
         //alert("提交文章");
     });
 
+    //提交文章到后端
     function submit_article() {
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
@@ -22,15 +23,8 @@ $(document).ready(function () {
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
                 /*8属性*/
-                articleCreatorId:'hly',
                 articleTitle: articleTitle,
-                articleContent: articleContent,
-                articleCategoryIds:'',
-                articleTags:'',
-                articleCreateTime:'',
-                articleCommentStatus:"1",
-                articleStatus:"1"
-
+                articleContent: articleContent
             }),
             type: "POST",
             contentType: 'application/json',
