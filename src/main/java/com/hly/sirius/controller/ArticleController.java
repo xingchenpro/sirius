@@ -2,11 +2,16 @@ package com.hly.sirius.controller;
 
 
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.ArticleService;
+import com.hly.sirius.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author :hly
@@ -20,6 +25,9 @@ public class ArticleController {
 
     @Autowired
     ArticleService articleService;
+
+    @Autowired
+    CategoryService categoryService;
 
     /**
      * 根据文章id获得文章
@@ -44,15 +52,34 @@ public class ArticleController {
         return mv;
     }
 
+    /**
+     * 文章历史信息
+     * @return
+     */
     @RequestMapping("/historyArticles")
     public ModelAndView getHistoryArticles(){
 
         ModelAndView modelAndView = new ModelAndView();
+        List<Category> categoryList = categoryService.getCategories();
+        System.err.println(categoryList);
+        List<Article> articleList = articleService.getArticleList(new HashMap<>());
+        //获得文章分类和文章信息
+        modelAndView.addObject("categoryList",categoryList);
+        modelAndView.addObject("articleList",articleList);
+        modelAndView.addObject("categoryNum",articleList.size());
         modelAndView.setViewName("/article/article_history");
-
 
         return modelAndView;
     }
 
 
+    @RequestMapping("/category/{id}")
+    public ModelAndView getArticleByCategory(@PathVariable("id") Integer id){
+
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/article/article_history");
+        return  modelAndView;
+
+    }
 }
