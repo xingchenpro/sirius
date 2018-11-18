@@ -37,3 +37,25 @@ dateFile:2018\11\17
 6.解决编辑器无法加载csdn图片问题，图片做了访盗链
 http://www.udpwork.com/item/14184.html
 <meta name="referrer" content="no-referrer">
+
+7.后端接收多个对象的JSON
+
+(1).前端JSON
+var categoryList = [];
+data: JSON.stringify({
+   article:{
+       articleTitle: articleTitle,
+       articleContent: articleContent
+       },
+       categoryList:categoryList
+   }),
+
+(2)后端实体类
+private Article article;
+private List<String> categoryList;
+
+(3)接收
+@RequestBody ArticleCategories articleCategories
+
+
+

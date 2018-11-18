@@ -1,2 +1,11 @@
-光标自动定位
+1.光标自动定位
 $(".input-category input").focus();
+
+2.JQ获取checkBox
+https://www.cnblogs.com/zhaoyingjie/p/6622743.html
+
+var categoryList = [];
+$.each($('input:checkbox:checked'),function(){
+            categoryList.push($(this).val());
+});
+alert(categoryList);

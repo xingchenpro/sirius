@@ -1,6 +1,8 @@
 package com.hly.sirius.controller;
 
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.ArticleCategories;
+import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,17 +37,20 @@ public class ArticleEditController {
     /**
      * 获得编辑的文章内容与添加新的文章
      *
-     * @param article
+     * @param
      * @return
      */
-    @RequestMapping(value = "articleWriting", method = RequestMethod.POST)
-    public ModelAndView postArticle(@RequestBody Article article, HttpSession session) {
+    @RequestMapping(value = "articleWritingSubmit", method = RequestMethod.POST)
+    public ModelAndView postArticle(@RequestBody ArticleCategories articleCategories, HttpSession session) {
+        Article article = articleCategories.getArticle();
         article.setUsername((String) session.getAttribute("username"));
         article.setArticleCreateTime(DateUtil.getCurrentDateString());
-        System.err.println("文章标题\n" + article.getArticleTitle());
-        System.err.println("MD文本:\n" + article.getArticleContent());
-        System.err.println(article.toString());
         articleService.insertArticle(article);
+
+
+        System.err.println(articleCategories.toString());
+
+
         return null;
     }
 

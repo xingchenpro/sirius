@@ -34,6 +34,8 @@ DELETE:删除(Delete)
 4XX 客户端错误
 5XX 服务器错误
 
+6.thymeleaf给id赋值
+<input type="checkbox" th:id="'checkbox'+${category.categoryId}" class="chk"/><label th:for="'checkbox'+${category.categoryId}" th:text="${category.categoryName}"></label>
 
 
 

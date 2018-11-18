@@ -33,15 +33,11 @@
 
         <!--start article_edit-->
         <div class="article_edit" id="article_edit" th:fragment="article_editor">
-
            <input id="article_title" class="title" type="text" placeholder="请输入文章标题">
-
-
             <div class="my_editor" id="my_editor" >
                 <!--调用编辑器后台返回视图，顺便解决了css样式冲突问题-->
                 <!--<iframe th:src="@{/articleEdit}"  width="1250px" height="1000px" scrolling="no" frameborder="0"></iframe>-->
                 <div th:replace="article/simple::html"></div>
-
             </div>
 
             <!--文章类型选择开始-->
@@ -52,31 +48,16 @@
                     <i class="del fa fa-remove"></i>
                 </div>-->
                 <span class="add-type">&nbsp;&nbsp;添加分类</span>
-
             </div>
 
             <!--添加类型结束-->
 
             <!--单选按钮开始-->
             <ul class="article-category-select">
-                <li><input type="checkbox" id="checkbox1" class="chk"/><label for="checkbox1">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <li th:each="category:${categories}">
+                    <input th:value="${category.categoryName}" name="categoryCheckbox" type="checkbox" th:id="'checkbox'+${category.categoryId}" class="chk"/><label th:for="'checkbox'+${category.categoryId}" th:text="${category.categoryName+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'}">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 </li>
-                <li><input type="checkbox" id="checkbox2" class="chk"/><label for="checkbox2">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox3" class="chk"/><label for="checkbox3">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox4" class="chk"/><label for="checkbox4">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox5" class="chk"/><label for="checkbox5">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox6" class="chk"/><label for="checkbox6">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox7" class="chk"/><label for="checkbox7">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox8" class="chk"/><label for="checkbox8">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
-                <li><input type="checkbox" id="checkbox9" class="chk"/><label for="checkbox9">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                </li>
+
             </ul>
             <!--单选按钮结束-->
             <!--文章类型选择结束-->
@@ -86,13 +67,11 @@
                 <input type="button" value="保存草稿" class="article_save_draft">
                 <input type="button" value="返回" class="go_back">
             </div>
-
             <!--end my_editor-->
         </div>
         <!--end article edit-->
     </div>
     <!--end main-->
-
     <!--页脚-->
     <!--页脚结束-->
     <!--<iframe class="foot-iframe" src="foot.html" width="100%" height="100px" scrolling="no" frameborder="0"></iframe>-->

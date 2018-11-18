@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hly.sirius.dao.CategoryDao">
+
+    <resultMap id="CategoryResult" type="Category">
+        <result property="categoryId" column="categoryId"/>
+        <result property="categoryName" column="categoryName"/>
+        <result property="categoryOrder" column="categoryOrder"/>
+    </resultMap>
+
+    <!--查询所有分类信息-->
+    <select id="getCategories" resultMap="CategoryResult">
+        SELECT * FROM category
+    </select>
+
+
+</mapper>

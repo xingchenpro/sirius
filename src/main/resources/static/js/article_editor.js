@@ -16,15 +16,27 @@ $(document).ready(function () {
 
     //提交文章到后端
     function submit_article() {
+
+
+        var categoryList = [];
+
+        $.each($('input:checkbox:checked'),function(){
+            categoryList.push($(this).val());
+        });
+
+        alert(categoryList);
+
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
         $.ajax({
-            url: "/articleWriting",
+            url: "/articleWritingSubmit",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
-                /*8属性*/
-                articleTitle: articleTitle,
-                articleContent: articleContent,
+                article:{
+                    articleTitle: articleTitle,
+                    articleContent: articleContent
+                },
+                categoryList:categoryList
 
             }),
             type: "POST",
@@ -45,10 +57,8 @@ $(document).ready(function () {
                 '<input type="text" placeholder="输入分类">'+
                 '<i class="del fa fa-remove">'+'</i>'+
                 '</div>';
-
             $('.add-category').prepend(tpye);
             $(".input-category input").focus();
-
             // 删除表单
             $('.del').click(function () {
                 $(this).parent().remove();

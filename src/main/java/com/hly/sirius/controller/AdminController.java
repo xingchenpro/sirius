@@ -1,7 +1,9 @@
 package com.hly.sirius.controller;
 
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.ArticleService;
+import com.hly.sirius.service.CategoryService;
 import com.hly.sirius.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @author :hly
@@ -24,9 +27,18 @@ public class AdminController {
     @Autowired
     ArticleService articleService;
 
+    @Autowired
+    CategoryService categoryService;
+
     @RequestMapping("/admin")
-    public String admin(){
-        return "/admin/admin";
+    public ModelAndView admin(){
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/admin/admin");
+        List<Category> categories = categoryService.getCategories();
+        modelAndView.addObject("categories",categories);
+        return modelAndView ;
+
     }
 
 
