@@ -9,10 +9,14 @@
 .settings
 .springBeans
 .sts4-cache
-.gitignore
+
+### test filt ###
+/src/main/resources/static/html/
+/src/main/resources/static/test/
+/src/main/resources/summary/
 
 ### IntelliJ IDEA ###
-/src/main/resources/static/html/
+
 .idea
 *.iws
 *.iml
