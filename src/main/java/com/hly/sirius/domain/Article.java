@@ -19,6 +19,7 @@ public class Article {
     private String articleCreateTime;
     private int articleViewCount;
     private int articleLikeCount;
+    private int articleOrder;
 
     public int getArticleId() {
         return articleId;
@@ -76,6 +77,14 @@ public class Article {
         this.articleLikeCount = articleLikeCount;
     }
 
+    public int getArticleOrder() {
+        return articleOrder;
+    }
+
+    public void setArticleOrder(int articleOrder) {
+        this.articleOrder = articleOrder;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -86,6 +95,7 @@ public class Article {
                 ", articleCreateTime='" + articleCreateTime + '\'' +
                 ", articleViewCount=" + articleViewCount +
                 ", articleLikeCount=" + articleLikeCount +
+                ", articleOrder=" + articleOrder +
                 '}';
     }
 }

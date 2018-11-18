@@ -6,6 +6,7 @@
         <result property="categoryId" column="categoryId"/>
         <result property="categoryName" column="categoryName"/>
         <result property="categoryOrder" column="categoryOrder"/>
+        <result property="categoryArticleNum" column="categoryArticleNum"/>
     </resultMap>
 
     <!--查询所有分类信息-->
@@ -22,4 +23,7 @@
         INSERT INTO category(categoryName) VALUES (#{categoryName});
     </insert>
 
+    <update id="updateCategoryNum" parameterType="string">
+        UPDATE category SET categoryArticleNum = categoryArticleNum+1 WHERE categoryName = #{categoryName}
+    </update>
 </mapper>

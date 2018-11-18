@@ -31,4 +31,11 @@ public interface CategoryService {
      * @return
      */
     public Integer  getCategory(String Category);
+
+    /**
+     * 更新分类的数目
+     * @param categoryNum
+     * @return
+     */
+    public int updateCategoryNum(String categoryNum);
 }

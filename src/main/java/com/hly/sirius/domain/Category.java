@@ -11,6 +11,7 @@ public class Category {
     private int categoryId;
     private String categoryName;
     private int categoryOrder;
+    private int categoryArticleNum;
 
     public int getCategoryId() {
         return categoryId;
@@ -36,12 +37,21 @@ public class Category {
         this.categoryOrder = categoryOrder;
     }
 
+    public int getCategoryArticleNum() {
+        return categoryArticleNum;
+    }
+
+    public void setCategoryArticleNum(int categoryArticleNum) {
+        this.categoryArticleNum = categoryArticleNum;
+    }
+
     @Override
     public String toString() {
         return "Category{" +
                 "categoryId=" + categoryId +
                 ", categoryName='" + categoryName + '\'' +
                 ", categoryOrder=" + categoryOrder +
+                ", categoryArticleNum=" + categoryArticleNum +
                 '}';
     }
 }

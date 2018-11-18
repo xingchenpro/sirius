@@ -38,9 +38,5 @@ public class AdminController {
         List<Category> categories = categoryService.getCategories();
         modelAndView.addObject("categories",categories);
         return modelAndView ;
-
     }
-
-
-
 }

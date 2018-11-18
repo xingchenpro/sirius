@@ -80,12 +80,15 @@ public class ArticleEditController {
                     category.setCategoryName(categoryName);
                     categoryService.addCategory(category);
                     categoryId.add(category.getCategoryId());
+                    //更新分类的文章数
+                    categoryService.updateCategoryNum(categoryName);
                     articleCategoryMap = new HashMap<String, Object>();
                     articleCategoryMap.put("articleId", articleId);
                     articleCategoryMap.put("categoryId",category.getCategoryId());
                     articleService.addArticleCategory(articleCategoryMap);
 
                 } else {
+                    categoryService.updateCategoryNum(categoryName);
                     categoryId.add(categoryService.getCategory(categoryName));
                     articleCategoryMap = new HashMap<String, Object>();
                     articleCategoryMap.put("articleId", articleId);
@@ -102,7 +105,6 @@ public class ArticleEditController {
         System.err.println("分类：" + categoryList);
         System.err.println("ArticleId：" + articleId);
         System.err.println("分类Id：" + categoryId);
-
         return null;
     }
 

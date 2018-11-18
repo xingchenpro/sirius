@@ -146,6 +146,8 @@ header .article_image figure {
     /*border: 1px solid red;*/
 }
 
+
+
 .articles {
 
     width: 1200px;
@@ -161,6 +163,15 @@ header .article_image figure {
     float: left;
     min-height: 1550px;
 }
+
+/*!*当屏幕高于780时*!
+@media only screen and (min-height: 700px) {
+    .article_lists {
+       height: 1900px;
+    }
+}*/
+
+
 
 .article_lists > li {
     /*列表上下空隙*/

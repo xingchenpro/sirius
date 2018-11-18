@@ -82,7 +82,6 @@ public class UserController {
 			return "/user/login";
 		}
 	}
-
 	/**
 	 * 注册
 	 * @param

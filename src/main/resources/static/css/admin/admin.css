@@ -279,8 +279,9 @@ header img {
     margin: 0 10px 0;
     color: #FFF;
     font-size: 12px;
-    width: auto;
     border-bottom: 1px solid #104cec;
+    min-width: 105px;
+
 }
 
 .chk + label:after {

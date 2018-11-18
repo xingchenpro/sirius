@@ -34,4 +34,9 @@ public class CategoryServiceImpl implements CategoryService {
     public Integer  getCategory(String Category) {
         return categoryDao.getCategory(Category);
     }
+
+    @Override
+    public int updateCategoryNum(String categoryNum) {
+        return categoryDao.updateCategoryNum(categoryNum);
+    }
 }

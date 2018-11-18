@@ -29,7 +29,8 @@ body::-webkit-scrollbar {
 
 body {
 
-    background-color: rgba(252, 255, 232, 0.4);
+    background: linear-gradient(#212741, rgb(37, 43, 68)); /* 标准的语法（必须放在最后） */
+    /*background-color: rgba(252, 255, 232, 0.4);*/
 }
 
 a {
@@ -157,15 +158,17 @@ header .article_image figure {
 }
 
 .article-history {
+    border-radius: 10px;
     background-color: white;
     width: 1000px;
-    min-height: 700px;
+    min-height: 1650px;
     /*border: 1px solid blue;*/
     margin: 20px auto;
 }
 
 /*文章标签*/
 .article-history-tag {
+   padding-top: 10px;
     width: inherit;
     /*border: 1px solid black;*/
     min-height: 50px;
@@ -181,11 +184,11 @@ header .article_image figure {
     /*inline只能设置left和right*/
     padding: 0 10px 0 12px;
     color: #feffe4;
-    background-color: #ff9b1a;
+    background-color: #005565;
     transition: all ease .4s;
     cursor: pointer;
     box-shadow: inset 0 50px 37px -30px rgba(255, 222, 197, 0.3), 0 0 13px rgba(0, 0, 0, 0.6);
-    border-top: 1px solid #ECA14F;
+    border-top: 1px solid #2f93b4;
 
 }
 
@@ -195,11 +198,15 @@ header .article_image figure {
     color: #005565;
     box-shadow: rgba(0, 0, 0, .117647) 0 1px 6px, rgba(0, 0, 0, .239216) 0 1px 4px;
 }
-
-.article-history-tag a:hover {
-    border-top: 1px solid #2f93b4;
-    background-color: #2f93b4;
+.article-history-tag a:first-child:hover,.article-history-tag a:first-child:focus{
+    background-color: #005565;
     color: white;
+}
+
+.article-history-tag a:hover,.article-history-tag a:focus {
+    border-top: 1px solid white;
+    background-color: white;
+    color: #005565
 }
 
 .article-history-tag a:focus {
