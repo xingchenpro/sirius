@@ -11,6 +11,7 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
+/src/main/java/resources/static/html/
 .idea
 *.iws
 *.iml

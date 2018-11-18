@@ -17,14 +17,19 @@ $(document).ready(function () {
     //提交文章到后端
     function submit_article() {
 
-
         var categoryList = [];
 
+        //获取所有复选
         $.each($('input:checkbox:checked'),function(){
             categoryList.push($(this).val());
         });
 
-        alert(categoryList);
+        //获取所有input
+        $.each($("input[name='inputCategory']"),function () {
+            categoryList.push($(this).val());
+        });
+
+        //alert(categoryList);
 
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
@@ -37,7 +42,6 @@ $(document).ready(function () {
                     articleContent: articleContent
                 },
                 categoryList:categoryList
-
             }),
             type: "POST",
             contentType: 'application/json',
@@ -54,7 +58,7 @@ $(document).ready(function () {
     //添加分类
         $('.add-type').click(function () {
             var tpye = '<div class="input-category">'+
-                '<input type="text" placeholder="输入分类">'+
+                '<input type="text" placeholder="输入分类" name="inputCategory">'+
                 '<i class="del fa fa-remove">'+'</i>'+
                 '</div>';
             $('.add-category').prepend(tpye);
@@ -64,6 +68,7 @@ $(document).ready(function () {
                 $(this).parent().remove();
             });
         });
+
 
 });
 
