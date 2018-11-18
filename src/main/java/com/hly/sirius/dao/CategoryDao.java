@@ -21,4 +21,18 @@ public interface CategoryDao {
      */
     public List<Category> getCategories ();
 
+    /**
+     * 插入分类
+     * @param
+     * @return
+     */
+    public int addCategory(Category category);
+
+    /**
+     * 查询某一类
+     * @param Category
+     * @return
+     */
+    public Integer  getCategory(String Category);
+
 }

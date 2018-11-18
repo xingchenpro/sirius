@@ -33,8 +33,36 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+
 	/**
-	 * 登录
+	 * 登录界面
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("login")
+	public String login(HttpSession session){
+		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
+			return "/admin/admin";
+		}
+		return "/user/login";
+	}
+
+	/**
+	 * 注销
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/logout")
+	public String logout(HttpSession session){
+		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
+			session.removeAttribute("username");
+			System.err.println("注销成功!");
+		}
+		return "redirect:/index";
+	}
+
+	/**
+	 * 登录验证
 	 * @param username
 	 * @param password
 	 * @return
@@ -74,34 +102,4 @@ public class UserController {
 				return mView;
 			}
 	}
-
-	/**
-	 * 登录
-	 * @param session
-	 * @return
-	 */
-	@RequestMapping("login")
-	public String login(HttpSession session){
-		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
-			return "/admin/admin";
-		}
-		return "/user/login";
-	}
-
-	/**
-	 * 注销
-	 * @param session
-	 * @return
-	 */
-	@RequestMapping("/logout")
-	public String logout(HttpSession session){
-		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
-			session.removeAttribute("username");
-			System.err.println("注销成功!");
-		}
-		return "redirect:/index";
-	}
-	
-
-
 }

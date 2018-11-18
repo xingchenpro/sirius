@@ -32,7 +32,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public boolean insertArticle(Article article) {
+    public int insertArticle(Article article) {
         return articleDao.insertArticle(article);
     }
 
@@ -55,4 +55,11 @@ public class ArticleServiceImpl implements ArticleService {
     public Article getNextArticle(Integer articleId) {
         return articleDao.getNextArticle(articleId);
     }
+
+    @Override
+    public int addArticleCategory(Map<String, Object> map) {
+        return articleDao.addArticleCategory(map);
+    }
+
+
 }

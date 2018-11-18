@@ -33,7 +33,7 @@ public interface ArticleService {
      * @param article
      * @return
      */
-    public boolean insertArticle(Article article);
+    public int insertArticle(Article article);
 
     /**
      * 根据id查询文章信息
@@ -62,4 +62,12 @@ public interface ArticleService {
      * @return
      */
     public Article getNextArticle(Integer articleId);
+
+    /**
+     * 添加文章和所对应的类型
+     * @param
+     * @param
+     * @return
+     */
+    public int addArticleCategory(Map<String, Object> map);
 }

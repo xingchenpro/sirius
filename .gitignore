@@ -10,13 +10,12 @@
 .springBeans
 .sts4-cache
 
-### test filt ###
+### test file ###
 /src/main/resources/static/html/
 /src/main/resources/static/test/
 /src/main/resources/summary/
 
 ### IntelliJ IDEA ###
-
 .idea
 *.iws
 *.iml

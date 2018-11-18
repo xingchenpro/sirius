@@ -4,6 +4,7 @@ import com.hly.sirius.domain.Article;
 import com.hly.sirius.domain.ArticleCategories;
 import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.ArticleService;
+import com.hly.sirius.service.CategoryService;
 import com.hly.sirius.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.Calendar;
+import java.util.*;
 
 /**
  * @author :hly
@@ -34,6 +35,21 @@ public class ArticleEditController {
     @Autowired
     ArticleService articleService;
 
+    @Autowired
+    CategoryService categoryService;
+
+    /**
+     * 返回文章编辑界面
+     *
+     * @return editor article
+     */
+    @RequestMapping("/writeArticle")
+    public ModelAndView getWriteArticle() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("admin/admin");
+        return mv;
+    }
+
     /**
      * 获得编辑的文章内容与添加新的文章
      *
@@ -43,13 +59,49 @@ public class ArticleEditController {
     @RequestMapping(value = "articleWritingSubmit", method = RequestMethod.POST)
     public ModelAndView postArticle(@RequestBody ArticleCategories articleCategories, HttpSession session) {
         Article article = articleCategories.getArticle();
+        //获得文章类型
+        List<String> categoryList = articleCategories.getCategoryList();
         article.setUsername((String) session.getAttribute("username"));
         article.setArticleCreateTime(DateUtil.getCurrentDateString());
-        articleService.insertArticle(article);
+        int articleId = 0;
+        List<Integer> categoryId = null;
+        Map<String, Object> articleCategoryMap = null;
+        try {
+            articleService.insertArticle(article);
+            //获得插入文章的id
+            articleId = article.getArticleId();
+            //查询是否存在分类，若不存在则插入
+            categoryId = new ArrayList<>();
+            int cId;
+            Category category = null;
+            for (String categoryName : categoryList) {
+                if (categoryService.getCategory(categoryName) == null) {
+                    category = new Category();
+                    category.setCategoryName(categoryName);
+                    categoryService.addCategory(category);
+                    categoryId.add(category.getCategoryId());
+                    articleCategoryMap = new HashMap<String, Object>();
+                    articleCategoryMap.put("articleId", articleId);
+                    articleCategoryMap.put("categoryId",category.getCategoryId());
+                    articleService.addArticleCategory(articleCategoryMap);
 
+                } else {
+                    categoryId.add(categoryService.getCategory(categoryName));
+                    articleCategoryMap = new HashMap<String, Object>();
+                    articleCategoryMap.put("articleId", articleId);
+                    articleCategoryMap.put("categoryId",categoryService.getCategory(categoryName));
+                    articleService.addArticleCategory(articleCategoryMap);
+                }
+            }
 
-        System.err.println(articleCategories.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("添加失败");
+        }
 
+        System.err.println("分类：" + categoryList);
+        System.err.println("ArticleId：" + articleId);
+        System.err.println("分类Id：" + categoryId);
 
         return null;
     }
@@ -70,12 +122,12 @@ public class ArticleEditController {
             //String upload = request.getSession().getServletContext().getRealPath("/resource/upload/");
             //获取跟目录
             File path = new File(ResourceUtils.getURL("classpath:").getPath());
-            if(!path.exists()) path = new File("");
-            System.out.println("path:"+path.getAbsolutePath());
+            if (!path.exists()) path = new File("");
+            System.out.println("path:" + path.getAbsolutePath());
 
-            File upload = new File(path.getAbsolutePath(),"static/images/upload/");
-            if(!upload.exists()) upload.mkdirs();
-            System.out.println("upload url:"+upload.getAbsolutePath());
+            File upload = new File(path.getAbsolutePath(), "static/images/upload/");
+            if (!upload.exists()) upload.mkdirs();
+            System.out.println("upload url:" + upload.getAbsolutePath());
 
             //Calendar.getInstance()是获取一个Calendar对象并可以进行时间的计算，时区的指定
             Calendar date = Calendar.getInstance();
@@ -94,12 +146,11 @@ public class ArticleEditController {
             //System.out.println("/resources/upload/"+dateFile+File.separator+originalFile);
             System.out.println(dateFile + "/" + file.getOriginalFilename());
             /*JSON格式*/
-            response.getWriter().write("{\"success\":1,\"message\":\"上传成功\",\"url\":\"/images/upload/" + dateFile.getPath().replace('\\','/') + "/" + file.getOriginalFilename() + "\"}");
+            response.getWriter().write("{\"success\":1,\"message\":\"上传成功\",\"url\":\"/images/upload/" + dateFile.getPath().replace('\\', '/') + "/" + file.getOriginalFilename() + "\"}");
 
         } catch (Exception e) {
             response.getWriter().write("{\"success\":0}");
 
         }
     }
-
 }

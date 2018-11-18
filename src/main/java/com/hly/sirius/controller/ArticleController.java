@@ -24,35 +24,26 @@ public class ArticleController {
 
     /**
      * 根据文章id获得文章
+     *
      * @param id
      * @return
      */
     @RequestMapping("/articleDetail/{id}")
-    public ModelAndView getArticleDetail(@PathVariable("id")Integer id){
+    public ModelAndView getArticleDetail(@PathVariable("id") Integer id) {
         ModelAndView mv = new ModelAndView();
         articleService.updateArticleViewCount(id);
-        Article article  = articleService.getArticleById(id);
+        Article article = articleService.getArticleById(id);
         Article preArticle = articleService.getPreArticle(id);
         Article nextArticle = articleService.getNextArticle(id);
         //System.err.println(article.getArticleTitle()+" "+preArticle.toString()+" "+nextArticle.toString());
-        mv.addObject("article",article);
-        if(preArticle!=null)
-            mv.addObject("preArticle",preArticle);
-        if(nextArticle!=null)
-            mv.addObject("nextArticle",nextArticle);
+        mv.addObject("article", article);
+        if (preArticle != null)
+            mv.addObject("preArticle", preArticle);
+        if (nextArticle != null)
+            mv.addObject("nextArticle", nextArticle);
         mv.setViewName("article/article_detail");
         return mv;
     }
 
-    /**
-     * 返回文章编辑界面
-     *
-     * @return editor article
-     */
-    @RequestMapping("/writeArticle")
-    public ModelAndView getWriteArticle() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("admin/admin");
-        return mv;
-    }
+
 }

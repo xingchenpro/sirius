@@ -35,7 +35,7 @@ public interface ArticleDao {
      * @param article
      * @return
      */
-    public boolean insertArticle(Article article);
+    public int insertArticle(Article article);
 
     /**
      * 根据文章id查询文章信息
@@ -62,5 +62,13 @@ public interface ArticleDao {
      * @return
      */
     public Article getNextArticle(Integer articleId);
+
+    /**
+     * 添加文章和所对应的类型
+     * @param
+     * @param
+     * @return
+     */
+    public int addArticleCategory(Map<String, Object> map);
 
 }

@@ -13,5 +13,13 @@
         SELECT * FROM category
     </select>
 
+    <!--查询某个分类是否存在-->
+    <select id="getCategory" parameterType="string" resultType="Integer">
+        SELECT categoryId FROM category WHERE categoryName = #{categoryName}
+    </select>
+
+    <insert id="addCategory"  parameterType="Category" useGeneratedKeys="true" keyProperty="categoryId" keyColumn="categoryId">
+        INSERT INTO category(categoryName) VALUES (#{categoryName});
+    </insert>
 
 </mapper>
