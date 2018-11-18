@@ -11,7 +11,7 @@
 
     <!--查询所有分类信息-->
     <select id="getCategories" resultMap="CategoryResult">
-        SELECT * FROM category
+        SELECT * FROM category ORDER BY categoryArticleNum DESC
     </select>
 
     <!--查询某个分类是否存在-->

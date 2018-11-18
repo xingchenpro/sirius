@@ -159,7 +159,7 @@ header .article_image figure {
 
 .article-history {
     border-radius: 10px;
-    background-color: white;
+    background: linear-gradient(#212741, rgba(37, 43, 68,0.7)); /* 标准的语法（必须放在最后） */
     width: 1000px;
     min-height: 1650px;
     /*border: 1px solid blue;*/
@@ -169,9 +169,10 @@ header .article_image figure {
 /*文章标签*/
 .article-history-tag {
    padding-top: 10px;
-    width: inherit;
+    width: 950px;
     /*border: 1px solid black;*/
     min-height: 50px;
+    margin:0 auto;
 }
 
 .article-history-tag a {
@@ -233,10 +234,12 @@ header .article_image figure {
     border-bottom:  1px solid #e3e2d7;
     display: inline-block;
     width: 950px;
+    color: white;
 
 }
 
 .article-history-lists li a {
+    color: white;
     padding-bottom: 15px;
     padding-left: 20px;
     font-size: 18px;

@@ -44,8 +44,7 @@
 <div id="main">
     <div class="article-history">
         <div class="article-history-tag">
-            <a href="javascript:">ALL ARTICLES<sup th:text="${categoryNum}">145</sup></a>
-
+            <a th:href="@{/historyArticles}">ALL ARTICLES<sup th:text="${categoryNum}">145</sup></a>
             <a th:each="category:${categoryList}" th:href="@{'/category/'+${category.categoryId}}" th:inline="text"
                >[[${category.categoryName}]]<sup th:text="${category.categoryArticleNum}">19</sup>
             </a>
