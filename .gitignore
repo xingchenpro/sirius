@@ -9,9 +9,10 @@
 .settings
 .springBeans
 .sts4-cache
+.gitignore
 
 ### IntelliJ IDEA ###
-/src/main/java/resources/static/html/
+/src/main/resources/static/html/
 .idea
 *.iws
 *.iml
