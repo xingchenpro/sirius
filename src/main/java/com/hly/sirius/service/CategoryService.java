@@ -1,5 +1,6 @@
 package com.hly.sirius.service;
 
+import com.hly.sirius.domain.Article;
 import com.hly.sirius.domain.Category;
 
 import java.util.List;
@@ -38,4 +39,6 @@ public interface CategoryService {
      * @return
      */
     public int updateCategoryNum(String categoryNum);
+
+
 }

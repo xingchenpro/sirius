@@ -1,6 +1,7 @@
 package com.hly.sirius.service.Impl;
 
 import com.hly.sirius.dao.CategoryDao;
+import com.hly.sirius.domain.Article;
 import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,4 +40,6 @@ public class CategoryServiceImpl implements CategoryService {
     public int updateCategoryNum(String categoryNum) {
         return categoryDao.updateCategoryNum(categoryNum);
     }
+
+
 }

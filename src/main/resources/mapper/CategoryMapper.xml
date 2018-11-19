@@ -26,4 +26,6 @@
     <update id="updateCategoryNum" parameterType="string">
         UPDATE category SET categoryArticleNum = categoryArticleNum+1 WHERE categoryName = #{categoryName}
     </update>
+
+
 </mapper>

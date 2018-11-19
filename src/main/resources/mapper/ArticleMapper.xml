@@ -34,7 +34,8 @@
     </select>
 
     <!--添加文章,并返回文章id-->
-    <insert id="insertArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="articleId" keyColumn="articleId">
+    <insert id="insertArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="articleId"
+            keyColumn="articleId">
         INSERT INTO article(
         <include refid="addArticle"/>
         )VALUES
@@ -60,10 +61,10 @@
     <!--前一篇，序号大的，现在写的-->
     <select id="getPreArticle" parameterType="integer" resultMap="ArticleResult">
         SELECT * FROM article
-          <where>
-              articleId &gt; #{articleId}
-          </where>
-        ORDER BY  articleId
+        <where>
+            articleId &gt; #{articleId}
+        </where>
+        ORDER BY articleId
         limit 1
     </select>
 
@@ -73,7 +74,7 @@
         <where>
             articleId &lt; #{articleId}
         </where>
-        ORDER BY  articleId DESC
+        ORDER BY articleId DESC
         limit 1
     </select>
 
@@ -81,6 +82,15 @@
     <insert id="addArticleCategory" parameterType="Map">
         INSERT  INTO article_category (articleId,categoryId) VALUES (#{articleId},#{categoryId})
     </insert>
+
+
+    <!--根据目录id查找文章列表-->
+    <select id="getArticleByCategoryId" parameterType="integer" resultMap="ArticleResult">
+        SELECT * FROM article WHERE article.articleId IN
+        (SELECT article_category.articleId FROM article_category WHERE article_category.categoryId IN
+        (SELECT category.categoryId FROM category
+        WHERE category.categoryId =#{categoryId}))
+    </select>
 
 
 </mapper>

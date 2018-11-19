@@ -1,5 +1,6 @@
 package com.hly.sirius.dao;
 
+import com.hly.sirius.domain.Article;
 import com.hly.sirius.domain.Category;
 import org.springframework.stereotype.Repository;
 
@@ -41,5 +42,7 @@ public interface CategoryDao {
      * @return
      */
     public int updateCategoryNum(String categoryNum);
+
+
 
 }

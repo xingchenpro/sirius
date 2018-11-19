@@ -70,4 +70,11 @@ public interface ArticleService {
      * @return
      */
     public int addArticleCategory(Map<String, Object> map);
+
+    /**
+     * 根据分类id查询文章
+     * @param categoryId
+     * @return
+     */
+    public List<Article> getArticleByCategoryId(Integer categoryId);
 }

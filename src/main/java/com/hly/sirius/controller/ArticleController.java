@@ -75,9 +75,11 @@ public class ArticleController {
 
     @RequestMapping("/category/{id}")
     public ModelAndView getArticleByCategory(@PathVariable("id") Integer id){
-
-
         ModelAndView modelAndView = new ModelAndView();
+        List<Category> categoryList = categoryService.getCategories();
+        List<Article> articleList = articleService.getArticleByCategoryId(id);
+        modelAndView.addObject("articleList",articleList);
+        modelAndView.addObject("categoryList",categoryList);
         modelAndView.setViewName("/article/article_history");
         return  modelAndView;
 
