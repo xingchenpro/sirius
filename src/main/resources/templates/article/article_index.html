@@ -66,8 +66,17 @@
 <!--页脚结束-->
 
 </body>
-<script src="../../static/libs/assets/jquery/jquery-3.1.1.js" th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
 <script src="../../static/js/header-sidebar.js" th:src="@{/js/header-sidebar.js}"></script>
+<!--隐藏滑轮依赖-->
+<script src="../../static/libs/assets/jquery/jquery-3.1.1.js"
+        th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
+<script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"
+        th:src="@{/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js}"></script>
+
+<!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
+<script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js"
+        th:src="@{/libs/assets/slimscroll/jquery.slimscroll.min.js}"></script>
+
 <script src="../../static/libs/assets/layer-v3.1.1/layer/layer.js" th:src="@{/libs/assets/layer-v3.1.1/layer/layer.js}"></script>
 <script src="../../static/js/article_index.js" th:src="@{/js/article_index.js}"></script>
 </html>

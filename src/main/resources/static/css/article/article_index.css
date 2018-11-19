@@ -291,7 +291,7 @@ aside {
     font-size: 14px;
     width: 310px;
     float: right;
-    margin: 20px 0px;
+    margin: 0 0 20px;
     overflow: hidden;
     /*border: 1px solid red;*/
 
@@ -309,8 +309,8 @@ aside h2 {
 aside div {
     border-radius: 6px;
     padding: 15px;
-    margin-bottom: 20px;
-
+    /*margin-bottom: 5px;*/
+    overflow: auto;
 }
 
 /*右边栏部分结束*/
@@ -318,13 +318,14 @@ aside div {
 /*网站信息开始*/
 .web-info {
     background-color: #101733;
+    overflow: auto;
 }
 
 /*用户信息*/
 .user-info {
-
     /*border: 1px solid blue;*/
     text-align: center;
+
 }
 
 .user-info li {
@@ -398,8 +399,17 @@ aside div {
 /*文章分类和归档开始*/
 
 .article-classify {
-    background-color: #ffc30d;
+    background-color: #ffac01;
+    max-height: 400px;
+    overflow: auto;
+    /*border: 1px solid red;*/
 }
+
+.article-classify::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .article-classify ul {
     width: 100%;

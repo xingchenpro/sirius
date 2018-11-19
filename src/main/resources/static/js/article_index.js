@@ -7,7 +7,6 @@
 
 
 
-
 //layer UI :https://www.cnblogs.com/lxwphp/p/9717960.html
 //微信二维码
 $("#weChatBtn").click(function () {
@@ -26,6 +25,13 @@ $("#weChatBtn").click(function () {
     });
 });
 
+//隐藏滑轮
+$("div[name='article-slim-scroll']").slimScroll({
+
+    height: '100%',
+    railVisible: false,
+    railColor: '#ff0f04'
+});
 
 /*$("#weChatBtn").click(function () {
     layer.open({

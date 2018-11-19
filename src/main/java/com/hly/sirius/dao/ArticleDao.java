@@ -73,9 +73,9 @@ public interface ArticleDao {
 
     /**
      * 根据分类id查询文章
-     * @param categoryId
+     * @param
      * @return
      */
-    public List<Article> getArticleByCategoryId(Integer categoryId);
+    public List<Article> getArticleByCategoryId(Map<String,Object> map);
 
 }

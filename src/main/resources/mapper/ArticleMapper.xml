@@ -84,13 +84,15 @@
     </insert>
 
 
-    <!--根据目录id查找文章列表-->
-    <select id="getArticleByCategoryId" parameterType="integer" resultMap="ArticleResult">
+    <!--根据分类查找文章列表-->
+    <select id="getArticleByCategoryId" parameterType="Map" resultMap="ArticleResult">
         SELECT * FROM article WHERE article.articleId IN
         (SELECT article_category.articleId FROM article_category WHERE article_category.categoryId IN
         (SELECT category.categoryId FROM category
         WHERE category.categoryId =#{categoryId}))
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
     </select>
-
 
 </mapper>

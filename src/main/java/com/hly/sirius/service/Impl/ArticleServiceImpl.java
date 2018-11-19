@@ -62,8 +62,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getArticleByCategoryId(Integer categoryId) {
-        return articleDao.getArticleByCategoryId(categoryId);
+    public List<Article> getArticleByCategoryId(Map<String,Object> map) {
+        return articleDao.getArticleByCategoryId(map);
     }
 
 

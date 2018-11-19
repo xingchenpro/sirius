@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author :hly
@@ -28,6 +29,8 @@ public class ArticleController {
 
     @Autowired
     CategoryService categoryService;
+
+    private static int articleNum;
 
     /**
      * 根据文章id获得文章
@@ -66,18 +69,25 @@ public class ArticleController {
         //获得文章分类和文章信息
         modelAndView.addObject("categoryList",categoryList);
         modelAndView.addObject("articleList",articleList);
-        modelAndView.addObject("categoryNum",articleList.size());
+        articleNum = articleList.size();
+        modelAndView.addObject("categoryNum",articleNum);
         modelAndView.setViewName("/article/article_history");
-
         return modelAndView;
     }
 
-
+    /**
+     * 根据分类查找文章信息
+     * @param id
+     * @return
+     */
     @RequestMapping("/category/{id}")
     public ModelAndView getArticleByCategory(@PathVariable("id") Integer id){
         ModelAndView modelAndView = new ModelAndView();
         List<Category> categoryList = categoryService.getCategories();
-        List<Article> articleList = articleService.getArticleByCategoryId(id);
+        Map<String,Object> articleMap = new HashMap<>();
+        articleMap.put("categoryId",id);
+        List<Article> articleList = articleService.getArticleByCategoryId(articleMap);
+        modelAndView.addObject("categoryNum",articleNum);
         modelAndView.addObject("articleList",articleList);
         modelAndView.addObject("categoryList",categoryList);
         modelAndView.setViewName("/article/article_history");
