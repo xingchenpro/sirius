@@ -106,9 +106,14 @@ public class IndexController {
         Page pageList = new Page(Integer.parseInt(page), 7);
 
         Map<String,Object> articleMap = new HashMap<>();
+        //得到文章信息
+        articleMap.put("createYear",year);
+        articleMap.put("createMonth",month);
+        List<Article> articleList = articleService.getArticleList(articleMap);
         //得到文章数目，分类，年月分类信息
         ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap,articleService,categoryService);
-        modelAndView.addObject("pageCode", PageUtil.pageInfo(request.getContextPath() + "/index/category/"+year+"/"+month, articleService.getArticleCount(articleMap), Integer.parseInt(page), pageList.getlistNum()));
+        modelAndView.addObject("articleList", articleList);
+        modelAndView.addObject("pageCode", PageUtil.pageInfo(request.getContextPath() + "/index/time/"+year+"/"+month, articleService.getArticleCount(articleMap), Integer.parseInt(page), pageList.getlistNum()));
         modelAndView.setViewName("article/article_index");
         return modelAndView;
 

@@ -20,9 +20,15 @@
     <!--<select id="articleList" parameterType="Map" resultMap="ArticleResult">
         SELECT TOP ${size} * FROM article WHERE article_id NOT IN(SELECT TOP ${(page-1)*size} article_id FROM article ORDER BY article_id DESC)ORDER BY article_id DESC;
     </select>-->
-    <!--获得文章列表-->
+    <!--获得文章记录，可根据年月选择-->
     <select id="getArticleList" parameterType="Map" resultMap="ArticleResult">
-        SELECT * FROM article WHERE articleOrder=1 order by articleId desc
+        SELECT * FROM article
+        <where>
+            <if test="createYear!=null and createMonth!=null">
+                year(articleCreateTime)= #{createYear} AND MONTH(articleCreateTime)= #{createMonth}
+            </if>
+            AND articleOrder=1 order by articleId desc
+        </where>
         <if test="start!=null and size!=null">
             limit #{start},#{size}
         </if>
@@ -98,6 +104,5 @@
     <select id="getArticleByMonth" resultType="java.util.HashMap">
         SELECT YEAR(articleCreateTime) as createYear,MONTH(articleCreateTime) as createMonth,COUNT(1) AS articleNum FROM article GROUP BY YEAR(articleCreateTime) DESC,MONTH(articleCreateTime) DESC
     </select>
-
 
 </mapper>
