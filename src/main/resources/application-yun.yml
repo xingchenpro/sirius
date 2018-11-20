@@ -53,22 +53,22 @@ spring:
 
   # 集成JPA
   jpa:
-        database: mysql
-        show-sql: true
-        hibernate:
-        # update 第一次加载model自动建立起表的结构
-        # create 每次加载删除重建表
-        # create-drop 每次加载生成表，sessionFactory关闭，表自动删除
-        # validate 验证表结构，不会创建表，会插入新的值
-          ddl-auto: update
-          naming:
-          # 遇到大写字母加 "_" 命名法
-          # org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-          # 无修改命名法
-            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-        properties:
-           hibernate:
-              dialect: org.hibernate.dialect.MySQL5Dialect
+    database: mysql
+    show-sql: true
+    hibernate:
+          # update 第一次加载model自动建立起表的结构
+          # create 每次加载删除重建表
+          # create-drop 每次加载生成表，sessionFactory关闭，表自动删除
+          # validate 验证表结构，不会创建表，会插入新的值
+      ddl-auto: update
+      naming:
+            # 遇到大写字母加 "_" 命名法
+            # org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+            # 无修改命名法
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+       dialect: org.hibernate.dialect.MySQL5Dialect
 
   # 集成MongoDB NoSQL数据库
   data:

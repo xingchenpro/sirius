@@ -77,4 +77,10 @@ public interface ArticleService {
      * @return
      */
     public List<Article> getArticleByCategoryId(Map<String,Object> map);
+
+    /**
+     * 返回每个月的文章数
+     * @return
+     */
+    public List<Map<String,Object>> getArticleByMonth();
 }

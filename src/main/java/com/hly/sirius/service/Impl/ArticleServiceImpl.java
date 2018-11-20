@@ -66,5 +66,9 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.getArticleByCategoryId(map);
     }
 
+    @Override
+    public List<Map<String, Object>> getArticleByMonth() {
+        return articleDao.getArticleByMonth();
+    }
 
 }

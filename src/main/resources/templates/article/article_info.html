@@ -64,21 +64,10 @@
     <div class="article-classify article-archived" name="article-slim-scroll" th:scrolling="no">
         <h2>文章归档</h2>
         <ul>
-            <li>
-                <a href="javascript:">2018年10月<span>18篇</span></a>
+            <li th:each="timeMap:${articleByMonthMapList}">
+                <a th:href="@{'/index/time/'+${timeMap.createYear}+'/'+${timeMap.createMonth}}" th:inline="text">[[${timeMap.createYear}]]年[[${timeMap.createMonth}]]月<span th:text="${timeMap.articleNum+'篇'}">18篇</span></a>
             </li>
-            <li>
-                <a href="javascript:">2018年09月<span>18篇</span></a>
-            </li>
-            <li>
-                <a href="javascript:">2018年08月<span>18篇</span></a>
-            </li>
-            <li>
-                <a href="javascript:">2018年07月<span>18篇</span></a>
-            </li>
-            <li>
-                <a href="javascript:">2018年06月<span>18篇</span></a>
-            </li>
+
         </ul>
     </div>
     <!--文章归档结束-->

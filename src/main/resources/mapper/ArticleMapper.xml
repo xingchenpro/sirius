@@ -83,7 +83,6 @@
         INSERT  INTO article_category (articleId,categoryId) VALUES (#{articleId},#{categoryId})
     </insert>
 
-
     <!--根据分类查找文章列表-->
     <select id="getArticleByCategoryId" parameterType="Map" resultMap="ArticleResult">
         SELECT * FROM article WHERE article.articleId IN
@@ -94,5 +93,11 @@
             limit #{start},#{size}
         </if>
     </select>
+
+    <!--查询每年每个月所对应的文章数目-->
+    <select id="getArticleByMonth" resultType="java.util.HashMap">
+        SELECT YEAR(articleCreateTime) as createYear,MONTH(articleCreateTime) as createMonth,COUNT(1) AS articleNum FROM article GROUP BY YEAR(articleCreateTime) DESC,MONTH(articleCreateTime) DESC
+    </select>
+
 
 </mapper>
