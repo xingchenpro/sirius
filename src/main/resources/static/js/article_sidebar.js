@@ -1,9 +1,8 @@
-
 /*@author :hly
-@github :github.com/SiriusHly
+@github :https://github.com/huangliangyun
 @blog :blog.csdn.net/Sirius_hly
 @date :2018/8/14*/
-/*文档*/
+/*slimScroll文档*/
 /*http://www.jq22.com/demo/jQuery-slimScroll-141223223505/*/
 var handleSlimScroll = function () {
     "use strict";
@@ -46,13 +45,20 @@ var handlesSidebarStatus = function () {
             left:parseInt($lefty.css('left'),10)==0 ? - $lefty.outerWidth()+10 : 0
         });
 
+        //改变文章编辑界面的位置
         var $articleEdit=$(".article_edit");
         $articleEdit.animate({
             /*动态改变位置*/
             marginLeft:parseInt($articleEdit.css('margin-left'),10)==230?0:230
         });
-    });
 
+        //改变文章管理界面的位置
+        var $articleManege = $(".admin-articles-list-part");
+        $articleManege.animate({
+           /* width:$articleManege.css('width')=='100%'?'82%':'100%',*/
+            marginLeft:parseInt($articleManege.css('margin-left'),10)==230?10:230
+        });
+    });
 };
 
 var App = function () {
@@ -64,4 +70,4 @@ var App = function () {
             handleSlimScroll();
         }
     }
-}()
+}();

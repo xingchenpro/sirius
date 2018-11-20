@@ -57,10 +57,10 @@ ul, ol {
     list-style-type: none;
 }
 
-/*这里的宽度是相对于父类容器的宽度，也就是相对于main的宽度*/
+
 .admin-articles-list-part {
-    width: 82%;
-    float: left;
+    /*不设置宽度可以使用animate实现宽度自适应，它是在整个main下，占main剩下的百分比，随着main改变*/
+    /*width: 82%;*/
     /*border: 1px solid red;*/
     margin-left: 230px;
 
@@ -68,7 +68,7 @@ ul, ol {
 
 /*按条件查找div*/
 .admin-articles-select {
-
+    width: 100%;
     /* border: 1px solid blue;*/
     height: 70px;
     margin-top: 12px;
@@ -113,8 +113,8 @@ ul, ol {
 
 /*文章列表管理开始*/
 .admin-article-list {
-
     margin: 10px 0;
+    width: 100%;
     /*border: 1px solid #141aff;*/
 
 }
@@ -162,7 +162,7 @@ ul, ol {
 
 .page {
     text-align: center;
-    margin: 22px auto 0px;
+    margin: 12px auto 0px;
     font-size: 10px;
 
 }
