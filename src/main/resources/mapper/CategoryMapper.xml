@@ -19,10 +19,12 @@
         SELECT categoryId FROM category WHERE categoryName = #{categoryName}
     </select>
 
+    <!--添加分类-->
     <insert id="addCategory"  parameterType="Category" useGeneratedKeys="true" keyProperty="categoryId" keyColumn="categoryId">
         INSERT INTO category(categoryName) VALUES (#{categoryName});
     </insert>
 
+    <!--更新分类文章数-->
     <update id="updateCategoryNum" parameterType="string">
         UPDATE category SET categoryArticleNum = categoryArticleNum+1 WHERE categoryName = #{categoryName}
     </update>

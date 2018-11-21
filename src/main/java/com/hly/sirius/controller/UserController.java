@@ -75,7 +75,7 @@ public class UserController {
 		try {
 			subject.login(token);
 			session.setAttribute("username",username);
-			return "redirect:/admin";
+			return "redirect:/admin/articleWriting";
 		} catch (AuthenticationException e) {
 			System.err.println("用户名或密码错误");
 			e.printStackTrace();

@@ -1,18 +1,14 @@
 package com.hly.sirius.controller;
 
-import com.hly.sirius.domain.Article;
+
 import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.service.CategoryService;
-import com.hly.sirius.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -22,6 +18,7 @@ import java.util.List;
  * @date :2018/11/16
  */
 @Controller
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -30,7 +27,11 @@ public class AdminController {
     @Autowired
     CategoryService categoryService;
 
-    @RequestMapping("/admin")
+    /**
+     * 返回后端管理或文章编辑界面
+     * @return
+     */
+    @RequestMapping({"/articleWriting"})
     public ModelAndView admin(){
 
         ModelAndView modelAndView = new ModelAndView();

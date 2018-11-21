@@ -19,7 +19,6 @@ var handleSlimScroll = function () {
         railVisible: true,
         railColor: '#ff0b56'
     });*/
-
 };
 
 var handleSidebarMenu = function () {

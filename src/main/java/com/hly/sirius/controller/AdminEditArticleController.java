@@ -30,7 +30,7 @@ import java.util.*;
  * @date :2018/11/17
  */
 @Controller
-public class ArticleEditController {
+public class AdminEditArticleController {
 
     @Autowired
     ArticleService articleService;
@@ -38,17 +38,6 @@ public class ArticleEditController {
     @Autowired
     CategoryService categoryService;
 
-    /**
-     * 返回文章编辑界面
-     *
-     * @return editor article
-     */
-    @RequestMapping("/writeArticle")
-    public ModelAndView getWriteArticle() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("admin/admin");
-        return mv;
-    }
 
     /**
      * 获得编辑的文章内容与添加新的文章

@@ -159,12 +159,15 @@ ul, ol {
 }
 
 /*分页查询*/
-
 .page {
+    /*这里绝对布局，相对于main，分页永远在底下*/
     text-align: center;
-    margin: 12px auto 0px;
     font-size: 10px;
-
+    /*border: 1px solid red;*/
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    right: 0;
 }
 
 .page ul.pagination {

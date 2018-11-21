@@ -7,7 +7,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    < <title>黄良运的博客</title>
+    <title>黄良运的博客</title>
     <link href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../../static/libs/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css">
@@ -30,8 +30,8 @@
                         <span>文章管理</span>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="javascript:">写文章</a> </li>
-                        <li><a href="javascript:">已发表</a></li>
+                        <li><a th:href="@{/admin/articleWriting}">写文章</a> </li>
+                        <li><a th:href="@{/admin/articleManage}">已发表</a></li>
                         <li><a href="javascript:">私密</a></li>
                         <li><a href="javascript:">草稿箱</a></li>
                         <li><a href="javascript:">回收站</a></li>

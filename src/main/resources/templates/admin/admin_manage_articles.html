@@ -1,0 +1,145 @@
+<!--@author :hly
+@github :https://github.com/huangliangyun
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/8/4
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>黄良运的博客</title>
+    <link rel="shortcut icon" href="../../static/images/user/hly.jpg" type="image/x-icon" th:href="@{/images/user/hly.jpg}"/>
+    <!--bootstrap-3.3.7-->
+    <link rel="stylesheet" type="text/css" href="../../static/libs/assets/bootstrap-3.3.7/css/bootstrap.css"
+          th:href="@{/libs/assets/bootstrap-3.3.7/css/bootstrap.css}">
+    <!--font-awesome-4.7.0-->
+    <link href="../../static/libs/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
+          th:href="@{/libs/assets/font-awesome-4.7.0/css/font-awesome.min.css}">
+    <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{/css/admin/admin.css}">
+    <link href="../../static/css/admin/admin_manage_article.css" rel="stylesheet" type="text/css" th:href="@{/css/admin/admin_manage_article.css}">
+    <!--隐藏滑轮依赖-->
+    <script src="../../static/libs/assets/jquery/jquery-3.1.1.js"
+            th:src="@{/libs/assets/jquery/jquery-3.1.1.js}"></script>
+    <script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"
+            th:src="@{/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js}"></script>
+    <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
+    <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js"
+            th:src="@{/libs/assets/slimscroll/jquery.slimscroll.min.js}"></script>
+    <!--sidebar JS-->
+    <script src="../../static/js/article_sidebar.js" th:src="@{/js/article_sidebar.js}"></script>
+    <script th:src="@{/js/article_editor.js}" src="../../static/js/article_editor.js"></script>
+    <script th:src="@{/js/admin_manage_article.js}" src="../../static/js/admin_manage_article.js" ></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+
+</head>
+<body>
+<div id="page-container">
+
+    <header th:replace="admin/admin_nav ::admin_nav "></header>
+
+    <!--导航结束-->
+    <!--start main-->
+    <div class="main" id="main">
+        <!--start sidebar-->
+        <div id="admin-sidebar" class="sidebar" th:replace="admin/admin_sidebar::sidebar"></div>
+        <!--end sidebar-->
+
+        <!--start article list part-->
+        <div class="admin-articles-list-part">
+            <!--筛选文章开始-->
+            <div class="admin-articles-select">
+
+                <h5>发布时间:</h5>
+
+                <ul class="admin-articles-select-button">
+
+                    <li>
+                        <select>
+                            <option>不限</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select>
+                            <option>不限</option>
+                            <option>12</option>
+                            <option>11</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <select>
+                            <option>选择分类</option>
+                            <option>Docker</option>
+                            <option>微服务</option>
+                            <option>Linux</option>
+                        </select>
+                    </li>
+                </ul>
+
+                    <form class="bs-example bs-example-form search" role="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							Go!
+						</button>
+					</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+                <!--筛选文章结束-->
+
+                <!--文章列表开始-->
+                <ul class="admin-article-list">
+                    <li th:each="article:${articleList}">
+                        <h4><a th:text="${article.articleTitle}" th:href="@{'/articleDetail/'+${article.articleId}}">SpringCloud 微服务架构的搭建</a></h4>
+                        <div>
+                            <ul class="admin-article-info">
+                                <li th:text="${article.articleCreateTime}">2018年11月2日 10:11:12</li>
+                                <li th:text="${article.articleViewCount}"><i class="fa fa-columns"></i></i>17</li>
+
+                            </ul>
+
+                            <ul class="admin-article-operate">
+                                <li><i class="fa fa-columns"></i><a th:href="@{'/articleDetail/'+${article.articleId}}">查看</a></li>
+                                <li><i class="fa fa-edit"></i><a href="javascript:">编辑</a></li>
+
+                                <li><i class="fa fa-arrow-circle-up"></i><a href="javascript:">置顶</a></li>
+                                <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a href="javascript:" style="color:red">删除</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <!--文章列表结束-->
+
+        </div>
+        <!--end article list part-->
+        <!--分页开始-->
+        <div class="page">
+            <!--uetxt能解析html-->
+            <ul class="pagination" th:utext="${pageCode}"></ul>
+        </div>
+        <!--分页结束-->
+        <!--页脚-->
+        <div th:include="common/foot::footer" class="foot"></div>
+        <!--页脚结束-->
+    </div>
+    <!--end main-->
+</div>
+<!--container end-->
+
+</body>
+
+
+
+</html>

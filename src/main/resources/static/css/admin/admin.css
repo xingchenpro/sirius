@@ -452,7 +452,7 @@ header img {
 
 #admin-sidebar-button {
     position: absolute;
-    /*动态页面百分比*/
+    /*和编辑器样式冲突有编辑器42*/
     margin-left: 42%;
     /*静态页面百分比*/
     /*margin-left:92%;*/

@@ -13,7 +13,6 @@
     <link href="../../static/css/article/article_index.css" th:href="@{/css/article/article_index.css}" type="text/css"
           rel="stylesheet">
 </head>
-
 <body>
 <header th:replace="common/head :: header"></header>
 <!--导航结束-->
@@ -51,12 +50,9 @@
 </div>
 <!--main结束-->
 <!--分页开始-->
-
 <div class="page">
     <!--uetxt能解析html-->
-    <ul class="pagination" th:utext="${pageCode}">
-
-    </ul>
+    <ul class="pagination" th:utext="${pageCode}"></ul>
 </div>
 <!--分页结束-->
 <!--页脚-->
