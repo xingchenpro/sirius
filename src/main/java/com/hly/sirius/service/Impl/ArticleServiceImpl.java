@@ -71,4 +71,14 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.getArticleByMonth();
     }
 
+    @Override
+    public int deleteArticleById(Integer id) {
+        return articleDao.deleteArticleById(id);
+    }
+
+    @Override
+    public int deleteArticleAndCategoryById(Integer id) {
+        return articleDao.deleteArticleAndCategoryById(id);
+    }
+
 }

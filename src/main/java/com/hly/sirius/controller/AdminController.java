@@ -18,7 +18,6 @@ import java.util.List;
  * @date :2018/11/16
  */
 @Controller
-@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -31,11 +30,11 @@ public class AdminController {
      * 返回后端管理或文章编辑界面
      * @return
      */
-    @RequestMapping({"/articleWriting"})
+    @RequestMapping({"/admin"})
     public ModelAndView admin(){
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/admin/admin");
+        modelAndView.setViewName("/admin/admin_articleWriting");
         List<Category> categories = categoryService.getCategories();
         modelAndView.addObject("categories",categories);
         return modelAndView ;

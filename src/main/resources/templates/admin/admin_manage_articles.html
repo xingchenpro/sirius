@@ -106,16 +106,16 @@
                         <div>
                             <ul class="admin-article-info">
                                 <li th:text="${article.articleCreateTime}">2018年11月2日 10:11:12</li>
-                                <li th:text="${article.articleViewCount}"><i class="fa fa-columns"></i></i>17</li>
+                                <li th:inline="text"><i class="fa fa-columns"></i>&nbsp;[[${article.articleViewCount}]]</li>
 
                             </ul>
 
                             <ul class="admin-article-operate">
-                                <li><i class="fa fa-columns"></i><a th:href="@{'/articleDetail/'+${article.articleId}}">查看</a></li>
-                                <li><i class="fa fa-edit"></i><a href="javascript:">编辑</a></li>
+                                <li><i class="fa fa-columns"></i><a th:href="@{'/articleDetail/'+${article.articleId}}" >阅览</a></li>
+                                <li><i class="fa fa-edit"></i><a th:href="@{'/admin/editArticle/'+${article.articleId}}">编辑</a></li>
 
                                 <li><i class="fa fa-arrow-circle-up"></i><a href="javascript:">置顶</a></li>
-                                <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a href="javascript:" style="color:red">删除</a></li>
+                                <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a th:href="@{'/admin/deleteArticle/'+${article.articleId}}" style="color:red">删除</a></li>
                             </ul>
                         </div>
                     </li>

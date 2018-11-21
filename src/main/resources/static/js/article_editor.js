@@ -8,7 +8,6 @@
 $(document).ready(function () {
 
     /*提交文章函数和方法*/
-
     $('#submit_article').click(function () {
         submit_article();
         //alert("提交文章");
@@ -68,7 +67,6 @@ $(document).ready(function () {
                 $(this).parent().remove();
             });
         });
-
 
 });
 

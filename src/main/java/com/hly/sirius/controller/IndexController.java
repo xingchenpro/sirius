@@ -1,11 +1,9 @@
 package com.hly.sirius.controller;
 
 import com.hly.sirius.domain.Article;
-import com.hly.sirius.domain.Page;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.service.CategoryService;
 import com.hly.sirius.util.ArticleUtil;
-import com.hly.sirius.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,7 +31,6 @@ public class IndexController {
     CategoryService categoryService;
     /**
      * 请求文章列表
-     *
      * @return article list
      */
     @RequestMapping({"/index","/"})
@@ -92,6 +89,5 @@ public class IndexController {
         modelAndView.addObject("articleList", articleList);
         modelAndView.setViewName("article/article_index");
         return modelAndView;
-
     }
 }

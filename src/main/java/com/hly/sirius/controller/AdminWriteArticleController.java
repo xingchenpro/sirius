@@ -30,7 +30,8 @@ import java.util.*;
  * @date :2018/11/17
  */
 @Controller
-public class AdminEditArticleController {
+@RequestMapping("/admin")
+public class AdminWriteArticleController {
 
     @Autowired
     ArticleService articleService;
@@ -38,6 +39,19 @@ public class AdminEditArticleController {
     @Autowired
     CategoryService categoryService;
 
+    /**
+     * 返回后端管理或文章编辑界面
+     * @return
+     */
+    @RequestMapping({"/articleWriting"})
+    public ModelAndView admin(){
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/admin/admin_writing");
+        List<Category> categories = categoryService.getCategories();
+        modelAndView.addObject("categories",categories);
+        return modelAndView ;
+    }
 
     /**
      * 获得编辑的文章内容与添加新的文章
@@ -102,7 +116,7 @@ public class AdminEditArticleController {
      *
      * @return
      */
-    @RequestMapping("/articlePhotos")
+    @RequestMapping("/articlePhotosSubmit")
     public void postArticlePhotos(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "editormd-image-file", required = false) MultipartFile file) throws IOException {
         try {
             System.out.println("开始上传");

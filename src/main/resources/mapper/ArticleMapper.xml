@@ -105,4 +105,13 @@
         SELECT YEAR(articleCreateTime) as createYear,MONTH(articleCreateTime) as createMonth,COUNT(1) AS articleNum FROM article GROUP BY YEAR(articleCreateTime) DESC,MONTH(articleCreateTime) DESC
     </select>
 
+    <!--删除文章(article_category表)(有触发器,category表分类数目减1)-->
+    <delete id="deleteArticleAndCategoryById" parameterType="integer">
+        DELETE FROM article_category WHERE articleId = #{articleId}
+    </delete>
+
+    <delete id="deleteArticleById" parameterType="integer">
+        DELETE FROM article WHERE articleId = #{articleId}
+    </delete>
+
 </mapper>

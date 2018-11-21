@@ -42,7 +42,7 @@ public class UserController {
 	@RequestMapping("login")
 	public String login(HttpSession session){
 		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
-			return "/admin/admin";
+			return "/admin/admin_writing";
 		}
 		return "/user/login";
 	}

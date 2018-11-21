@@ -2,7 +2,6 @@ package com.hly.sirius.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;

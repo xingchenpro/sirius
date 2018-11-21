@@ -83,4 +83,18 @@ public interface ArticleService {
      * @return
      */
     public List<Map<String,Object>> getArticleByMonth();
+
+    /**
+     * 删除文章
+     * @param id
+     * @return
+     */
+    public int deleteArticleById(Integer id);
+
+    /**
+     * 删除文章和分类
+     * @param id
+     * @return
+     */
+    public int deleteArticleAndCategoryById(Integer id);
 }
