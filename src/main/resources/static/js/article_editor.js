@@ -7,24 +7,31 @@
 
 $(document).ready(function () {
 
-    /*提交文章函数和方法*/
-    $('#submit_article').click(function () {
-        submit_article();
+
+
+    /*提交文章*/
+    $('#submit-article').click(function () {
+        submitArticle();
         //alert("提交文章");
     });
 
-    //提交文章到后端
-    function submit_article() {
+    //更新文章
+    $('#update-article-modify').click(function () {
+        updateArticle();
+    });
+
+    //编写提交文章
+    function submitArticle() {
 
         var categoryList = [];
 
         //获取所有复选
-        $.each($('input:checkbox:checked'),function(){
+        $.each($('input:checkbox:checked'), function () {
             categoryList.push($(this).val());
         });
 
         //获取所有input
-        $.each($("input[name='inputCategory']"),function () {
+        $.each($("input[name='inputCategory']"), function () {
             categoryList.push($(this).val());
         });
 
@@ -33,14 +40,14 @@ $(document).ready(function () {
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
         $.ajax({
-            url: "/articleWritingSubmit",
+            url: "/admin/articleWritingSubmit",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
-                article:{
+                article: {
                     articleTitle: articleTitle,
                     articleContent: articleContent
                 },
-                categoryList:categoryList
+                categoryList: categoryList
             }),
             type: "POST",
             contentType: 'application/json',
@@ -54,22 +61,57 @@ $(document).ready(function () {
         });
     }
 
-    //编辑文章
+    //更新文章
+    function updateArticle() {
+        var articleTitle = $("#article_title").val();
+        var articleContent = $("#editor-md-doc").val();
+        var categoryList = [];
 
+        //获取所有复选
+        $.each($('input:checkbox:checked'), function () {
+            categoryList.push($(this).val());
+        });
+
+        //获取所有input
+        $.each($("input[name='inputCategory']"), function () {
+            categoryList.push($(this).val());
+        });
+        $.ajax({
+            url: "/admin/updateArticle",
+            /*这里属性名字和后端一直就行，顺序无所谓*/
+            data: JSON.stringify({
+                article: {
+                    articleId: articleId,
+                    articleTitle: articleTitle,
+                    articleContent: articleContent
+                },
+                categoryList: categoryList
+            }),
+            type: "POST",
+            contentType: 'application/json',
+            success: function () {
+                alert("更新成功" + articleId);
+
+            },
+            error: function () {
+                alert("更新失败");
+            }
+        });
+    }
 
     //添加分类
-        $('.add-type').click(function () {
-            var tpye = '<div class="input-category">'+
-                '<input type="text" placeholder="输入分类" name="inputCategory">'+
-                '<i class="del fa fa-remove">'+'</i>'+
-                '</div>';
-            $('.add-category').prepend(tpye);
-            $(".input-category input").focus();
-            // 删除表单
-            $('.del').click(function () {
-                $(this).parent().remove();
-            });
+    $('.add-type').click(function () {
+        var tpye = '<div class="input-category">' +
+            '<input type="text" placeholder="输入分类" name="inputCategory">' +
+            '<i class="del fa fa-remove">' + '</i>' +
+            '</div>';
+        $('.add-category').prepend(tpye);
+        $(".input-category input").focus();
+        // 删除表单
+        $('.del').click(function () {
+            $(this).parent().remove();
         });
+    });
 
 });
 

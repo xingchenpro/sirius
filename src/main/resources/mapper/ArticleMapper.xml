@@ -83,6 +83,10 @@
         ORDER BY articleId DESC
         limit 1
     </select>
+    <!--查询文章对应的分类是否存在-->
+    <select id="selectArticleCategory" parameterType="Map" resultType="java.util.HashMap">
+        SELECT * FROM article_category WHERE articleId =#{articleId} AND categoryId = #{categoryId}
+    </select>
 
     <!--插入文章所对应的分类-->
     <insert id="addArticleCategory" parameterType="Map">
@@ -110,8 +114,15 @@
         DELETE FROM article_category WHERE articleId = #{articleId}
     </delete>
 
+    <!--删除文章article表-->
     <delete id="deleteArticleById" parameterType="integer">
         DELETE FROM article WHERE articleId = #{articleId}
     </delete>
+
+    <!--更新文章-->
+    <update id="updateArticle">
+        UPDATE article SET articleTitle = #{articleTitle},articleContent = #{articleContent} WHERE articleId = #{articleId}
+
+    </update>
 
 </mapper>

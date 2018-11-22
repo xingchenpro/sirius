@@ -62,6 +62,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Map<String,Object>> selectArticleCategory(Map<String, Object> map) {
+        return articleDao.selectArticleCategory(map);
+    }
+
+    @Override
     public List<Article> getArticleByCategoryId(Map<String,Object> map) {
         return articleDao.getArticleByCategoryId(map);
     }
@@ -79,6 +84,11 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public int deleteArticleAndCategoryById(Integer id) {
         return articleDao.deleteArticleAndCategoryById(id);
+    }
+
+    @Override
+    public int updateArticle(Article article) {
+        return articleDao.updateArticle(article);
     }
 
 }

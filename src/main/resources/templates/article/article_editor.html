@@ -16,8 +16,9 @@
     <script src="../../static/libs/assets/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
     <!--slimScroll在使用的时候要依赖JQ，所以首次使用的时候要引入JQ再引入simScroll插件，不能放到js前面，不然显示不出-->
     <script src="../../static/libs/assets/slimscroll/jquery.slimscroll.min.js"></script>
-
     <script src="../../static/js/article_sidebar.js"></script>
+
+
     <script>
         $(document).ready(function () {
             App.init();
@@ -56,17 +57,16 @@
             <!--单选按钮开始-->
             <ul class="article-category-select">
                 <li th:each="category:${categories}">
-                    <input th:value="${category.categoryName}" name="categoryCheckbox" type="checkbox" th:id="'checkbox'+${category.categoryId}" class="chk"/><label th:for="'checkbox'+${category.categoryId}" th:text="${category.categoryName+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'}">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="checkbox" th:value="${category.categoryName}" th:checked="(${category.categoryOrder}==1)?true:false" name="categoryCheckbox"  th:id="'checkbox'+${category.categoryId}"  class="chk"/><label th:for="'checkbox'+${category.categoryId}" th:text="${category.categoryName+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'}">微服务架构&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 </li>
-
             </ul>
             <!--单选按钮结束-->
             <!--文章类型选择结束-->
             <!--start btns-->
             <div class="article_operation">
-                <input type="button" value="发布文章" class="submit_article" id="submit_article">
+                <input type="button" value="发布文章" class="submit-article" id="submit-article">
+                <input type="button" value="保存修改" class="update-article-modify" id="update-article-modify">
                 <input type="button" value="保存草稿" class="article_save_draft">
-                <input type="button" value="返回" class="go_back">
             </div>
             <!--end my_editor-->
         </div>

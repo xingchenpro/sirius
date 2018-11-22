@@ -57,5 +57,10 @@
 </div>
 <!--container end-->
 <link href="../../static/css/admin/admin.css" rel="stylesheet" type="text/css" th:href="@{/css/admin/admin.css}">
+<script th:inline="JavaScript">
+    /*<![CDATA[*/
+    var articleId = [[${article!=null?article.articleId:''}]];
+    /*]]>*/
+</script>
 </body>
 </html>

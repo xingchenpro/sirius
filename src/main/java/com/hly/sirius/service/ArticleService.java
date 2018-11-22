@@ -72,6 +72,13 @@ public interface ArticleService {
     public int addArticleCategory(Map<String, Object> map);
 
     /**
+     * 查询文章对应的分类是否存在
+     * @param map
+     * @return
+     */
+    public List<Map<String,Object>> selectArticleCategory(Map<String, Object> map);
+
+    /**
      * 根据分类id查询文章
      * @param
      * @return
@@ -97,4 +104,11 @@ public interface ArticleService {
      * @return
      */
     public int deleteArticleAndCategoryById(Integer id);
+
+    /**
+     * 更新文章
+     * @param article
+     * @return
+     */
+    public int updateArticle(Article article);
 }

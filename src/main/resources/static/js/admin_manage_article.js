@@ -10,8 +10,6 @@ $(document).ready(function () {
 
     $("#admin-sidebar-button").css('margin-left','92%');
 
-
-
 });
 //删除文章
 /*function deleteArticle() {

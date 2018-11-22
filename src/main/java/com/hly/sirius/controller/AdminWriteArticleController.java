@@ -70,20 +70,20 @@ public class AdminWriteArticleController {
         int articleId = 0;
         List<Integer> categoryId = null;
         Map<String, Object> articleCategoryMap = null;
+        Category category = null;
         try {
+            //添加文章到数据库
             articleService.insertArticle(article);
             //获得插入文章的id
             articleId = article.getArticleId();
             //查询是否存在分类，若不存在则插入
-            categoryId = new ArrayList<>();
-            int cId;
-            Category category = null;
+            //categoryId = new ArrayList<>();
             for (String categoryName : categoryList) {
                 if (categoryService.getCategory(categoryName) == null) {
                     category = new Category();
                     category.setCategoryName(categoryName);
                     categoryService.addCategory(category);
-                    categoryId.add(category.getCategoryId());
+                    //categoryId.add(category.getCategoryId());
                     //更新分类的文章数
                     categoryService.updateCategoryNum(categoryName);
                     articleCategoryMap = new HashMap<String, Object>();
@@ -93,7 +93,7 @@ public class AdminWriteArticleController {
 
                 } else {
                     categoryService.updateCategoryNum(categoryName);
-                    categoryId.add(categoryService.getCategory(categoryName));
+                    //categoryId.add(categoryService.getCategory(categoryName));
                     articleCategoryMap = new HashMap<String, Object>();
                     articleCategoryMap.put("articleId", articleId);
                     articleCategoryMap.put("categoryId",categoryService.getCategory(categoryName));
@@ -108,7 +108,7 @@ public class AdminWriteArticleController {
 
         System.err.println("分类：" + categoryList);
         System.err.println("ArticleId：" + articleId);
-        System.err.println("分类Id：" + categoryId);
+        //System.err.println("分类Id：" + categoryId);
         return null;
     }
 

@@ -55,7 +55,6 @@
             <li th:each="category:${categoryList}">
                 <a th:href="@{'/index/category/'+${category.categoryId}}" th:inline="text">[[${category.categoryName}]]<span th:text="${category.categoryArticleNum}">18篇</span></a>
             </li>
-
         </ul>
     </div>
     <!--文章分类结束-->
@@ -67,7 +66,6 @@
             <li th:each="timeMap:${articleByMonthMapList}">
                 <a th:href="@{'/index/time/'+${timeMap.createYear}+'/'+${timeMap.createMonth}}" th:inline="text">[[${timeMap.createYear}]]年[[${timeMap.createMonth}]]月<span th:text="${timeMap.articleNum+'篇'}">18篇</span></a>
             </li>
-
         </ul>
     </div>
     <!--文章归档结束-->
