@@ -19,7 +19,7 @@ public class ConnectionFactoryConfig  {
     private  static ConnectionFactoryConfig connectionFactoryConfig;
 
     private Connection getConnection() throws SQLException {
-        System.err.println("实例化");
+        //System.err.println("实例化");
         Properties properties = new Properties();
         String user = "root";
         String password = "roof";

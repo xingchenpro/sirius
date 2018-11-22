@@ -20,16 +20,16 @@ import java.io.IOException;
  * @date :2018/10/2
  */
 //这种方法的filter按文件名顺序执行
-@WebFilter(filterName = "VisitorFilter", urlPatterns = "/index")
-public class VisitorFilter extends OncePerRequestFilter {
+@WebFilter(filterName = "UserFilter", urlPatterns = {"/admin/articleWriting","/user/login"})
+public class UserFilter extends OncePerRequestFilter {
 
-    private static Logger logger = LogManager.getLogger(VisitorFilter.class);
+    private static Logger logger = LogManager.getLogger(UserFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String userId = (String) session.getAttribute("userId");
-        String userIP = request.getRemoteUser();
+        String userId = (String) session.getAttribute("username");
+        String userIP = request.getRemoteAddr();
         ThreadContext.put("userId", userId);
         ThreadContext.put("userIP", userIP);
         System.err.println("登录用户：" + userId);
@@ -37,6 +37,5 @@ public class VisitorFilter extends OncePerRequestFilter {
         logger.error("用户：" + userId);
         //寻找下一个链，没有则跳转页面
         filterChain.doFilter(request, response);
-
     }
 }

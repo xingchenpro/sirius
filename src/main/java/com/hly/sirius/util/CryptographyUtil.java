@@ -11,7 +11,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 public class CryptographyUtil {
 
     public static String md5(String str,String salt){
-        System.err.println("加盐MD5:"+new Md5Hash(str,salt).toString());
+        //System.err.println("加盐MD5:"+new Md5Hash(str,salt).toString());
         return new Md5Hash(str,salt).toString();
     }
 

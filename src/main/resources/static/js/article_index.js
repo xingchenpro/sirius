@@ -5,8 +5,6 @@
  *@date :2018/11/15
  */
 
-
-
 //layer UI :https://www.cnblogs.com/lxwphp/p/9717960.html
 //微信二维码
 $("#weChatBtn").click(function () {

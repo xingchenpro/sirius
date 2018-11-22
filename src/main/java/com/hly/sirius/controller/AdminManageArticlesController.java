@@ -44,7 +44,6 @@ public class AdminManageArticlesController {
      */
     @RequestMapping("/articleManage")
     public ModelAndView getArticles(@RequestParam(value = "page", required = false) String page, HttpServletRequest request) {
-
         //查询文章的参数
         Map<String, Object> articleMap = new HashMap<String, Object>();
         //得到文章数目，分类，年月分类信息
@@ -126,31 +125,24 @@ public class AdminManageArticlesController {
                     articleService.addArticleCategory(articleCategoryMap);
 
                 } else {
-
                     //更新文章所对应的分类
                     articleCategoryMap = new HashMap<String, Object>();
                     articleCategoryMap.put("articleId", article.getArticleId());
                     articleCategoryMap.put("categoryId", categoryService.getCategory(categoryName));
-                    if(articleService.selectArticleCategory(articleCategoryMap).isEmpty()) {
-                        System.err.println("articleCategoryMap"+articleCategoryMap);
+                    //不存在文章所对应的分类关系则删除
+                    if (articleService.selectArticleCategory(articleCategoryMap).isEmpty())
                         articleService.addArticleCategory(articleCategoryMap);
-
-                    }
-
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         System.err.println(article);
         System.err.println(categoryList);
         return null;
     }
-
     /**
      * 删除文章
-     *
      * @param id
      * @return
      */
@@ -163,7 +155,6 @@ public class AdminManageArticlesController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return "redirect:/admin/articleManage";
     }
 }

@@ -49,7 +49,8 @@ public class UserController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
-			session.removeAttribute("username");
+			//SecurityUtils.getSubject().getSession().removeAttribute("username");
+			SecurityUtils.getSubject().logout();
 			System.err.println("注销成功!");
 		}
 		return "redirect:/index";
@@ -68,7 +69,7 @@ public class UserController {
 		UsernamePasswordToken token = new UsernamePasswordToken(username, CryptographyUtil.md5(password,username));
 		try {
 			subject.login(token);
-			session.setAttribute("username",username);
+			//session.setAttribute("username",username);
 			return "redirect:/admin/articleWriting";
 		} catch (AuthenticationException e) {
 			System.err.println("用户名或密码错误");

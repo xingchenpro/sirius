@@ -7,8 +7,6 @@
 
 $(document).ready(function () {
 
-
-
     /*提交文章*/
     $('#submit-article').click(function () {
         submitArticle();
@@ -34,8 +32,6 @@ $(document).ready(function () {
         $.each($("input[name='inputCategory']"), function () {
             categoryList.push($(this).val());
         });
-
-        //alert(categoryList);
 
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
@@ -112,6 +108,5 @@ $(document).ready(function () {
             $(this).parent().remove();
         });
     });
-
 });
 
