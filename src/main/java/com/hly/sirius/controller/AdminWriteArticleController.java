@@ -60,7 +60,7 @@ public class AdminWriteArticleController {
      * @param
      * @return
      */
-    @RequestMapping(value = "articleWritingSubmit", method = RequestMethod.POST)
+    @RequestMapping(value = "/articleWritingSubmit", method = RequestMethod.POST)
     public ModelAndView postArticle(@RequestBody ArticleCategories articleCategories, HttpSession session) {
         Article article = articleCategories.getArticle();
         //获得文章类型

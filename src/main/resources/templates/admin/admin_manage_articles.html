@@ -39,13 +39,13 @@
 <body>
 <div id="page-container">
 
-    <header th:replace="admin/admin_nav ::admin_nav "></header>
+    <header th:replace="/admin/admin_nav ::admin_nav "></header>
 
     <!--导航结束-->
     <!--start main-->
     <div class="main" id="main">
         <!--start sidebar-->
-        <div id="admin-sidebar" class="sidebar" th:replace="admin/admin_sidebar::sidebar"></div>
+        <div id="admin-sidebar" class="sidebar" th:replace="/admin/admin_sidebar::sidebar"></div>
         <!--end sidebar-->
 
         <!--start article list part-->
@@ -131,7 +131,7 @@
         </div>
         <!--分页结束-->
         <!--页脚-->
-        <div th:include="common/foot::footer" class="foot"></div>
+        <div th:include="/common/foot::footer" class="foot"></div>
         <!--页脚结束-->
     </div>
     <!--end main-->

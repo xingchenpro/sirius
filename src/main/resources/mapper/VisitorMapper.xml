@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hly.sirius.dao.VisitorDao">
+
+    <resultMap id="VisitorResult" type="Visitor">
+        <result property="visitorId" column="visitorId"/>
+        <result property="visitorIP" column="visitorIP"/>
+        <result property="visitorViewNum" column="visitorViewNum"/>
+        <result property="visitorLastTime" column="visitorLastTime"/>
+    </resultMap>
+
+    <sql id="addVisitor">
+        visitorIP,visitorLastTime
+    </sql>
+
+    <select id="getVisitorByVisitorIP" parameterType="string" resultMap="VisitorResult">
+        SELECT * FROM visitor WHERE visitorIP = #{visitorIP}
+    </select>
+
+    <update id="updateViewNum" parameterType="Map">
+        UPDATE visitor SET visitorViewNum = visitorViewNum+1,visitorLastTime=#{visitorLastTime} WHERE visitorIP = #{visitorIP}
+    </update>
+
+    <insert id="addVisitor" parameterType="Visitor">
+        INSERT  INTO  visitor (
+        <include refid="addVisitor"/>
+        )
+        VALUES (#{visitorIP},#{visitorLastTime})
+    </insert>
+
+
+
+</mapper>

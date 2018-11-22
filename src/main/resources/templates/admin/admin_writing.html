@@ -35,21 +35,21 @@
 </head>
 <body>
 <div id="page-container">
-    <header th:replace="admin/admin_nav ::admin_nav "></header>
+    <header th:replace="/admin/admin_nav ::admin_nav "></header>
 
     <!--导航结束-->
     <!--start main-->
     <div class="main" id="main">
         <!--start sidebar-->
-        <div id="admin-sidebar" class="sidebar" th:replace="admin/admin_sidebar::sidebar"></div>
+        <div id="admin-sidebar" class="sidebar" th:replace="/admin/admin_sidebar::sidebar"></div>
         <!--end sidebar-->
         <!--start article_edit-->
-        <div class="article_edit" id="article_edit" th:replace="article/article_editor::article_editor"></div>
+        <div class="article_edit" id="article_edit" th:replace="/article/article_editor::article_editor"></div>
         <!--end article edit-->
 
         <!--页脚-->
         <!--放到main里边解决布局混乱问题-->
-        <div th:include="common/foot::footer" class="foot"></div>
+        <div th:include="/common/foot::footer" class="foot"></div>
         <!--页脚结束-->
     </div>
     <!--end main-->

@@ -51,7 +51,7 @@ public class AdminManageArticlesController {
         //所有文章信息
         List<Article> articleList = articleService.getArticleList(articleMap);
         modelAndView.addObject("articleList", articleList);
-        modelAndView.setViewName("admin/admin_manage_articles");
+        modelAndView.setViewName("/admin/admin_manage_articles");
         return modelAndView;
     }
 

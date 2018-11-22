@@ -21,7 +21,6 @@ import java.util.Map;
  * @date :2018/8/11
  */
 @Controller
-@RequestMapping("/")
 public class ArticleController {
 
     @Autowired
@@ -51,7 +50,7 @@ public class ArticleController {
             mv.addObject("preArticle", preArticle);
         if (nextArticle != null)
             mv.addObject("nextArticle", nextArticle);
-        mv.setViewName("article/article_detail");
+        mv.setViewName("/article/article_detail");
         return mv;
     }
 
@@ -80,7 +79,7 @@ public class ArticleController {
      * @param id
      * @return
      */
-    @RequestMapping("/category/{id}")
+    @RequestMapping("category/{id}")
     public ModelAndView getArticleByCategory(@PathVariable("id") Integer id){
         ModelAndView modelAndView = new ModelAndView();
         List<Category> categoryList = categoryService.getCategories();

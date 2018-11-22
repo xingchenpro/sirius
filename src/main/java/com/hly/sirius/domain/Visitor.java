@@ -19,16 +19,9 @@ public class Visitor {
     //根据底层数据库自动增长方式
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int visitorId;
-    private String visitorName;
-    private int visitorViewNum;
-    private String visitorQQ;
-    private String visitorTel;
-    private String visitorUnit;
-    private String visitorEmail;
-    private String visitorBlog;
-    private String visitorGithub;
     private String visitorIP;
-    private String visitorWords;
+    private int visitorViewNum;
+    private String visitorLastTime;
 
     public int getVisitorId() {
         return visitorId;
@@ -36,14 +29,6 @@ public class Visitor {
 
     public void setVisitorId(int visitorId) {
         this.visitorId = visitorId;
-    }
-
-    public String getVisitorName() {
-        return visitorName;
-    }
-
-    public void setVisitorName(String visitorName) {
-        this.visitorName = visitorName;
     }
 
     public int getVisitorViewNum() {
@@ -54,52 +39,12 @@ public class Visitor {
         this.visitorViewNum = visitorViewNum;
     }
 
-    public String getVisitorQQ() {
-        return visitorQQ;
+    public String getVisitorLastTime() {
+        return visitorLastTime;
     }
 
-    public void setVisitorQQ(String visitorQQ) {
-        this.visitorQQ = visitorQQ;
-    }
-
-    public String getVisitorTel() {
-        return visitorTel;
-    }
-
-    public void setVisitorTel(String visitorTel) {
-        this.visitorTel = visitorTel;
-    }
-
-    public String getVisitorUnit() {
-        return visitorUnit;
-    }
-
-    public void setVisitorUnit(String visitorUnit) {
-        this.visitorUnit = visitorUnit;
-    }
-
-    public String getVisitorEmail() {
-        return visitorEmail;
-    }
-
-    public void setVisitorEmail(String visitorEmail) {
-        this.visitorEmail = visitorEmail;
-    }
-
-    public String getVisitorBlog() {
-        return visitorBlog;
-    }
-
-    public void setVisitorBlog(String visitorBlog) {
-        this.visitorBlog = visitorBlog;
-    }
-
-    public String getVisitorGithub() {
-        return visitorGithub;
-    }
-
-    public void setVisitorGithub(String visitorGithub) {
-        this.visitorGithub = visitorGithub;
+    public void setVisitorLastTime(String visitorLastTime) {
+        this.visitorLastTime = visitorLastTime;
     }
 
     public String getVisitorIP() {
@@ -110,28 +55,13 @@ public class Visitor {
         this.visitorIP = visitorIP;
     }
 
-    public String getVisitorWords() {
-        return visitorWords;
-    }
-
-    public void setVisitorWords(String visitorWords) {
-        this.visitorWords = visitorWords;
-    }
-
     @Override
     public String toString() {
         return "Visitor{" +
                 "visitorId=" + visitorId +
-                ", visitorName='" + visitorName + '\'' +
-                ", visitorViewNum=" + visitorViewNum +
-                ", visitorQQ='" + visitorQQ + '\'' +
-                ", visitorTel='" + visitorTel + '\'' +
-                ", visitorUnit='" + visitorUnit + '\'' +
-                ", visitorEmail='" + visitorEmail + '\'' +
-                ", visitorBlog='" + visitorBlog + '\'' +
-                ", visitorGithub='" + visitorGithub + '\'' +
                 ", visitorIP='" + visitorIP + '\'' +
-                ", visitorWords='" + visitorWords + '\'' +
+                ", visitorViewNum=" + visitorViewNum +
+                ", visitorLastTime='" + visitorLastTime + '\'' +
                 '}';
     }
 }

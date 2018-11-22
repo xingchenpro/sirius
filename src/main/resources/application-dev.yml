@@ -8,7 +8,8 @@ spring:
 
     # 配置前端Thymeleaf模板引擎
   thymeleaf:
-    prefix: classpath:/templates/
+  # 打包末尾无/
+    prefix: classpath:/templates
     check-template-location: true
     suffix: .html
     encoding: UTF-8

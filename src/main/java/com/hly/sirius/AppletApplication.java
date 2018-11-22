@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableAutoConfiguration//开启自动配置，逐层往下搜索加注解的类
 @MapperScan("com.hly.sirius.dao")
-@ServletComponentScan(basePackages = {"com.hly.sirius.filter"})//开启扫描Servlet
+@ServletComponentScan(basePackages = {"com.hly.sirius.filter","com.hly.sirius.listener"})//开启扫描
 @EnableTransactionManagement//开启事务
 @EnableScheduling//开启定时任务的支持
 @EnableCaching//开启缓存功能

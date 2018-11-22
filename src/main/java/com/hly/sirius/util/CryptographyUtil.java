@@ -16,7 +16,7 @@ public class CryptographyUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(CryptographyUtil.md5("123","hly"));
+        System.out.println(CryptographyUtil.md5("hly0228","hly"));
     }
 
 }

@@ -14,7 +14,7 @@
           rel="stylesheet">
 </head>
 <body>
-<header th:replace="common/head :: header"></header>
+<header th:replace="/common/head :: header"></header>
 <!--导航结束-->
 
 <div id="main">
@@ -43,7 +43,7 @@
         </ul>
         <!--文章列表结束-->
         <!--右边栏开始-->
-        <aside th:replace="~{article/article_info::article_info}"></aside>
+        <aside th:replace="~{/article/article_info::article_info}"></aside>
         <!--右边栏结束-->
     </div>
     <!--文章部分结束-->
@@ -58,7 +58,7 @@
 <!--页脚-->
 
 <!--页脚-->
-<div th:include="common/foot::footer" class="foot"></div>
+<div th:include="/common/foot::footer" class="foot"></div>
 <!--页脚结束-->
 
 </body>

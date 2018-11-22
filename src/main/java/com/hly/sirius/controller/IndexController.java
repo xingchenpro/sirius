@@ -1,9 +1,12 @@
 package com.hly.sirius.controller;
 
+import com.hly.sirius.dao.VisitorDao;
 import com.hly.sirius.domain.Article;
+import com.hly.sirius.domain.Visitor;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.service.CategoryService;
 import com.hly.sirius.util.ArticleUtil;
+import com.hly.sirius.util.VisitorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +32,9 @@ public class IndexController {
 
     @Autowired
     CategoryService categoryService;
+
+    @Autowired
+    VisitorDao visitorDao;
     /**
      * 请求文章列表
      * @return article list
@@ -42,8 +48,9 @@ public class IndexController {
         ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap,page,request.getContextPath() + "/index",articleService,categoryService);
         //所有文章信息
         List<Article> articleList = articleService.getArticleList(articleMap);
-         modelAndView.addObject("articleList", articleList);
-        modelAndView.setViewName("article/article_index");
+        VisitorUtil.saveVisitor(visitorDao,request);
+        modelAndView.addObject("articleList", articleList);
+        modelAndView.setViewName("/article/article_index");
         return modelAndView;
     }
 
@@ -65,7 +72,7 @@ public class IndexController {
         //查询该分类所有文章
         List<Article> articleList = articleService.getArticleByCategoryId(articleMap);
           modelAndView.addObject("articleList",articleList);
-        modelAndView.setViewName("article/article_index");
+        modelAndView.setViewName("/article/article_index");
         return modelAndView;
     }
 
@@ -87,7 +94,7 @@ public class IndexController {
         articleMap.put("createMonth",month);
         List<Article> articleList = articleService.getArticleList(articleMap);
         modelAndView.addObject("articleList", articleList);
-        modelAndView.setViewName("article/article_index");
+        modelAndView.setViewName("/article/article_index");
         return modelAndView;
     }
 }
