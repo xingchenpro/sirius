@@ -54,6 +54,9 @@ $(document).ready(function () {
         });
     }
 
+    //编辑文章
+
+
     //添加分类
         $('.add-type').click(function () {
             var tpye = '<div class="input-category">'+

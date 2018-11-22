@@ -43,6 +43,13 @@ public interface CategoryDao {
      */
     public int updateCategoryNum(String categoryNum);
 
+    /**
+     * 根据文章id查询对应的分类
+     * @param articleId
+     * @return
+     */
+    public List<Category> getCategoriesByArticleId(Integer articleId);
+
 
 
 }

@@ -33,8 +33,9 @@
 
         <!--start article_edit-->
         <div class="article_edit" id="article_edit" th:fragment="article_editor">
-           <input id="article_title" class="title" type="text" placeholder="请输入文章标题">
-            <div class="my_editor" id="my_editor" >
+            <input  th:value="${article!=null?article.articleTitle:''}" id="article_title" class="title" type="text" placeholder="请输入文章标题">
+
+            <div class="my_editor" id="my_editor">
                 <!--调用编辑器后台返回视图，顺便解决了css样式冲突问题-->
                 <!--<iframe th:src="@{/articleEdit}"  width="1250px" height="1000px" scrolling="no" frameborder="0"></iframe>-->
                 <div th:replace="article/simple::html"></div>

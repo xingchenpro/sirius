@@ -1,12 +1,10 @@
 package com.hly.sirius.service.Impl;
 
 import com.hly.sirius.dao.CategoryDao;
-import com.hly.sirius.domain.Article;
 import com.hly.sirius.domain.Category;
 import com.hly.sirius.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
@@ -41,5 +39,9 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryDao.updateCategoryNum(categoryNum);
     }
 
+    @Override
+    public List<Category> getCategoriesByArticleId(Integer articleId) {
+        return categoryDao.getCategoriesByArticleId(articleId);
+    }
 
 }

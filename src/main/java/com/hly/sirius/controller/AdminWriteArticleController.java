@@ -50,6 +50,7 @@ public class AdminWriteArticleController {
         modelAndView.setViewName("/admin/admin_writing");
         List<Category> categories = categoryService.getCategories();
         modelAndView.addObject("categories",categories);
+        modelAndView.addObject("article",null);
         return modelAndView ;
     }
 

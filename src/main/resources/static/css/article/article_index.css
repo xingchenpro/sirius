@@ -399,7 +399,7 @@ aside div {
 /*文章分类和归档开始*/
 
 .article-classify {
-    background-color: #ffac01;
+    background-color: rgba(255, 70, 17, 0.7);
     max-height: 400px;
     overflow: auto;
     /*border: 1px solid red;*/
@@ -441,7 +441,8 @@ aside div {
 
 /*文章归档背景*/
 .article-archived {
-    background-color: rgba(255, 70, 17, 0.7);
+    background-color: #ffac01;
+
 }
 
 /*热门文章开始*/

@@ -17,7 +17,7 @@
 
 <div id="layout">
     <div id="test-editormd">
-        <textarea id="editor-md-doc" name="editor-md-doc" style="display:none;"></textarea>
+        <textarea id="editor-md-doc" name="editor-md-doc" style="display:none;" th:text="${article!=null?article.articleContent:''}"></textarea>
         <!--<textarea id="editor-md-html" name="editor-md-html"></textarea>-->
     </div>
 </div>

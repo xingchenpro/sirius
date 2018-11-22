@@ -112,7 +112,7 @@
 
                             <ul class="admin-article-operate">
                                 <li><i class="fa fa-columns"></i><a th:href="@{'/articleDetail/'+${article.articleId}}" >阅览</a></li>
-                                <li><i class="fa fa-edit"></i><a th:href="@{'/admin/editArticle/'+${article.articleId}}">编辑</a></li>
+                                <li><i class="fa fa-edit"></i><a th:href="@{'/admin/articleEdit/'+${article.articleId}}">编辑</a></li>
 
                                 <li><i class="fa fa-arrow-circle-up"></i><a href="javascript:">置顶</a></li>
                                 <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a th:href="@{'/admin/deleteArticle/'+${article.articleId}}" style="color:red">删除</a></li>

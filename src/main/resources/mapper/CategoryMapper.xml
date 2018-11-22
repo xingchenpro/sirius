@@ -29,4 +29,10 @@
         UPDATE category SET categoryArticleNum = categoryArticleNum+1 WHERE categoryName = #{categoryName}
     </update>
 
+    <!--获得某一篇文章的分类-->
+    <select id="getCategoriesByArticleId" parameterType="integer" resultMap="CategoryResult">
+            SELECT * FROM category WHERE category.categoryId IN (
+            SELECT article_category.categoryId FROM  article_category WHERE article_category.articleId = #{articleId})
+    </select>
+
 </mapper>
