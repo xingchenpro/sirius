@@ -1,22 +1,78 @@
-# sirius
-### 一.项目介绍
+### 1.项目介绍
+该项目为一个博客系统 , 目前由笔者独自开发和完善  ,  后续将会添加其他功能 , 后端技术采用的是springboot2.0 技术栈 , 将会加入 springcloud 技术栈 , 打造一个微服务系统。前端技术使用了最基础的 css , js , JQ 等 ,  可能暂时存在一些不足 。
 
-  介绍地址：https://blog.csdn.net/Sirius_hly/article/details/83043614
-  
-  笔者计划开发一个整合目前绝大多数主流java框架和技术的个人网站，该项目将会实现一些实用和有趣的功能，目前正在开发的是博客功能，其它功能待定。
+该项目目前使用 Docker 容器技术部署在了阿里云 CentOS 服务器上 , 预览地址如下:
+[天狼星博客](http://123.56.219.53/)
+[下载地址](https://github.com/huangliangyun/sirius)
 
-  该项目目前主要整合的技术有：
+### 2.涉及技术
+该项目目前主要技术如下：
 
-前端：HTML+CSS+JS+JQuery+Thymeleaf+EditorMD(MarkDown编辑器)等
+前端：
+>Thymeleaf
+>JQuery
+>Bootstrap
+>Awesome
+>EditorMD编辑器等
 
-后端：SpringBoot+MyBatis+Spring Data JPA+Shiro+Servlet等
+后端：
+>springboot2.0技术栈
+>shiro安全框架
+>mybatis
+>JPA等
 
-数据库：Mysql+MongoDB+Redis等
+日志:
+>log4j2
 
-中间件：Maven3+Git+Tomcat+Druid连接池+Log4j2日志等
+中间件:
+>maven3
+>git
+>Druid等
 
-IDE：IntelliJ IDEA
+IDE:
+>IntelliJ IDEA
 
-    该项目将会不断集成和使用各种技术,作为分享和学习使用，计划完成基本的博客功能后，将会分成两个版本，一个版本用于集成各种技术，而另外一个版本将会选择适合此项目的技术方案，完成一个简单，高效，流畅的，炫酷，有趣的个人网站。
+数据库:
+>mysql5.7
+
+部署:
+>阿里云服务器
+>CentOS7.3
+>Docker容器技术
+
+### 3.项目截图
+[天狼星博客](http://123.56.219.53/)
+
+首页
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123103834261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+历史页面
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123103907596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+文章详情页
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104113591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+文章管理
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104213582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+编写文章
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104244484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104330880.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
+
+支持全屏编写
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104418465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
 
 
+
+### 4.使用方法
+
+在笔者 [github](https://github.com/huangliangyun/sirius) 下载项目后 , 安装好maven3 , 导入数据库 , 使用 IntelliJ IDEA 打开 , 直接运行 springboot 即可。
+
+>QQ交流群：865061230
