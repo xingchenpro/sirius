@@ -23,7 +23,7 @@ public class ConnectionFactoryConfig  {
         Properties properties = new Properties();
         String user = "root";
         String password = "roof";
-        String url = "jdbc:mysql://mysql:3306/sirius?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true";
+        String url = "jdbc:mysql://localhost:3306/sirius?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true";
         String driverClassName = "com.mysql.jdbc.Driver";
         properties.put("driverClassName",driverClassName);
         properties.put("url",url);

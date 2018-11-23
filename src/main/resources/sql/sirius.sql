@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50152
 File Encoding         : 65001
 
-Date: 2018-11-22 22:30:19
+Date: 2018-11-23 11:13:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -152,7 +152,7 @@ CREATE TABLE `log` (
   `actionDate` datetime DEFAULT NULL,
   `result` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=535 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of log
@@ -217,6 +217,13 @@ INSERT INTO `log` VALUES ('531', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filte
 INSERT INTO `log` VALUES ('532', '', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-22 10:26:17', '用户：null');
 INSERT INTO `log` VALUES ('533', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-22 10:26:26', '用户：hly');
 INSERT INTO `log` VALUES ('534', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-22 10:26:28', '用户：hly');
+INSERT INTO `log` VALUES ('535', '', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:04:27', '用户：null');
+INSERT INTO `log` VALUES ('536', '', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:06:25', '用户：null');
+INSERT INTO `log` VALUES ('537', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:09:03', '用户：hly');
+INSERT INTO `log` VALUES ('538', '', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:09:06', '用户：null');
+INSERT INTO `log` VALUES ('539', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:11:04', '用户：hly');
+INSERT INTO `log` VALUES ('540', '', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:12:15', '用户：null');
+INSERT INTO `log` VALUES ('541', 'hly', '0:0:0:0:0:0:0:1', 'com.hly.sirius.filter.UserFilter', '2018-11-23 11:12:22', '用户：hly');
 
 -- ----------------------------
 -- Table structure for `user`
@@ -231,8 +238,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('001', '111');
-INSERT INTO `user` VALUES ('hly', '4a1f9c0d66ee9063c31ea2c4adeb9617');
+INSERT INTO `user` VALUES ('hly', '6a855b873a49703125eab20222efde86');
 
 -- ----------------------------
 -- Table structure for `userinfo`
@@ -271,7 +277,7 @@ CREATE TABLE `visitor` (
 -- ----------------------------
 -- Records of visitor
 -- ----------------------------
-INSERT INTO `visitor` VALUES ('7', '0:0:0:0:0:0:0:1', '24', '2018-11-22 10:26:12');
+INSERT INTO `visitor` VALUES ('7', '0:0:0:0:0:0:0:1', '30', '2018-11-23 11:12:13');
 INSERT INTO `visitor` VALUES ('8', '192.168.43.1', '0', '2018-11-22 09:25:25');
 INSERT INTO `visitor` VALUES ('9', '127.0.0.1', '1', '2018-11-22 10:17:20');
 
