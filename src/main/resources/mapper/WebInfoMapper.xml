@@ -14,4 +14,6 @@
     <update id="updateWebViewNum" parameterType="integer">
         UPDATE webinfo SET webViewNum = webViewNum + 1
     </update>
+
+
 </mapper>

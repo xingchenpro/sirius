@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 
 body {
 
-    background: linear-gradient(#212741, rgb(37, 43, 68)); /* 标准的语法（必须放在最后） */
+    background: linear-gradient( #101636,#212741); /* 标准的语法（必须放在最后） */
     /*background-color: rgba(252, 255, 232, 0.4);*/
 }
 

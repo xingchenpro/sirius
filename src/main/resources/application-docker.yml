@@ -1,10 +1,9 @@
 spring:
   datasource:
-      type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: roof
-      url: jdbc:mysql://mysql:3306/sirius?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+      url: jdbc:mysql://123.56.219.53:3***/sirius?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
 
     # 配置前端Thymeleaf模板引擎
   thymeleaf:

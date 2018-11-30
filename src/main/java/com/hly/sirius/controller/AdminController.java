@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpSession;
 
 /**
@@ -22,8 +21,8 @@ import javax.servlet.http.HttpSession;
  * @date 2018年9月13日 下午6:22:04
  */
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
 
 	@Autowired
 	UserService userService;
@@ -33,7 +32,7 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public String login(HttpSession session){
 		if(session.getAttribute("username")!=null&&session.getAttribute("username")!=""){
 			return "/admin/admin_writing";
@@ -69,19 +68,15 @@ public class UserController {
 		UsernamePasswordToken token = new UsernamePasswordToken(username, CryptographyUtil.md5(password,username));
 		try {
 			subject.login(token);
+			//System.err.println("验证成功");
 			//session.setAttribute("username",username);
-			return "redirect:/admin/articleWriting";
+			return "redirect:/admin/writing/edition";
 		} catch (AuthenticationException e) {
-			System.err.println("用户名或密码错误");
 			e.printStackTrace();
-			return "/user/login";
+			return "redirect:/admin/login";
 		}
 	}
-	/**
-	 * 注册
-	 * @param
-	 * @return
-	 */
+
 	//@RequestMapping("/register")
 	public ModelAndView register(@RequestParam(value="username",required=false)String username,@RequestParam(value="password",required=false)String password){
 		ModelAndView mView = new ModelAndView();

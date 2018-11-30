@@ -43,6 +43,7 @@ public class ArticleUtil {
         //得到文章按月份分类信息
         List<Map<String,Object>> articleByMonthMapList = articleService.getArticleByMonth();
 
+
         modelAndView.addObject("categoryList",categoryList);
         modelAndView.addObject("articleNum",articleNum);
         modelAndView.addObject("articleByMonthMapList",articleByMonthMapList);

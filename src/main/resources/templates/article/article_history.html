@@ -21,8 +21,8 @@
     <nav id="nav">
         <ul>
             <li><a th:href="@{/index}" target="_blank">黄良运的博客</a></li>
-            <li><a th:href="@{/user/login}" target="_blank">ADMIN</a></li>
-            <li><a th:href="@{/historyArticles}" target="_blank">HISTORY</a></li>
+            <li><a th:href="@{/admin/login}" target="_blank">ADMIN</a></li>
+            <li><a th:href="@{/article/history}" target="_blank">HISTORY</a></li>
             <li><a th:href="@{/about}" target="_blank">ABOUT ME</a></li>
             <li><a th:href="@{/index}" title="首页">HOME</a></li>
         </ul>
@@ -44,8 +44,8 @@
 <div id="main">
     <div class="article-history">
         <div class="article-history-tag">
-            <a th:href="@{/historyArticles}">ALL ARTICLES<sup th:text="${categoryNum}">145</sup></a>
-            <a th:each="category:${categoryList}" th:href="@{'/category/'+${category.categoryId}}" th:inline="text"
+            <a th:href="@{/article/history}">ALL ARTICLES<sup th:text="${categoryNum}">145</sup></a>
+            <a th:each="category:${categoryList}" th:href="@{'/article/category/'+${category.categoryId}}" th:inline="text"
                >[[${category.categoryName}]]<sup th:text="${category.categoryArticleNum}">19</sup>
             </a>
         </div>
@@ -53,7 +53,7 @@
             <section>
                 <ul>
                     <li th:each="article:${articleList}">
-                        <a th:href="@{'/articleDetail/'+${article.articleId}}" th:text="${article.articleTitle}">微服务架构的搭建</a>
+                        <a th:href="@{'/article/detail/'+${article.articleId}}" th:text="${article.articleTitle}">微服务架构的搭建</a>
                         <span th:text="${article.articleCreateTime}">2018/11/14</span>
                     </li>
                 </ul>

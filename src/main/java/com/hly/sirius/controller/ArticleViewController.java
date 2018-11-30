@@ -23,7 +23,8 @@ import java.util.Map;
  * @date :2018/8/11
  */
 @Controller
-public class ArticleController {
+@RequestMapping("/article")
+public class ArticleViewController {
 
     @Autowired
     WebInfoDao webInfoDao;
@@ -42,7 +43,7 @@ public class ArticleController {
      * @param id
      * @return
      */
-    @RequestMapping("/articleDetail/{id}")
+    @RequestMapping("/detail/{id}")
     public ModelAndView getArticleDetail(@PathVariable("id") Integer id) {
         ModelAndView mv = new ModelAndView();
         articleService.updateArticleViewCount(id);
@@ -66,7 +67,7 @@ public class ArticleController {
      *
      * @return
      */
-    @RequestMapping("/historyArticles")
+    @RequestMapping("/history")
     public ModelAndView getHistoryArticles() {
 
         ModelAndView modelAndView = new ModelAndView();

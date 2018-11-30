@@ -36,7 +36,7 @@ $(document).ready(function () {
         var articleTitle = $("#article_title").val();
         var articleContent = $("#editor-md-doc").val();
         $.ajax({
-            url: "/admin/articleWritingSubmit",
+            url: "/admin/writing/submit",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
                 article: {
@@ -73,7 +73,7 @@ $(document).ready(function () {
             categoryList.push($(this).val());
         });
         $.ajax({
-            url: "/admin/updateArticle",
+            url: "/admin/manage/update/article",
             /*这里属性名字和后端一直就行，顺序无所谓*/
             data: JSON.stringify({
                 article: {

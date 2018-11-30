@@ -27,9 +27,9 @@
                     <h2 class="article_title"><a th:text="${article.articleTitle}" th:href="@{'/articleDetail/'+${article.articleId}}">SpringBoot通</a>
                     </h2>
                     <div class="article_Info">
-                        <a th:href="@{'/articleDetail/'+${article.articleId}}"><img src="../../static/images/article_images/img_12.jpg"
+                        <a th:href="@{'/article/detail/'+${article.articleId}}"><img src="../../static/images/article_images/img_12.jpg"
                                                            th:src="@{'/images/article_images/img_'+ ${article.articleId%10}+'.jpg'}"></a>
-                        <p><a th:href="@{'/articleDetail/'+${article.articleId}}" th:text="${#strings.abbreviate(article.articleContent,200)}"> Spring
+                        <p><a th:href="@{'/article/detail/'+${article.articleId}}" th:text="${#strings.abbreviate(article.articleContent,200)}"> Spring
                             Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。</a></p>
                     </div>
                     <ul class="article_detail">

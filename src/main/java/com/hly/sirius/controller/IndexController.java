@@ -7,6 +7,7 @@ import com.hly.sirius.domain.Visitor;
 import com.hly.sirius.domain.WebInfo;
 import com.hly.sirius.service.ArticleService;
 import com.hly.sirius.service.CategoryService;
+import com.hly.sirius.service.WebInfoService;
 import com.hly.sirius.util.ArticleUtil;
 import com.hly.sirius.util.VisitorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ import java.util.Map;
 public class IndexController {
 
     @Autowired
-    WebInfoDao webInfoDao;
+    WebInfoService webInfoService;
 
     @Autowired
     ArticleService articleService;
@@ -53,12 +54,12 @@ public class IndexController {
         ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap,page,9,request.getContextPath() + "/index",articleService,categoryService);
         //所有文章信息
         List<Article> articleList = articleService.getArticleList(articleMap);
-        //获取网站信息
-        WebInfo webInfo = webInfoDao.getWebInfo();
         //保存访客信息
         VisitorUtil.saveVisitor(visitorDao,request);
         //更新网站访问次数
-        webInfoDao.updateWebViewNum();
+        webInfoService.updateWebViewNum();
+        //获取网站信息
+        WebInfo webInfo = webInfoService.getWebInfo();
         modelAndView.addObject("webInfo", webInfo);
         modelAndView.addObject("articleList", articleList);
         modelAndView.setViewName("/article/article_index");
@@ -82,6 +83,9 @@ public class IndexController {
         articleMap.put("categoryId",id);
         //查询该分类所有文章
         List<Article> articleList = articleService.getArticleByCategoryId(articleMap);
+        //获取网站信息
+        WebInfo webInfo = webInfoService.getWebInfo();
+        modelAndView.addObject("webInfo", webInfo);
           modelAndView.addObject("articleList",articleList);
         modelAndView.setViewName("/article/article_index");
         return modelAndView;
@@ -104,8 +108,25 @@ public class IndexController {
         articleMap.put("createYear",year);
         articleMap.put("createMonth",month);
         List<Article> articleList = articleService.getArticleList(articleMap);
+        //获取网站信息
+        WebInfo webInfo = webInfoService.getWebInfo();
+        modelAndView.addObject("webInfo", webInfo);
         modelAndView.addObject("articleList", articleList);
         modelAndView.setViewName("/article/article_index");
         return modelAndView;
     }
+
+    /**
+     * about blogger
+     * @return
+     */
+    @RequestMapping("/about")
+    public ModelAndView about(){
+        ModelAndView modelAndView = new ModelAndView();
+        Article about = articleService.getArticleById(100);
+        modelAndView.addObject("about",about);
+        modelAndView.setViewName("/user/about");
+        return modelAndView;
+    }
+
 }

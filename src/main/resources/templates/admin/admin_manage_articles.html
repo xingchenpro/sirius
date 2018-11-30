@@ -102,7 +102,7 @@
                 <!--文章列表开始-->
                 <ul class="admin-article-list">
                     <li th:each="article:${articleList}">
-                        <h4><a th:text="${article.articleTitle}" th:href="@{'/articleDetail/'+${article.articleId}}">SpringCloud 微服务架构的搭建</a></h4>
+                        <h4><a th:text="${article.articleTitle}" th:href="@{'/article/detail/'+${article.articleId}}">SpringCloud 微服务架构的搭建</a></h4>
                         <div>
                             <ul class="admin-article-info">
                                 <li th:text="${article.articleCreateTime}">2018年11月2日 10:11:12</li>
@@ -111,11 +111,11 @@
                             </ul>
 
                             <ul class="admin-article-operate">
-                                <li><i class="fa fa-columns"></i><a th:href="@{'/articleDetail/'+${article.articleId}}" >阅览</a></li>
-                                <li><i class="fa fa-edit"></i><a th:href="@{'/admin/articleEdit/'+${article.articleId}}">编辑</a></li>
+                                <li><i class="fa fa-columns"></i><a th:href="@{'/article/detail/'+${article.articleId}}" >阅览</a></li>
+                                <li><i class="fa fa-edit"></i><a th:href="@{'/admin/manage/edit/article/'+${article.articleId}}">编辑</a></li>
 
                                 <li><i class="fa fa-arrow-circle-up"></i><a href="javascript:">置顶</a></li>
-                                <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a th:href="@{'/admin/deleteArticle/'+${article.articleId}}" style="color:red">删除</a></li>
+                                <li><i class="fa fa-exclamation-triangle" style="color:red"></i><a th:href="@{'/admin/manage/delete/article/'+${article.articleId}}" style="color:red">删除</a></li>
                             </ul>
                         </div>
                     </li>

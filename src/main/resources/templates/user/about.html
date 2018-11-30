@@ -32,7 +32,7 @@
         <figure>
 
             <figcaption >
-                <p th:text="${article.articleTitle}">黄良运的博客</p>
+                <p>ABOUT ME</p>
                 <p>种一棵树最好的时间是十年前，其次是现在。</p>
             </figcaption>
         </figure>
@@ -46,13 +46,13 @@
 
     <div class="articles">
         <!--文章内容开始-->
-        <div class="panel panel-info article_detail_panel">
-            <div class="panel-heading">
+        <div class="panel panel-info article_detail_panel" style="background-color: #212741">
+            <!--<div class="panel-heading">
                 <h3 class="panel-title" th:text="${article.articleTitle}">文章标题</h3>
-            </div>
+            </div>-->
             <!--这里修改显示代码颜色-->
-            <div class="panel-body content editormd-preview-theme-dark" id="content" >
-               <textarea style="display:none;" th:text="${article.articleContent}">
+            <div class="panel-body content editormd-preview-theme-dark" id="content" style="background-color: #212741 ;color: white" >
+               <textarea style="display:none;" th:text="${about.articleContent}">
                    # 文章内容
                </textarea>
             </div>
@@ -61,10 +61,7 @@
     </div>
     <!--文章部分结束-->
     <!---->
-    <ul class="article_chapter">
-        <li class="previous"><a th:if="${preArticle!=null}" th:href="@{'/article/detail/'+${preArticle.articleId}}">PREVIOUS<br><span th:if="${preArticle!=null}" th:text="${preArticle.articleTitle}">已是第一篇</span></a></li>
-        <li class="next"><a th:if="${nextArticle!=null}" th:href="@{'/article/detail/'+${nextArticle.articleId}}">NEXT<br/><span th:if="${nextArticle!=null}" th:text="${nextArticle.articleTitle}">已是最后一篇</span></a></li>
-    </ul>
+
 </div>
 
 <!--页脚-->
@@ -100,4 +97,6 @@
 </body>
 <link href="../../static/css/article/article_detail.css" th:href="@{/css/article/article_detail.css}" rel="stylesheet"
       type="text/css">
+<link href="../../static/css/article/article_history.css" th:href="@{/css/article/article_history.css}"
+      type="text/css" rel="stylesheet">
 </html>

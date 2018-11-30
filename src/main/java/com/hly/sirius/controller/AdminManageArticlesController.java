@@ -26,7 +26,7 @@ import java.util.Map;
  * @date :2018/11/20
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/manage")
 public class AdminManageArticlesController {
 
     @Autowired
@@ -42,12 +42,12 @@ public class AdminManageArticlesController {
      * @param request
      * @return
      */
-    @RequestMapping("/articleManage")
+    @RequestMapping("/article")
     public ModelAndView getArticles(@RequestParam(value = "page", required = false) String page, HttpServletRequest request) {
         //查询文章的参数
         Map<String, Object> articleMap = new HashMap<String, Object>();
         //得到文章数目，分类，年月分类信息
-        ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap, page, 7,request.getContextPath() + "/admin/articleManage", articleService, categoryService);
+        ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap, page, 7,request.getContextPath() + "/admin/manage/article", articleService, categoryService);
         //所有文章信息
         List<Article> articleList = articleService.getArticleList(articleMap);
         modelAndView.addObject("articleList", articleList);
@@ -62,7 +62,7 @@ public class AdminManageArticlesController {
      * @param id
      * @return
      */
-    @RequestMapping("/articleEdit/{id}")
+    @RequestMapping("/edit/article/{id}")
     public ModelAndView putArticleEdit(@PathVariable("id") Integer id) {
 
         ModelAndView modelAndView = new ModelAndView();
@@ -94,7 +94,7 @@ public class AdminManageArticlesController {
      * @param
      * @return
      */
-    @RequestMapping("/updateArticle")
+    @RequestMapping("/update/article")
     public ModelAndView putArticle(@RequestBody ArticleCategories articleCategories) {
 
         //得到文章
@@ -146,7 +146,7 @@ public class AdminManageArticlesController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/deleteArticle/{id}")
+    @RequestMapping(value = "/delete/article/{id}")
     public String deleteArticle(@PathVariable("id") Integer id) {
 
         try {
@@ -155,6 +155,6 @@ public class AdminManageArticlesController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/admin/articleManage";
+        return "redirect:/admin/manage/article";
     }
 }

@@ -20,7 +20,7 @@ import java.io.IOException;
  * @date :2018/10/2
  */
 //这种方法的filter按文件名顺序执行
-@WebFilter(filterName = "UserFilter", urlPatterns = {"/admin/articleWriting","/user/login"})
+@WebFilter(filterName = "UserFilter", urlPatterns = {"/admin/writing/edition","/admin/login"})
 public class UserFilter extends OncePerRequestFilter {
 
     private static Logger logger = LogManager.getLogger(UserFilter.class);
