@@ -24,14 +24,14 @@ public class ArticleUtil {
      * @param categoryService 分类查询接口
      * @return 视图参数
      */
-    public static ModelAndView getArticlesList(Map<String,Object> map, String page,String url,ArticleService articleService, CategoryService categoryService){
+    public static ModelAndView getArticlesList(Map<String,Object> map, String page,int pageArticleNum,String url,ArticleService articleService, CategoryService categoryService){
         ModelAndView modelAndView = new ModelAndView();
 
         //分页查询
         if (page == null)
             page = "1";
         //当前页数，每页条数
-        Page pageList = new Page(Integer.parseInt(page), 7);
+        Page pageList = new Page(Integer.parseInt(page), pageArticleNum);
         //开始查询的记录数
         map.put("start", pageList.getStart());
         //一页总记录数

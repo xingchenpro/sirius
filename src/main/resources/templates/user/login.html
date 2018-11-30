@@ -9,7 +9,7 @@
 
 <body>
 <main>
-    <form class="form" id="loginForm" method="post" action="/user/blogger" th:action="@{/user/blogger}" autocomplete="off">
+    <form class="form" id="loginForm" method="post" action="/user/blogger" th:action="@{/user/blogger}" >
         <div class="form__cover"></div>
         <div class="form__loader">
             <div class="spinner active">
@@ -23,7 +23,7 @@
             <h1>Authorization</h1>
             <div class="styled-input">
                 <!--用户名-->
-                <input type="text" class="styled-input__input" name="username" id="username" autocomplete="off" >
+                <input type="text" class="styled-input__input" name="username" id="username" autocomplete="new-text" >
                 <div class="styled-input__placeholder">
                     <span class="styled-input__placeholder-text">username</span>
                 </div>
@@ -32,7 +32,7 @@
 
             <div class="styled-input">
                 <!--密码-->
-                <input type="password" class="styled-input__input" id="password" name="password" autocomplete="off" >
+                <input type="password" class="styled-input__input" id="password" name="password" autocomplete="new-password" >
                 <div class="styled-input__placeholder">
                     <span class="styled-input__placeholder-text">password</span>
                 </div>

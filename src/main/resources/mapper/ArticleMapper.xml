@@ -27,7 +27,7 @@
             <if test="createYear!=null and createMonth!=null">
                 year(articleCreateTime)= #{createYear} AND MONTH(articleCreateTime)= #{createMonth}
             </if>
-            AND articleOrder=1 order by articleId desc
+            AND articleOrder !=0 order by articleOrder desc,articleId desc
         </where>
         <if test="start!=null and size!=null">
             limit #{start},#{size}

@@ -47,7 +47,7 @@ public class AdminManageArticlesController {
         //查询文章的参数
         Map<String, Object> articleMap = new HashMap<String, Object>();
         //得到文章数目，分类，年月分类信息
-        ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap, page, request.getContextPath() + "/admin/articleManage", articleService, categoryService);
+        ModelAndView modelAndView = ArticleUtil.getArticlesList(articleMap, page, 7,request.getContextPath() + "/admin/articleManage", articleService, categoryService);
         //所有文章信息
         List<Article> articleList = articleService.getArticleList(articleMap);
         modelAndView.addObject("articleList", articleList);

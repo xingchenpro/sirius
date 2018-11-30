@@ -5,8 +5,8 @@
 *@date :2018/8/16
 */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 /*页脚开始*/
@@ -42,6 +42,10 @@
 #ower {
     margin-left: 175px;
     color: #dddddd;
+}
+
+#ower a{
+    color: white;
 }
 
 /*页脚结束*/

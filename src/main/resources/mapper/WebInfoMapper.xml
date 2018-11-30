@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hly.sirius.dao.WebInfoDao">
+
+    <resultMap id="webInfoMap" type="WebInfo">
+        <result property="webName" column="webName"/>
+        <result property="webViewNum" column="webViewNum"/>
+    </resultMap>
+
+    <select id="getWebInfo" resultMap="webInfoMap">
+        SELECT * FROM webinfo
+    </select>
+
+    <update id="updateWebViewNum" parameterType="integer">
+        UPDATE webinfo SET webViewNum = webViewNum + 1
+    </update>
+</mapper>
