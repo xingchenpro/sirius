@@ -14,7 +14,7 @@
 /src/main/resources/static/html/
 /src/main/resources/static/test/
 /src/main/resources/summary/
-/src/main/resources/application-distance.yml/
+/src/main/resources/application-distance.yml
 
 ### IntelliJ IDEA ###
 .idea
