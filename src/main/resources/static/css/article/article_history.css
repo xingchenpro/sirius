@@ -161,7 +161,7 @@ header .article_image figure {
     border-radius: 10px;
     background: linear-gradient(#212741, rgba(37, 43, 68,0.7)); /* 标准的语法（必须放在最后） */
     width: 1000px;
-    min-height: 1650px;
+    min-height: 2100px;
     /*border: 1px solid blue;*/
     margin: 20px auto;
 }

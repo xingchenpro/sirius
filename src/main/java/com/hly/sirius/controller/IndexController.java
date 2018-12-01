@@ -57,7 +57,7 @@ public class IndexController {
         //保存访客信息
         VisitorUtil.saveVisitor(visitorDao,request);
         //更新网站访问次数
-        webInfoService.updateWebViewNum();
+        //webInfoService.updateWebViewNum();
         //获取网站信息
         WebInfo webInfo = webInfoService.getWebInfo();
         modelAndView.addObject("webInfo", webInfo);
