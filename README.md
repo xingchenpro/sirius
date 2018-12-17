@@ -69,8 +69,6 @@ IDE:
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20181123104418465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Npcml1c19obHk=,size_16,color_FFFFFF,t_70)
 
-
-
 ### 4.使用方法
 
 在笔者 [github](https://github.com/huangliangyun/sirius) 下载项目后 , 安装好maven3 , 导入数据库 , 使用 IntelliJ IDEA 打开 , 直接运行 springboot 即可。
