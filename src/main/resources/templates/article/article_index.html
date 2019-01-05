@@ -34,7 +34,7 @@
         <ul class="article_lists">
             <li th:each="article:${articleList}">
                 <div class="article_list">
-                    <h2 class="article_title"><a th:text="${article.articleTitle}" th:href="@{'/articleDetail/'+${article.articleId}}">SpringBoot通</a>
+                    <h2 class="article_title"><a th:text="${article.articleTitle}" th:href="@{'/article/detail/'+${article.articleId}}">SpringBoot通</a>
                     </h2>
                     <div class="article_Info">
                         <a th:href="@{'/article/detail/'+${article.articleId}}"><img src="../../static/images/article_images/img_12.jpg"

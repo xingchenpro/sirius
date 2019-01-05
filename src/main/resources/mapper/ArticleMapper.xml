@@ -68,7 +68,7 @@
     <select id="getPreArticle" parameterType="integer" resultMap="ArticleResult">
         SELECT * FROM article
         <where>
-            articleId &lt; #{articleId}
+            articleId &lt; #{articleId} AND articleOrder !=0
         </where>
         ORDER BY articleId DESC
         limit 1
@@ -78,7 +78,7 @@
     <select id="getNextArticle" parameterType="integer" resultMap="ArticleResult">
         SELECT * FROM article
         <where>
-            articleId &gt; #{articleId}
+            articleId &gt; #{articleId} AND articleOrder !=0
         </where>
         ORDER BY articleId
         limit 1
